@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itajaí								 *
+	*	@author Prefeitura Municipal de ItajaÃ­								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software PÃºblico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÃ­			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
-	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
-	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
+	*	Este  programa  Ã©  software livre, vocÃª pode redistribuÃ­-lo e/ou	 *
+	*	modificÃ¡-lo sob os termos da LicenÃ§a PÃºblica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versÃ£o 2 da	 *
+	*	LicenÃ§a   como  (a  seu  critÃ©rio)  qualquer  versÃ£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
-	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  Ã© distribuÃ­do na expectativa de ser Ãºtil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implÃ­cita de COMERCIALI-	 *
+	*	ZAÃ‡ÃƒO  ou  de ADEQUAÃ‡ÃƒO A QUALQUER PROPÃ“SITO EM PARTICULAR. Con-	 *
+	*	sulte  a  LicenÃ§a  PÃºblica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
-	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
+	*	VocÃª  deve  ter  recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU	 *
+	*	junto  com  este  programa. Se nÃ£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndex extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "Prefeitura de Itaja&iacute;- Sistema de Cadastro de A&ccedil;&oatilde;es do Governo - Detalhe de a&ccedil;&otilde;es do Governo!" );
+		$this->SetTitulo( "Trilha Jovem Iguassu - Sistema de Cadastro de AÃ§Ãµes - Detalhe de aÃ§Ãµes" );
 		$this->processoAp = "551";
 	}
 }
@@ -52,7 +52,7 @@ class indice extends clsDetalhe
 		$_SESSION['acao_det'] = $cod_acao_governo ;
 		@session_write_close();
 
-		$this->titulo = "Detalhe de a&ccedil;&otilde;es do Governo";
+		$this->titulo = "Detalhe de aÃ§Ãµes";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		if(!(int)$cod_acao_governo)
@@ -65,14 +65,14 @@ class indice extends clsDetalhe
 			header("Location: acoes_acao_lst.php");
 
 		if($det_acao_governo['numero_acao'])
-			$this->addDetalhe( array("N&uacute;mero a&ccedil;&atilde;o", "{$det_acao_governo['numero_acao']}") );
-		$this->addDetalhe( array("Nome da a&ccedil;&atilde;o", "{$det_acao_governo['nm_acao']}") );
-		$this->addDetalhe( array("Descri&ccedil;&atilde;o da a&ccedil;&atilde;o", "{$det_acao_governo['descricao']}") );
+			$this->addDetalhe( array("NÃºmero da aÃ§Ã£o", "{$det_acao_governo['numero_acao']}") );
+		$this->addDetalhe( array("Nome da aÃ§Ã£o", "{$det_acao_governo['nm_acao']}") );
+		$this->addDetalhe( array("DescriÃ§Ã£o da aÃ§Ã£o", "{$det_acao_governo['descricao']}") );
 		$det_acao_governo['data_inauguracao'] = dataToBrasil($det_acao_governo['data_inauguracao']);
-		$this->addDetalhe( array("Data inaugura&ccedil;&atilde;o", "{$det_acao_governo['data_inauguracao']}") );
+		$this->addDetalhe( array("Data inauguraÃ§Ã£o", "{$det_acao_governo['data_inauguracao']}") );
 		$det_acao_governo['valor'] = str_replace(".",",",$det_acao_governo['valor']);
 		$this->addDetalhe( array("Valor", "{$det_acao_governo['valor']}") );
-		$this->addDetalhe( array("Destaque",$det_acao_governo['destaque'] == 0 ? "N&atilde;o" : "Sim"));
+		$this->addDetalhe( array("Destaque",$det_acao_governo['destaque'] == 0 ? "NÃ£o" : "Sim"));
 		$this->addDetalhe( array("Status",$det_acao_governo['status_acao'] == 0 ? "Pendente" : "Confirmado"));
 
 		$display = $_SESSION["display"] == "inline" ? "inline" : "none";
@@ -83,7 +83,7 @@ class indice extends clsDetalhe
 				$func = "acoes_acao_det.php?cod_acao_governo={$cod_acao_governo}&display=inline";
 			else
 				$func = "acoes_acao_det.php?cod_acao_governo={$cod_acao_governo}&display=none";
-			$this->addDetalhe(array("Detalhes da A&ccedil;&atilde;o", "<a href='$func' >Mostrar detalhe</a><div id='det_pree' name='det_pree' style='display:{$display};'>".$det_acoes."</div>"));
+			$this->addDetalhe(array("Detalhes da AÃ§Ã£o", "<a href='$func' >Mostrar detalhe</a><div id='det_pree' name='det_pree' style='display:{$display};'>".$det_acoes."</div>"));
 		}
 
 		$this->url_novo = "acoes_acao_cad.php";
@@ -125,8 +125,8 @@ class indice extends clsDetalhe
 
 			if($obj_secretaria_responsavel_det != false && $status == 0)
 			{
-				$ativar_nome = "Incluir A&ccedil;&atilde;o";
-				$ativar_link = "if(confirm(\"Deseja incluir a ação?\"))window.location=\"acoes_acao_incluir_cad.php?cod_acao_governo={$cod_acao_governo}&status=1\"";
+				$ativar_nome = "Incluir AÃ§Ã£o";
+				$ativar_link = "if(confirm(\"Deseja incluir a aÃ§Ã£o?\"))window.location=\"acoes_acao_incluir_cad.php?cod_acao_governo={$cod_acao_governo}&status=1\"";
 
 				$this->array_botao[] = $ativar_nome;
 				$this->array_botao_url_script[] = $ativar_link;
@@ -134,7 +134,7 @@ class indice extends clsDetalhe
 			elseif($obj_secretaria_responsavel_det != false && $status == 1)
 			{
 				$ativar_nome = "Remarcar como pendente";
-				$ativar_link = "if(confirm(\"Deseja marcar a ação como pendente?\"))window.location=\"acoes_acao_incluir_cad.php?cod_acao_governo={$cod_acao_governo}&status=0\"";
+				$ativar_link = "if(confirm(\"Deseja marcar a aÃ§Ã£o como pendente?\"))window.location=\"acoes_acao_incluir_cad.php?cod_acao_governo={$cod_acao_governo}&status=0\"";
 
 				$this->array_botao[] = $ativar_nome;
 				$this->array_botao_url_script[] = $ativar_link;
@@ -229,7 +229,7 @@ class indice extends clsDetalhe
 			$cor = $cor == "#FFFFFF" ? "#E4E9ED" : "#FFFFFF";
 			$tabela .= "<tr bgcolor=$cor><td colspan='2'><b>Fotos</b></td></tr><tr><td>";
 			$tabela .= "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" align=\"left\" width='100%'>";
-			$tabela .= "<tr bgcolor='#A1B3BD'><th>Foto</th><th>Data</th><th width='100%'>Tï¿½tulo</th><th width='70'>Excluir</th></tr>";
+			$tabela .= "<tr bgcolor='#A1B3BD'><th>Foto</th><th>Data</th><th width='100%'>TÃ¯Â¿Â½tulo</th><th width='70'>Excluir</th></tr>";
 
 
 			$cor = $cor == "#FFFFFF" ? "#E4E9ED" : "#FFFFFF";
@@ -306,7 +306,7 @@ class indice extends clsDetalhe
 				$cor = $cor == "#FFFFFF" ? "#E4E9ED" : "#FFFFFF";
 				$tabela .= "<tr bgcolor=$cor><td colspan='2'><b>Fotos Portal</b></td></tr><tr><td>";
 				$tabela .= "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" align=\"left\" width='100%'>";
-				$tabela .= "<tr bgcolor='#A1B3BD'><th>Foto</th><th>Data</th><th width='60%'>Tï¿½tulo</th><th width='70'>Excluir</th></tr>";
+				$tabela .= "<tr bgcolor='#A1B3BD'><th>Foto</th><th>Data</th><th width='60%'>TÃ¯Â¿Â½tulo</th><th width='70'>Excluir</th></tr>";
 
 				$fotos_in = implode(",",$lista_fotos);
 
@@ -321,7 +321,7 @@ class indice extends clsDetalhe
 					$rowspan = "";
 					if($descricao){
 						$rowspan = "rowspan='2'";
-						$descricao = "<tr bgcolor=$cor><td colspan='2'><div><b>Descri&ccedil;&atilde;o:</b> {$descricao}</div></td></tr>";
+						$descricao = "<tr bgcolor=$cor><td colspan='2'><div><b>DescriÃ§Ã£o:</b> {$descricao}</div></td></tr>";
 					}
 					$tabela .= "<tr bgcolor=$cor align='center'><td $rowspan><img src='fotos/small/{$caminho}' border='0'></td><td>{$data}</td><td align='left'>{$titulo}</td><td $rowspan><a href='acoes_foto_portal.php?cod_acao_governo={$cod_acao_governo}&remover_foto={$cod_foto_portal}&display=inline' ><img src=\"imagens/nvp_bola_xis.gif\" border=0 style='padding-left:10px;'></a></td></tr>{$descricao}";
 				}

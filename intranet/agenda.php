@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -154,8 +154,8 @@ class indice
 		<table border=\"0\" cellpadding=\"0\" cellspacing=\"3\" width=\"100%\">";
 
 
-		$mesesArr = array( "", "Janeiro", "Fevereiro", "Mar&ccedil;o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" );
-		$diasArr = array( "Domingo", "Segunda Feira", "Ter&ccedil;a Feira", "Quarta Feira", "Quinta Feira", "Sexta Feira", "S&aacute;bado" );
+		$mesesArr = array( "", "Janeiro", "Fevereiro", "Mar√ßo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" );
+		$diasArr = array( "Domingo", "Segunda Feira", "Ter√ßa Feira", "Quarta Feira", "Quinta Feira", "Sexta Feira", "S√°bado" );
 
 		$this->arr_data_atual = array( date( "d", $this->time_atual ), date( "n", $this->time_atual ), date( "Y", $this->time_atual ), date( "w", $this->time_atual ) );
 		$amanhaArr = array( date( "d", $this->time_amanha ), date( "n", $this->time_amanha ), date( "Y", $this->time_amanha ), date( "w", $this->time_amanha ) );
@@ -183,7 +183,7 @@ class indice
 								<tr>
 									<td rowspan=\"2\" valign=\"top\"><a href=\"{$this->scriptNome}?cod_agenda={$this->agenda}&time={$this->time_ontem}\"><img src=\"imagens/agenda_data_prev_dia.gif\" border=\"0\" title=\"Dia anterior: {$ontemArr[0]} de {$mesesArr[$ontemArr[1]]} de {$ontemArr[2]}\" alt=\"Dia anterior\"></a></td>
 									<td background=\"imagens/agenda_data_bg.gif\" title=\"Dia: {$this->arr_data_atual[0]} de {$mesesArr[$this->arr_data_atual[1]]} de {$this->arr_data_atual[2]}\" align=\"center\"><span class=\"data1\">{$this->arr_data_atual[0]}<br></span><span class=\"data2\">" . strtoupper( substr( $mesesArr[$this->arr_data_atual[1]], 0, 3 ) ) . "<br><span class=\"data3\">{$this->arr_data_atual[2]}</span></td>
-									<td rowspan=\"2\" valign=\"top\"><a href=\"{$this->scriptNome}?cod_agenda={$this->agenda}&time={$this->time_amanha}\"><img src=\"imagens/agenda_data_prox_dia.gif\" border=\"0\" title=\"Pr&oacute;ximo dia: {$amanhaArr[0]} de {$mesesArr[$amanhaArr[1]]} de {$amanhaArr[2]}\" alt=\"Pr&oacute;ximo dia\"></a></td>
+									<td rowspan=\"2\" valign=\"top\"><a href=\"{$this->scriptNome}?cod_agenda={$this->agenda}&time={$this->time_amanha}\"><img src=\"imagens/agenda_data_prox_dia.gif\" border=\"0\" title=\"Pr√≥ximo dia: {$amanhaArr[0]} de {$mesesArr[$amanhaArr[1]]} de {$amanhaArr[2]}\" alt=\"Pr√≥ximo dia\"></a></td>
 									<td rowspan=\"2\" valign=\"top\" style=\"padding:5px;\"><span class=\"titulo\">{$diasArr[$this->arr_data_atual[3]]}</span></td>
 								</tr>
 								<tr><td valign=\"top\"><img src=\"imagens/agenda_data_fundo.gif\" border=\"0\" title=\"Dia: {$this->arr_data_atual[0]} de {$mesesArr[$this->arr_data_atual[1]]} de {$this->arr_data_atual[2]}\" alt=\"{$this->arr_data_atual[0]} de {$mesesArr[$this->arr_data_atual[1]]} de {$this->arr_data_atual[2]}\"><td></tr>
@@ -326,7 +326,7 @@ class indice
 					$max_versao = $objAgenda->getCompromissoVersao( $cod_agenda_compromisso );
 					if( $max_versao > 1 )
 					{
-						$img_versao = "<br><a href=\"{$this->scriptNome}?cod_agenda={$this->agenda}&time={$this->time_atual}&versoes={$cod_agenda_compromisso}\"><img src=\"imagens/nvp_agenda_historico.gif\" border=\"0\" alt=\"Historico\" title=\"Clique para ver antigas vers&otilde;es deste compromisso\"></a>";
+						$img_versao = "<br><a href=\"{$this->scriptNome}?cod_agenda={$this->agenda}&time={$this->time_atual}&versoes={$cod_agenda_compromisso}\"><img src=\"imagens/nvp_agenda_historico.gif\" border=\"0\" alt=\"Historico\" title=\"Clique para ver antigas vers√µes deste compromisso\"></a>";
 					}
 
 					// se a hora atual for maior ele fica mais apagado porque eh antigo
@@ -392,15 +392,15 @@ class indice
 
 					$nome = $db2->CampoUnico( "SELECT nome FROM cadastro.pessoa WHERE idpes = '{$ref_ref_cod_pessoa_cad}'" );
 					$ativo = ( $ativo )? "<b>Ativo</b>": "Inativo";
-					$importante = ( $importante )? "Sim": "N&atilde;o";
-					$publico = ( $publico )? "Sim": "N&atilde;o";
+					$importante = ( $importante )? "Sim": "N√£o";
+					$publico = ( $publico )? "Sim": "N√£o";
 					if( $data_fim )
 					{
 						$data_fim = date( "d/m/Y H:i", strtotime( $data_fim ) );
 					}
 					else
 					{
-						$data_fim = "Este compromisso era uma Anota&ccedil;&atilde;o";
+						$data_fim = "Este compromisso era uma Anota√ß√£o";
 					}
 
 					$conteudo .= "<tr><td>Vers&atilde;o:</td><td>{$versao}</td></tr>\n";
@@ -464,7 +464,7 @@ class indice
 		$conteudo .= "</td>
 			</tr>
 			<tr>
-				<td align=\"center\" class=\"escuro\"><span class=\"titulo\">Anota&ccedil;&otilde;es</span></td>
+				<td align=\"center\" class=\"escuro\"><span class=\"titulo\">Anota√ß√µes</span></td>
 			</tr>
 			<tr>
 				<td class=\"escuro\" valign=\"top\">

@@ -29,7 +29,7 @@
  */
 
 require_once '../includes/bootstrap.php';
-require_once 'include/clsBancoPgSql.inc.php';
+require_once ("include/clsBancoPgSql.inc.php");
 
 /**
  * clsBanco class.

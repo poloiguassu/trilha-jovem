@@ -59,7 +59,7 @@ class Portabilis_Model_Report_TipoBoletim extends CoreExt_Enum
     self::TRIMESTRAL_CONCEITUAL         => 'Trimestral conceitual',
     self::SEMESTRAL                     => 'Semestral',
     self::SEMESTRAL_CONCEITUAL          => 'Semestral conceitual',
-    self::SEMESTRAL_EDUCACAO_INFANTIL   => 'Semestral educa&ccedil;&atilde;o infantil',
+    self::SEMESTRAL_EDUCACAO_INFANTIL   => 'Semestral educação infantil',
     self::PARECER_DESCRITIVO_COMPONENTE => 'Parecer descritivo por componente curricular',
     self::PARECER_DESCRITIVO_GERAL      => 'Parecer descritivo geral'
   );

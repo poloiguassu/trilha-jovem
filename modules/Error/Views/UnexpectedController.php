@@ -34,6 +34,7 @@ ini_set("display_errors", 1);
 
 require_once 'lib/Portabilis/Controller/ErrorCoreController.php';
 
+
 class UnexpectedController extends Portabilis_Controller_ErrorCoreController
 {
   protected $_titulo = 'Erro inesperado';
@@ -43,7 +44,7 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
   }
 
   public function Gerar() {
-    $linkToSupport = $GLOBALS['coreExt']['Config']->modules->error->link_to_support;
+    /*$linkToSupport = $GLOBALS['coreExt']['Config']->modules->error->link_to_support;
 
     if ($GLOBALS['coreExt']['Config']->modules->error->show_details) {
       $detail  = "<br /><h3>Erro app</h3>{$this->getSession()->last_error_message}";
@@ -63,7 +64,7 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
                   <p>$detail</p>";
     }
     else
-      $detail = '<p>Visualiza&ccedil;&atilde;o de detalhes do erro desativada.</p>';
+      $detail = '<p>Visualização de detalhes do erro desativada.</p>';*/
 
     echo "
       <div id='error' class='small'>
@@ -76,7 +77,7 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
 
           <ol>
             <li><a href='/intranet/index.php'>Tente novamente</a></li>
-            <li><a href='/intranet/logof.php'>Fa&ccedil;a logoff do sistema</a> e tente novamente</li>
+            <li><a href='/intranet/logof.php'>Faça logoff do sistema</a> e tente novamente</li>
             <li>Caso o erro persista, por favor, <a target='_blank' href='$linkToSupport'>solicite suporte</a>.</li>
           </ol>
         </p>

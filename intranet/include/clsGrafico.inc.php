@@ -106,14 +106,14 @@
 		<script type='text/javascript' src='scripts/novo.js'></script>
 		<script type='text/javascript' src='scripts/dom.js'></script>
 		
-		<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<meta http-equiv=\"Pragma\" content=\"no-cache\">
 		<meta http-equiv=\"Expires\" content=\"-1\">
 		<!-- #&REFRESH&# -->
 		
-		<meta name='Author' content='Prefeitura de Itajaí'>
-		<meta name='Description' content='Portal da Prefeitura de Itajaí'>
-		<meta name='Keywords' content='portal, prefeitura, itajaí, serviço, cidadão'>
+		<meta name='Author' content='Trilha Jovem Iguassu'>
+		<meta name='Description' content='Sistema de Gestão Trilha Jovem Iguassu'>
+		<meta name='Keywords' content='portal, poloiguassu, foz do iguaçu, trilha jovem'>
 	</head>
 	<body>";
 			
@@ -363,14 +363,14 @@
 		<script type='text/javascript' src='scripts/novo.js'></script>
 		<script type='text/javascript' src='scripts/dom.js'></script>
 		
-		<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<meta http-equiv=\"Pragma\" content=\"no-cache\">
 		<meta http-equiv=\"Expires\" content=\"-1\">
 		<!-- #&REFRESH&# -->
 		
-		<meta name='Author' content='Prefeitura de Itajaí'>
-		<meta name='Description' content='Portal da Prefeitura de Itajaí'>
-		<meta name='Keywords' content='portal, prefeitura, itajaí, serviço, cidadão'>
+		<meta name='Author' content='Trilha Jovem Iguassu'>
+		<meta name='Description' content='Sistema de Gestão Trilha Jovem Iguassu'>
+		<meta name='Keywords' content='portal, poloiguassu, foz do iguaçu, trilha jovem'>
 	</head>
 	<body>";
 		

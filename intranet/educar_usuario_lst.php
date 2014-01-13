@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndexBase extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Usu&aacute;rio" );
+		$this->SetTitulo( "{$this->_instituicao} i-Educar - Usu√°rio" );
 		$this->processoAp = "555";
 	}
 }
@@ -104,7 +104,7 @@ class indice extends clsListagem
 		$objPermissao = new clsPermissoes();
 
 		// Filtros de Foreign Keys
-		$opcoes = array( "" => "Pesquise o funcion&aacute;rio clicando na lupa ao lado" );
+		$opcoes = array( "" => "Pesquise o funcion√°rio clicando na lupa ao lado" );
 		if( $this->cod_usuario )
 		{
 			$objTemp = new clsFuncionario( $this->cod_usuario );
@@ -115,7 +115,7 @@ class indice extends clsListagem
 		$parametros = new clsParametrosPesquisas();
 		$parametros->setSubmit( 0 );
 		$parametros->adicionaCampoSelect( "cod_usuario", "ref_cod_pessoa_fj", "nome" );
-		$this->campoListaPesq( "cod_usuario", "Usu&aacute;rio", $opcoes, $this->cod_usuario, "pesquisa_funcionario_lst.php", "", false, "", "", null, null, "", false, $parametros->serializaCampos() );
+		$this->campoListaPesq( "cod_usuario", "Usu√°rio", $opcoes, $this->cod_usuario, "pesquisa_funcionario_lst.php", "", false, "", "", null, null, "", false, $parametros->serializaCampos() );
 
 		$opcoes = array( "" => "Selecione" );
 		if( class_exists( "clsPmieducarTipoUsuario" ) )
@@ -134,9 +134,9 @@ class indice extends clsListagem
 		else
 		{
 			echo "<!--\nErro\nClasse clsPmieducarTipoUsuario n&atilde;o encontrada\n-->";
-			$opcoes = array( "" => "Erro na gera&ccedil;&atilde;o" );
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
-		$this->campoLista( "ref_cod_tipo_usuario", "Tipo Usu&aacute;rio", $opcoes, $this->ref_cod_tipo_usuario,null,null,null,null,null,false);
+		$this->campoLista( "ref_cod_tipo_usuario", "Tipo Usu√°rio", $opcoes, $this->ref_cod_tipo_usuario,null,null,null,null,null,false);
 
 
 
@@ -165,7 +165,7 @@ class indice extends clsListagem
 		{
 			$opcoes = array( "" => "Selecione", "8" => "Biblioteca");
 		}
-		$this->campoLista( "ref_cod_nivel_usuario", "N&iacute;vel de Acesso", $opcoes, $this->ref_cod_nivel_usuario,null,null,null,null,null,false );
+		$this->campoLista( "ref_cod_nivel_usuario", "N√≠vel de Acesso", $opcoes, $this->ref_cod_nivel_usuario,null,null,null,null,null,false );
 		
 		if ($super_usuario_det)
 		{
@@ -212,8 +212,8 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$nome_usuario = "Erro na gera&ccedil;&atilde;o";
-					echo "<!--\nErro\nClasse n&atilde;o existente: clsPessoa_\n-->";
+					$nome_usuario = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPessoa_\n-->";
 				}
 				if( class_exists( "clsPmieducarTipoUsuario" ) )
 				{
@@ -241,8 +241,8 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$registro["ref_cod_tipo_usuario"] = "Erro na gera&ccedil;&atilde;o";
-					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarTipoUsuario\n-->";
+					$registro["ref_cod_tipo_usuario"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarTipoUsuario\n-->";
 				}
 
 

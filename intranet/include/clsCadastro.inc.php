@@ -158,25 +158,25 @@ class clsCadastro extends clsCampos
           }
 
           if (!$sucesso && empty($this->erros) && empty($this->mensagem)) {
-            $this->mensagem = "N&atilde;o foi poss&iacute;vel inserir a informa&ccedil;&atilde;o. [CAD01]";
+            $this->mensagem = "Não foi possível inserir a informação. [CAD01]";
           }
       }
       elseif ($this->tipoacao == 'Editar') {
           $sucesso = $this->Editar();
           if (!$sucesso && empty($this->erros) && empty($this->mensagem)) {
-            $this->mensagem = "N&atilde;o foi poss&iacute;vel editar a informa&ccedil;&atilde;o. [CAD02]";
+            $this->mensagem = "Não foi possível editar a informação. [CAD02]";
           }
       }
       elseif ($this->tipoacao == 'Excluir') {
         $sucesso = $this->Excluir();
         if (!$sucesso && empty($this->erros) && empty($this->mensagem)) {
-          $this->mensagem = "N&atilde;o foi poss&iacute;vel excluir a informa&ccedil;&atilde;o. [CAD03]";
+          $this->mensagem = "Não foi possível excluir a informação. [CAD03]";
         }
       }
       elseif ($this->tipoacao == 'ExcluirImg') {
         $sucesso = $this->ExcluirImg();
         if (!$sucesso && empty( $this->erros ) && empty( $this->mensagem )) {
-          $this->mensagem = "N&atilde;o foi poss&iacute;vel excluir a informa&ccedil;&atilde;o. [CAD04]";
+          $this->mensagem = "Não foi possível excluir a informação. [CAD04]";
         }
       }
       if (empty($script) && $sucesso && !empty($this->url_sucesso)) {

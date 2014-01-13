@@ -32,9 +32,10 @@ ini_set("display_errors", 1);
  * @version   $Id$
  */
 
-require_once 'Core/View.php';
-require_once 'Core/Controller/Page/ViewController.php';
+require_once 'lib/Core/View.php';
+require_once 'lib/Core/Controller/Page/ViewController.php';
 require_once 'lib/Portabilis/View/Helper/Application.php';
+//require_once 'lib/CoreExt/Controller/Page/Interface.php';
 
 class Portabilis_Controller_ErrorCoreController extends Core_Controller_Page_ViewController
 {

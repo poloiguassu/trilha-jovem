@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -92,7 +92,7 @@ class indice extends clsCadastro
 		$this->campoTexto( "nm_empresa", "Nome", $this->nm_empresa, 60, 255, true );
 		$this->campoIdFederal("cnpj", "CNPJ", $this->cnpj, true );
 		$this->campoTexto("email", "e-mail", $this->email, 60, 255, true );
-		$this->campoTexto("endereco", "Endereco", $this->endereco, 60, 255, true );
+		$this->campoTexto("endereco", "Endere√ßo", $this->endereco, 60, 255, true );
 		$estados = array();
 		$db = new clsBanco();
 		$db->Consulta( "SELECT sigla_uf, nome FROM public.uf ORDER BY nome ASC" );
@@ -131,7 +131,7 @@ class indice extends clsCadastro
 
 			$nome = $db->CampoUnico( "SELECT nome FROM cadastro.pessoa WHERE idpes = {$this->id_pessoa}" );
 			$data_atual = date( "d/m/Y H:i", time() );
-			$conteudo = "Cadastrando empresa_edital:<br>\nUsuario: {$this->id_pessoa} - {$nome}<br>\nhorario: $data_atual<br>\n<br>\n";
+			$conteudo = "Cadastrando empresa_edital:<br>\nUsu√°rio: {$this->id_pessoa} - {$nome}<br>\nhorario: $data_atual<br>\n<br>\n";
 			$conteudo .= "Query:<br>\nINSERT INTO compras_editais_empresa( nm_empresa, cnpj, email, data_hora, endereco, ref_sigla_uf, cidade, bairro, telefone, fax, cep, nome_contato, senha ) VALUES( '{$this->nm_empresa}', '{$this->cnpj}', '{$this->email}', NOW(), '{$this->endereco}', '{$this->ref_sigla_uf}', '{$this->cidade}', '{$this->bairro}', '{$this->telefone}','{$this-> fax}', '{$this->cep}','{$this-> nome_contato}', '{$this->senha}' )";
 
 			header( "location: licitacoes_edital_empresa_lst.php" );
@@ -139,7 +139,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "As senhas n&atilde;o conferem.";
+			$this->mensagem = "As senhas n√£o conferem.";
 		}
 		return false;
 	}
@@ -163,7 +163,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "As senhas n&atilde;o conferem.";
+			$this->mensagem = "As senhas n√£o conferem.";
 		}
 		return false;
 	}
@@ -185,7 +185,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "Esta empresa esta associada a logs de downloads e n&atilde;o pode ser deletada.";
+			$this->mensagem = "Esta empresa est√° associada a logs de downloads e n√£o pode ser deletada.";
 		}
 		return false;
 	}

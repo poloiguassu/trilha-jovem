@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Institui&ccedil;&atilde;o" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Institui√ß√£o" );
 		$this->processoAp = "559";
 	}
 }
@@ -107,7 +107,7 @@ class indice extends clsCadastro
 		$this->campoOculto( "cod_instituicao", $this->cod_instituicao );
 
 		// text
-		$this->campoTexto( "nm_instituicao", "Nome da InstituiÁ„o", $this->nm_instituicao, 30, 255, true );
+		$this->campoTexto( "nm_instituicao", "Nome da Institui√ß√£o", $this->nm_instituicao, 30, 255, true );
 		$this->campoCep( "cep", "CEP", int2CEP( $this->cep ), true, "-", false, false );
 		$this->campoTexto( "logradouro", "Logradouro", $this->logradouro, 30, 255, true );
 		$this->campoTexto( "bairro", "Bairro", $this->bairro, 30, 40, true );
@@ -130,7 +130,7 @@ class indice extends clsCadastro
 		else
 		{
 			echo "<!--\nErro\nClasse clsUrbanoTipoLogradouro nao encontrada\n-->";
-			$opcoes = array( "" => "Erro na geracao" );
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
 		$this->campoLista( "ref_idtlog", "Tipo do Logradouro", $opcoes, $this->ref_idtlog, "", false, "", "", false, true );
 
@@ -151,14 +151,14 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsUf nao encontrada\n-->";
-			$opcoes = array( "" => "Erro na geracao" );
+			echo "<!--\nErro\nClasse clsUf n√£o encontrada\n-->";
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
 		$this->campoLista( "ref_sigla_uf", "UF", $opcoes, $this->ref_sigla_uf, "", false, "", "", false, true );
 
-		$this->campoNumero( "numero", "N˙mero", $this->numero, 6, 6 );
+		$this->campoNumero( "numero", "N√∫mero", $this->numero, 6, 6 );
 		$this->campoTexto( "complemento", "Complemento", $this->complemento, 30, 50, false );
-		$this->campoTexto( "nm_responsavel", "Nome do Respons·vel", $this->nm_responsavel, 30, 255, true );
+		$this->campoTexto( "nm_responsavel", "Nome do Respons√°vel", $this->nm_responsavel, 30, 255, true );
 		$this->campoNumero( "ddd_telefone", "DDD Telefone", $this->ddd_telefone, 2, 2 );
 		$this->campoNumero( "telefone", "Telefone", $this->telefone, 11, 11 );
 	}
@@ -179,7 +179,7 @@ class indice extends clsCadastro
 			return true;
 		}
 
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+		$this->mensagem = "Cadastro n√£o realizado.<br>";
 		echo "<!--\nErro ao cadastrar clsPmieducarInstituicao\nvalores obrigatorios\nis_numeric( $ref_usuario_cad ) && is_string( $ref_idtlog ) && is_string( $ref_sigla_uf ) && is_numeric( $cep ) && is_string( $cidade ) && is_string( $bairro ) && is_string( $logradouro ) && is_string( $nm_responsavel ) && is_string( $data_cadastro ) && is_numeric( $ativo )\n-->";
 		return false;
 	}
@@ -193,13 +193,13 @@ class indice extends clsCadastro
 		$editou = $obj->edita();
 		if( $editou )
 		{
-			$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 			header( "Location: educar_instituicao_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao editar clsPmieducarInstituicao\nvalores obrigatorios\nif( is_numeric( $this->cod_instituicao ) )\n-->";
 		return false;
 	}
@@ -214,13 +214,13 @@ class indice extends clsCadastro
 		$excluiu = $obj->excluir();
 		if( $excluiu )
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclus√£o efetuada com sucesso.<br>";
 			header( "Location: educar_instituicao_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclus√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmieducarInstituicao\nvalores obrigatorios\nif( is_numeric( $this->cod_instituicao ) )\n-->";
 		return false;
 	}

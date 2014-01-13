@@ -63,7 +63,7 @@ try
 
   // Configura o caminho aonde os módulos estão instalados
   $frontController->setOptions(
-    array('basepath' => PROJECT_ROOT . DS . 'modules')
+    array('basepath' => PROJECT_ROOT . DS . 'module')
   );
 
   $frontController->dispatch();
@@ -72,6 +72,7 @@ try
   print $frontController->getViewContents();
 }
 catch (Exception $e) {
+  echo $e->getMessage();
   $lastError = error_get_last();
 
   @session_start();

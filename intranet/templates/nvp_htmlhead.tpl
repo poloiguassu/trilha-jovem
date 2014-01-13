@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt">
 <head>
-  <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
   <!--meta http-equiv="Content-Type" content="text/html; charset=utf-8" /-->
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="-1" />
@@ -41,7 +41,7 @@
       var src    = imagem.src.indexOf('arrow-up') ;
 
       imagem.src = (src!= -1) ?
-        'imagens/arrow-down2.gif' : 'imagens/arrow-up2.gif' ;
+        'imagens/arrow-down2.png' : 'imagens/arrow-up2.png' ;
 
       imagem.title = (src!= -1) ?
         imagem.title.replace('Abrir', 'Fechar') :

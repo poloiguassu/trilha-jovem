@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndex extends clsBase
 	
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Not&iacute;cias" );
+		$this->SetTitulo( "{$this->_instituicao} Noticias" );
 		$this->processoAp = "26";
 	}
 }
@@ -43,7 +43,7 @@ class indice extends clsDetalhe
 {
 	function Gerar()
 	{
-		$this->titulo = "Detalhe de not&iacute;cias";
+		$this->titulo = "Detalhe de not√≠cias";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$id_noticia = @$_GET['id_noticia'];
@@ -58,7 +58,7 @@ class indice extends clsDetalhe
 			$data = explode(".",$data);
 			$data= date("d/m/Y", strtotime(substr($data[0],0,19) ));
 
-			$this->addDetalhe( array("Respons·vel", $responsavel) );
+			$this->addDetalhe( array("Respons√°vel", $responsavel) );
 			$this->addDetalhe( array("Data", $data) );
 			
 			$this->addDetalhe( array("T&iacute;tulo", $titulo) );
@@ -66,7 +66,7 @@ class indice extends clsDetalhe
 			$descricao = str_replace("\n\r", "<br>", $descricao);
 			$descricao = str_replace("\n", "<br>", $descricao);
 
-			$this->addDetalhe( array("Descri&ccedil;&atilde;o", $descricao) );
+			$this->addDetalhe( array("Descri√ß√£o", $descricao) );
 			
 			$db->Consulta( "SELECT tipo,cod_vinc,caminho,nome_arquivo FROM not_vinc_portal n WHERE ref_cod_not_portal={$id_noticia}" );
 
@@ -88,12 +88,12 @@ class indice extends clsDetalhe
 					$dba->Consulta( "SELECT titulo FROM not_portal WHERE cod_not_portal={$cod}" );
 					$dba->ProximoRegistro();
 					list ($titulo) = $dba->Tupla();
-					$this->addDetalhe( array("Noticias Vinculadas", "<img src='imagens/noticia.jpg' border=0>&nbsp;<a href='noticias_det.php?id_noticia=$cod'><strong>$titulo</strong></a>") );
+					$this->addDetalhe( array("Not√≠cias Vinculadas", "<img src='imagens/noticia.jpg' border=0>&nbsp;<a href='noticias_det.php?id_noticia=$cod'><strong>$titulo</strong></a>") );
 					$dba->Consulta( "SELECT v.cod_vinc, n.titulo FROM not_vinc_portal v, not_portal n WHERE v.ref_cod_not_portal={$cod} AND v.tipo='N' AND v.cod_vinc = n.cod_not_portal " );
 					while($dba->ProximoRegistro())
 					{
 						list($cod, $titulo) = $dba->Tupla();
-						$this->addDetalhe( array("Noticias Vinculadas", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='imagens/noticia.jpg' border=0>&nbsp;<a href='noticias_det.php?id_noticia=$cod'><strong>$titulo</strong></a>") );
+						$this->addDetalhe( array("Not√≠cias Vinculadas", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='imagens/noticia.jpg' border=0>&nbsp;<a href='noticias_det.php?id_noticia=$cod'><strong>$titulo</strong></a>") );
 					} 
 				}
 				if($tipo =="A")

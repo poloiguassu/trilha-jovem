@@ -360,9 +360,10 @@ abstract class clsBancoSQL_
     if (0 == $this->bLink_ID) {
       $this->FraseConexao();
       $this->bLink_ID = pg_connect($this->strFraseConexao);
+	  pg_set_client_encoding($this->bLink_ID, 'UTF-8');
 
       if (! $this->bLink_ID)
-        $this->Interrompe("N&atilde;o foi possivel conectar ao banco de dados");
+        $this->Interrompe("Não foi possível conectar ao banco de dados");
     }
   }
 
@@ -493,11 +494,11 @@ abstract class clsBancoSQL_
       $conteudo .= "</table>";
 
       $objEmail = new clsEmail($objConfig->arrayConfig['ArrStrEmailsAdministradores'],
-        "[INTRANET - PMI] Desempenho de query", $conteudo);
+        "[INTRANET - TJ] Desempenho de query", $conteudo);
       $objEmail->envia();
     }
 
-    return $this->bConsulta_ID;
+    return utf8_decode($this->bConsulta_ID);
   }
 
   /**

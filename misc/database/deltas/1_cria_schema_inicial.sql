@@ -14,6 +14,8 @@ SET escape_string_warning = off;
 -- Name: acesso; Type: SCHEMA; Schema: -; Owner: -
 --
 
+CREATE SCHEMA public;
+
 CREATE SCHEMA acesso;
 
 

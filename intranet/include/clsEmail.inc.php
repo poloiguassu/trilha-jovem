@@ -37,7 +37,7 @@ class clsEmail
 	var $tipo;
 	var $compilado;
 	var $conteudoCompilado;
-	var $charset = "iso-8859-1";
+	var $charset = "utf-8";
 	
 	function  clsEmail( $destinatarios, $assunto, $conteudo, $template=false, $remetente=false, $remetenteNome=false, $replyto=false, $tipo="html", $strFooter=false )
 	{
@@ -47,8 +47,8 @@ class clsEmail
 		$this->conteudo = $conteudo;
 		$this->footer = $strFooter;
 		$this->template = ( $template )? $template : "email_padrao";
-		$this->remetente = ( $remetente )? $remetente: "sistema@itajai.sc.gov.br";
-		$this->remetenteNome = ( $remetenteNome ) ? $remetenteNome: "Sistema - Itajai.sc.gov.br";
+		$this->remetente = ( $remetente )? $remetente: "trilhajovem@poloiguassu.org";
+		$this->remetenteNome = ( $remetenteNome ) ? $remetenteNome: "Trilha Jovem - POLOIGUASSU";
 		$this->replyto = ( $replyto )? $replyto: $remetente;
 		$this->tipo = ( $tipo == "html" )? "text/html": "text/plain";
 	}
