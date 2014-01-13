@@ -1,5 +1,5 @@
 <?php
- require_once '/var/www/ieducar/includes/bootstrap.php';
+ require_once '/var/www/Dropbox/ieducar/includes/bootstrap.php';
  $entityName = $GLOBALS['coreExt']['Config']->app->entity->name;
 ?>
 
