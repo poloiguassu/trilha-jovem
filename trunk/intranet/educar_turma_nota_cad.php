@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itaja�								 *
+	*	@author Prefeitura Municipal de Itajaí								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P�blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja�			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  �  software livre, voc� pode redistribu�-lo e/ou	 *
-	*	modific�-lo sob os termos da Licen�a P�blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers�o 2 da	 *
-	*	Licen�a   como  (a  seu  crit�rio)  qualquer  vers�o  mais  nova.	 *
+	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
+	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
+	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
 	*																		 *
-	*	Este programa  � distribu�do na expectativa de ser �til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia impl�cita de COMERCIALI-	 *
-	*	ZA��O  ou  de ADEQUA��O A QUALQUER PROP�SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licen�a  P�blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
+	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Voc�  deve  ter  recebido uma c�pia da Licen�a P�blica Geral GNU	 *
-	*	junto  com  este  programa. Se n�o, escreva para a Free Software	 *
+	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
+	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -39,7 +39,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Faltas/Notas Turma " );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Faltas/Notas Turma " );
 		$this->processoAp = "650";
 	}
 }
@@ -219,7 +219,7 @@ class indice extends clsCadastro
 					else
 					{
 						
-						// poderia ter exame, mas nenhum aluno pegou exame, vamos pra aprova��o
+						// poderia ter exame, mas nenhum aluno pegou exame, vamos pra aprovaï¿½ï¿½o
 						if( $this->conceitual )
 						{
 							// conceitual aprova manualmente
@@ -237,7 +237,7 @@ class indice extends clsCadastro
 							else
 							{
 								// ninguem de exame, a turma nao eh conceitual e nenhuma excessao... todos ja deveriam estar aprovados/reprovados
-								// $this->campoRotulo("alerta","Alerta","Erro: [1] Todos os alunos dessa turma j� foram aprovados/reprovados.");
+								// $this->campoRotulo("alerta","Alerta","Erro: [1] Todos os alunos dessa turma jï¿½ foram aprovados/reprovados.");
 								// vamos corrigir o problema aprovando o pessoal que esta na espera (ja que eles nao pegaram exame nem reprovaram por falta)
 								$db2 = new clsBanco();
 								$db2->Consulta("SELECT cod_matricula FROM pmieducar.v_matricula_matricula_turma WHERE ref_cod_turma = '{$this->ref_cod_turma}' AND aprovado = 3 AND ativo = 1");
@@ -283,7 +283,7 @@ class indice extends clsCadastro
 								$objAprova = new clsPmieducarMatricula($mat,null,null,null,$this->pessoa_logada,null,null,1);
 								$objAprova->edita();
 							}
-							//$this->campoRotulo("alerta","Alerta","Erro: [2] Todos os alunos dessa turma j� foram aprovados/reprovados.");
+							//$this->campoRotulo("alerta","Alerta","Erro: [2] Todos os alunos dessa turma jï¿½ foram aprovados/reprovados.");
 							header("location: educar_turma_mvto_det.php?cod_turma={$this->ref_cod_turma}");
 							die();
 						}
@@ -311,7 +311,7 @@ class indice extends clsCadastro
 					else
 					{
 						// ja acabou o exame, a turma nao eh conceitual e nenhuma excessao... todos ja deveriam estar aprovados/reprovados
-//						$this->campoRotulo("alerta","Alerta","Erro: [3] Todos os alunos dessa turma j� foram aprovados/reprovados.");
+//						$this->campoRotulo("alerta","Alerta","Erro: [3] Todos os alunos dessa turma jï¿½ foram aprovados/reprovados.");
 
 						$db2 = new clsBanco();
 						$db2->Consulta("SELECT cod_matricula FROM pmieducar.v_matricula_matricula_turma WHERE ref_cod_turma = '{$this->ref_cod_turma}' AND aprovado = 3 AND ativo = 1");
@@ -357,7 +357,7 @@ class indice extends clsCadastro
 					 * nao existem disciplinas sem nota redireciona para listagem de nota turma
 					 */
 					if(!$_POST)
-						echo "<script>alert('Todas as disciplinas j� se encontram com nota!');window.location='educar_turma_mvto_det.php?cod_turma=$this->ref_cod_turma';</script>";
+						echo "<script>alert('Todas as disciplinas já se encontram com nota');window.location='educar_turma_mvto_det.php?cod_turma=$this->ref_cod_turma';</script>";
 					else
 						header("location:educar_turma_mvto_det.php?cod_turma=$this->ref_cod_turma");
 					die;
@@ -371,9 +371,9 @@ class indice extends clsCadastro
 			}
 
 			$this->campoRotulo("nm_turma","Turma",$detalhe_turma["nm_turma"]);
-			$this->campoRotulo("nm_serie","S&eacute;rie",$detalhe_turma["multiseriada"] ? "{$detalhe_serie["nm_serie"]} e {$detalhe_serie_mult["nm_serie"]}": $detalhe_serie["nm_serie"] );
-			$this->campoRotulo("nm_modulo","M&oacute;dulo",$detalhe_modulo["nm_tipo"]);
-			$this->campoRotulo("num_modulo2","N&uacute;mero do M&oacute;dulo",$this->num_modulo . "
+			$this->campoRotulo("nm_serie","Série",$detalhe_turma["multiseriada"] ? "{$detalhe_serie["nm_serie"]} e {$detalhe_serie_mult["nm_serie"]}": $detalhe_serie["nm_serie"] );
+			$this->campoRotulo("nm_modulo","Módulo",$detalhe_modulo["nm_tipo"]);
+			$this->campoRotulo("num_modulo2","Número do Módulo",$this->num_modulo . "
 			<style>
 				.cell_normal
 				{
@@ -547,13 +547,13 @@ class indice extends clsCadastro
 										$restantes = $objNotaAluno->getQtdRestanteNotasAlunoNaoApuraFaltas($matricula["cod_matricula"],$this->ref_cod_serie_disciplina,$this->ref_cod_turma,$this->num_modulo,$this->ref_ref_cod_escola);
 										if ($restantes==1)
 										{
-											$this->campoTexto("falta[{$matricula["cod_matricula"]}]"," &nbsp; &nbsp; &nbsp; Faltas", "0", 7, 5, true,false,$duplo,"","Falta global!" );
+											$this->campoTexto("falta[{$matricula["cod_matricula"]}]"," &nbsp; &nbsp; &nbsp; Faltas", "0", 7, 5, true,false,$duplo,"","Falta global" );
 											$this->campoOculto("ultima_nota[{$matricula["cod_matricula"]}]","1" );
 											
 										}
 										else
 										{
-											$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Falta Globalizada &eacute; aplicada na ultima nota do aluno");
+											$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Falta Globalizada é aplicada na última nota do aluno");
 										}
 									}
 								}
@@ -568,11 +568,11 @@ class indice extends clsCadastro
 										if ($restantes==1)
 										{
 											// eh a ultima disciplina
-											$this->campoTexto("falta[{$matricula["cod_matricula"]}]"," &nbsp; &nbsp; &nbsp; Faltas", "0", 7, 5, true,false,$duplo,"","Falta global!" );
+											$this->campoTexto("falta[{$matricula["cod_matricula"]}]"," &nbsp; &nbsp; &nbsp; Faltas", "0", 7, 5, true,false,$duplo,"","Falta global" );
 											$this->campoOculto("ultima_nota[{$matricula["cod_matricula"]}]","1" );
 										}
 										else
-											$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Mat&eacute;ria n&atilde;o apura falta");
+											$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Matéria não apura falta");
 									}
 									else
 									{
@@ -583,7 +583,7 @@ class indice extends clsCadastro
 								if ($this->pula_passo) 
 								{
 //									$opcoes_conceito = array("" => "Selecione", 1 => "Aprovado", 2 => "Reprovado");
-//									$this->campoLista("conceito[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Situa��o", $opcoes_conceito, "");
+//									$this->campoLista("conceito[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Situação", $opcoes_conceito, "");
 									$this->campoLista("resultado_final[{$matricula["cod_matricula"]}]","&nbsp; &nbsp; &nbsp;Resultado final",array(""=>"Selecione","1"=>"Aprovado","2"=>"Reprovado"),"","",false,"","",false,true);
 								}
 							}
@@ -592,7 +592,7 @@ class indice extends clsCadastro
 								if (!is_array($lst_nota_aluno))
 								{
 									// esta no exame, entao nao apura faltas
-									$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Exame n&atilde;o apura falta");
+									$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Exame não apura falta");
 								}
 								// esta no exame, entao nao apura faltas
 //								$this->campoRotulo("espaco[{$matricula["cod_matricula"]}]", " &nbsp; &nbsp; &nbsp; Faltas","Exame n&atilde;o apura falta");
@@ -601,7 +601,7 @@ class indice extends clsCadastro
 						if (!$matriculas_exame_disponivel && $this->exame)
 						{
 							echo "<script>
-										alert('Todos os alunos est�o com notas do exame nessa disciplina');
+										alert('Todos os alunos estão com notas do exame nessa disciplina');
 										window.location='educar_turma_nota_cad.php?ref_cod_turma={$this->ref_cod_turma}&ref_ref_cod_escola={$this->ref_ref_cod_escola}&ref_ref_cod_serie={$this->ref_ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}';
 								  </script>";
 						}
@@ -609,7 +609,7 @@ class indice extends clsCadastro
 				}
 				else
 				{
-					$this->mensagem = "Neste m&oacute;dulo n&atilde;o existe nenhum aluno aguardando uma nota nesta disciplina";
+					$this->mensagem = "Neste módulo não existe nenhum aluno aguardando uma nota nesta disciplina";
 					$this->url_cancelar  = "educar_turma_nota_cad2.php?ref_cod_turma={$this->ref_cod_turma}&ref_ref_cod_escola={$this->ref_ref_cod_escola}&ref_ref_cod_serie={$this->ref_ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}";
 					$this->nome_url_cancelar = "Voltar";
 					$this->botao_enviar = false;
@@ -621,8 +621,8 @@ class indice extends clsCadastro
 				$objTipoAvaliacaoValor = new clsPmieducarTipoAvaliacaoValores();
 							
 				$this->campoQuebra2();
-				$this->campoRotulo("media_normal","M&eacute;dia",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
-				$this->campoRotulo("media_exame","M&eacute;dia Exame",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media_exame"], $detalhe_curso["ref_cod_tipo_avaliacao"] ) );
+				$this->campoRotulo("media_normal","Média",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
+				$this->campoRotulo("media_exame","Média Exame",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media_exame"], $detalhe_curso["ref_cod_tipo_avaliacao"] ) );
 
 				if( $detalhe_curso["falta_ch_globalizada"] )
 				{
@@ -633,10 +633,10 @@ class indice extends clsCadastro
 					$tipo_falta = "por Disciplina";
 				}
 				$this->campoRotulo("tipo_falta","Tipo de Falta",$tipo_falta);
-				$this->campoRotulo("carga_horaria","Carga Hor&aacute;ria",$detalhe_curso["carga_horaria"]);
+				$this->campoRotulo("carga_horaria","Carga Horária",$detalhe_curso["carga_horaria"]);
 				$this->campoRotulo("hora_falta","Horas por Falta",$detalhe_curso["hora_falta"]);
-				$this->campoRotulo("frequencia_minima1","Frequencia M&aacute;ima (%)",$detalhe_curso["frequencia_minima"] . "%");
-				$this->campoRotulo("frequencia_minima2","Frequencia M&iacute;nima (Horas)",ceil( ($detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) );
+				$this->campoRotulo("frequencia_minima1","Frequencia Média (%)",$detalhe_curso["frequencia_minima"] . "%");
+				$this->campoRotulo("frequencia_minima2","Frequencia Mínima (Horas)",ceil( ($detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) );
 				if ($detalhe_curso["hora_falta"])
 				{
 					$maximo_faltas = floor( ( $detalhe_curso["carga_horaria"] / $detalhe_curso["hora_falta"] ) - ( ( $detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) / $detalhe_curso["hora_falta"] );
@@ -667,7 +667,7 @@ class indice extends clsCadastro
 				if( is_array($lista_excessoes) )
 				{
 					$this->campoQuebra2();
-					$this->campoRotulo("descricao","Aviso","Existem alunos que reprovaram por falta e pegaram exame.<br>Voc� deve decidir se permitir� que eles fa�am exame ou reprovem.");
+					$this->campoRotulo("descricao","Aviso","Existem alunos que reprovaram por falta e pegaram exame.<br>Você deve decidir se permitirá que eles façam exame ou reprovem.");
 					$opcoes_excessao = array(""=>"Selecione","0"=>"Reprovar","1"=>"Permitir Exame");
 					// ainda tem alguma excessao que precisa de exame
 					foreach ($lista_excessoes AS $excessao)
@@ -686,7 +686,7 @@ class indice extends clsCadastro
 						$this->campoRotulo("boletim[{$excessao["cod_aluno_excessao"]}]","Boletim", $boletim["boletim"]);
 
 						$this->campoLista("excessao[{$excessao["cod_aluno_excessao"]}]","Resultado final",$opcoes_excessao,false,"",false,"","",false,false);
-						$this->campoRotulo("sugestao[{$excessao["cod_aluno_excessao"]}]","Autom&aacute;tico", $boletim["automatico"] );
+						$this->campoRotulo("sugestao[{$excessao["cod_aluno_excessao"]}]","Automático", $boletim["automatico"] );
 
 						$this->campoQuebra2("#FFFFFF",20);
 					}
@@ -697,7 +697,7 @@ class indice extends clsCadastro
 					if( is_array($lista_excessoes) )
 					{
 						$this->campoQuebra2();
-						$this->campoRotulo("descricao","Aviso","Existem alunos que reprovaram por falta mas foram aprovados em notas.<br>Você deve decidir se eles ser�o aprovados ou reprovados.");
+						$this->campoRotulo("descricao","Aviso","Existem alunos que reprovaram por falta mas foram aprovados em notas.<br>Você deve decidir se eles serão aprovados ou reprovados.");
 						$opcoes_excessao = array(""=>"Selecione","0"=>"Reprovar","2"=>"Aprovar");
 						// so existem excessoes para aprovacao direta
 						foreach ($lista_excessoes AS $excessao)
@@ -716,7 +716,7 @@ class indice extends clsCadastro
 							$this->campoRotulo("boletim[{$excessao["cod_aluno_excessao"]}]","Boletim", $boletim["boletim"]);
 
 							$this->campoLista("excessao[{$excessao["cod_aluno_excessao"]}]","Resultado final",$opcoes_excessao,false,"",false,"","",false,false);
-							$this->campoRotulo("sugestao[{$excessao["cod_aluno_excessao"]}]","Autom&aacute;tico", $boletim["automatico"] );
+							$this->campoRotulo("sugestao[{$excessao["cod_aluno_excessao"]}]","Automático", $boletim["automatico"] );
 
 							$this->campoQuebra2("#FFFFFF",20);
 						}
@@ -735,8 +735,8 @@ class indice extends clsCadastro
 				// vamos exibir alguns dados extras sobre o curso (padroes de aprovacao / reprovacao)
 				$this->campoQuebra2();
 				$objTipoAvaliacaoValor = new clsPmieducarTipoAvaliacaoValores();
-				$this->campoRotulo("media_normal","M&eacute;dia",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
-				$this->campoRotulo("media_exame","M&eacute;dia Exame",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media_exame"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
+				$this->campoRotulo("media_normal","Méida",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
+				$this->campoRotulo("media_exame","Média Exame",$objTipoAvaliacaoValor->nomeNota( $detalhe_curso["media_exame"], $detalhe_curso["ref_cod_tipo_avaliacao"] ));
 
 				if( $detalhe_curso["falta_ch_globalizada"] )
 				{
@@ -747,10 +747,10 @@ class indice extends clsCadastro
 					$tipo_falta = "por Disciplina";
 				}
 				$this->campoRotulo("tipo_falta","Tipo de Falta",$tipo_falta);
-				$this->campoRotulo("carga_horaria","Carga Hor&aacute;ria",$detalhe_curso["carga_horaria"]);
+				$this->campoRotulo("carga_horaria","Carga Horária",$detalhe_curso["carga_horaria"]);
 				$this->campoRotulo("hora_falta","Horas por Falta",$detalhe_curso["hora_falta"]);
-				$this->campoRotulo("frequencia_minima1","Frequencia M&iacute;nima (%)",$detalhe_curso["frequencia_minima"] . "%");
-				$this->campoRotulo("frequencia_minima2","Frequencia M&iacute;nima (Horas)",ceil( ($detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) );
+				$this->campoRotulo("frequencia_minima1","Frequência Mínimia (%)",$detalhe_curso["frequencia_minima"] . "%");
+				$this->campoRotulo("frequencia_minima2","Frequência Mínimia (Horas)",ceil( ($detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) );
 				if ($detalhe_curso["hora_falta"])
 				{
 					$maximo_faltas = floor( ( $detalhe_curso["carga_horaria"] / $detalhe_curso["hora_falta"] ) - ( ( $detalhe_curso["frequencia_minima"] / 100 ) * $detalhe_curso["carga_horaria"] ) / $detalhe_curso["hora_falta"] );
@@ -759,7 +759,7 @@ class indice extends clsCadastro
 				{
 					$maximo_faltas = "Ilimitado";
 				}
-				$this->campoRotulo("frequencia_minima3","M&aacute;ximo de faltas (quantidade)",$maximo_faltas );
+				$this->campoRotulo("frequencia_minima3","Máximo de faltas (quantidade)",$maximo_faltas );
 
 //				mostra a lista de todos alunos e a opcao de aprovar/reprovar (exceto os ja aprovados/reprovados)
 				$matriculas = $objTurma->matriculados();
@@ -1139,7 +1139,7 @@ class indice extends clsCadastro
 						$det_matricula = $objMatricula->detalhe();
 						$max_modulo_nota = (int)$db->CampoUnico("SELECT max(modulo) FROM pmieducar.nota_aluno WHERE ref_cod_matricula = '{$matricula}' AND ativo = 1");
 						/**
-						 * so avan�a o modulo
+						 * so avança o modulo
 						 * caso ele seja igual ao da maior nota
 						 * e que seja a ultima disciplina
 						 */
@@ -1279,7 +1279,7 @@ class indice extends clsCadastro
 							}
 
 							/**
-							 * calcula outro modo de m�dia se for especial
+							 * calcula outro modo de média se for especial
 							 */
 
 							if($media_especial)
@@ -1561,7 +1561,7 @@ class indice extends clsCadastro
 					}
 					else if( !$cadastrou2 )
 					{
-						$this->mensagem = "Cadastro do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro do Histórico Escolar não realizado.<br>";
 						return false;
 					}
 				}
@@ -1588,12 +1588,12 @@ class indice extends clsCadastro
 												$this->ref_cod_disciplina, $matricula, null, $this->pessoa_logada, 
 												null, null, null, $this->num_modulo, $this->ref_cod_curso, $valorNota["valor"]);
 						if (!$objNotaAluno->cadastra()) {
-							die("n�o cadastrou (nota)");
+							die("não cadastrou (nota)");
 						}
 						$objMatricula = new clsPmieducarMatricula($matricula, null, null, null, $this->pessoa_logada, $this->pessoa_logada, 
 																  null, $this->resultado_final[$matricula]);
 						if (!$objMatricula->edita()) {
-							die("n�o cadastrou (resultado final)");
+							die("não cadastrou (resultado final)");
 						}
 						$objFaltaAluno = new clsPmieducarFaltaAluno();										   
 						$existe_falta = $objFaltaAluno->lista(null, null, null, $this->ref_cod_serie_disciplina,
@@ -1606,7 +1606,7 @@ class indice extends clsCadastro
 																   $matricula, $this->falta[$matricula], null,
 																   null, null, $this->num_modulo);		
 							if (!$objFaltaAluno->edita()) {
-								die("n�o editou (falta)");
+								die("não editou (falta)");
 							}
 						} else { 				
 							$objFaltaAluno = new clsPmieducarFaltaAluno(null, null, $this->pessoa_logada, $this->ref_cod_serie_disciplina,
@@ -1614,12 +1614,12 @@ class indice extends clsCadastro
 																   $matricula, $this->falta[$matricula], null,
 																   null, null, $this->num_modulo);				  
 							if (!$objFaltaAluno->cadastra()) {
-								die("n�o cadastrou (falta)");
+								die("não cadastrou (falta)");
 							}
 						}
 					}
 				} else {
-					die("falto par�metros");	
+					die("faltou parâmetros");	
 				}
 			}
 //			die("nao");

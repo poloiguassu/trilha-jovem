@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itajaí								 *
+	*	@author Prefeitura Municipal de ItajaÃ­								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software PÃºblico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÃ­			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
-	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
-	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
+	*	Este  programa  Ã©  software livre, vocÃª pode redistribuÃ­-lo e/ou	 *
+	*	modificÃ¡-lo sob os termos da LicenÃ§a PÃºblica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versÃ£o 2 da	 *
+	*	LicenÃ§a   como  (a  seu  critÃ©rio)  qualquer  versÃ£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
-	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  Ã© distribuÃ­do na expectativa de ser Ãºtil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implÃ­cita de COMERCIALI-	 *
+	*	ZAÃ‡ÃƒO  ou  de ADEQUAÃ‡ÃƒO A QUALQUER PROPÃ“SITO EM PARTICULAR. Con-	 *
+	*	sulte  a  LicenÃ§a  PÃºblica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
-	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
+	*	VocÃª  deve  ter  recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU	 *
+	*	junto  com  este  programa. Se nÃ£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndex extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Licita&ccedil;&otilde;es!" );
+		$this->SetTitulo( "{$this->_instituicao} LicitaÃ§Ãµes" );
 		$this->processoAp = "29";
 	}
 }
@@ -93,7 +93,7 @@ class indice extends clsCadastro
 		$objPessoa = new clsPessoaFisica();
 		$db = new clsBanco();
 		list($nome_) = $objPessoa->queryRapida($this->id_pessoa, "nome");
-		$this->campoRotulo( "pessoa", "Responsável", $nome_);
+		$this->campoRotulo( "pessoa", "ResponsÃ¡vel", $nome_);
 
 		$lista = array();
 		$db = new clsBanco();
@@ -106,7 +106,7 @@ class indice extends clsCadastro
 		$this->id_modalidade = empty($this->id_modalidade) ? 2 : $this->id_modalidade;
 		$this->campoLista("id_modalidade", "Modalidade",  $lista, $this->id_modalidade);
 
-		$this->campoTexto( "numero", "Numero",  $this->numero, "8", "30", true );
+		$this->campoTexto( "numero", "NÃºmero",  $this->numero, "8", "30", true );
 		$this->campoMemo( "objeto", "Objeto",  $this->objeto, "50", "8", true );
 		$this->campoData( "data_c", "Data",  $this->data_c, true );
 		$this->campoHora( "hora", "Hora",  $this->hora, true, "", "", "hh:mm" );
@@ -115,7 +115,7 @@ class indice extends clsCadastro
 			$this->oculto = "";
 		}
 		$this->campoCheck("oculto","Ocultar",$this->oculto);
-		$this->campoNumero( "cod_licitacao_semasa", "Número Licitação Semasa",  $this->cod_licitacao_semasa, 6, 20, false);
+		$this->campoNumero( "cod_licitacao_semasa", "NÃºmero LicitaÃ§Ã£o Semasa",  $this->cod_licitacao_semasa, 6, 20, false);
 
 	}
 

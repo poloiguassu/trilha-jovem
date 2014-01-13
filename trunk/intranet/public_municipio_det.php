@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Munic&iacute;pio" );
+		$this->SetTitulo( "{$this->_instituicao} Munic√≠pio" );
 		$this->processoAp = "755";
 	}
 }
@@ -72,7 +72,7 @@ class indice extends clsDetalhe
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 		
-		$this->titulo = "Munic&iacute;pio - Detalhe";
+		$this->titulo = "Munic√≠pio - Detalhe";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$this->idmun=$_GET["idmun"];
@@ -97,8 +97,8 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["idpais"] = "Erro na geracao";
-			echo "<!--\nErro\nClasse nao existente: clsPais\n-->";
+			$registro["idpais"] = "Erro na gera√ß√£o";
+			echo "<!--\nErro\nClasse n√£o existente: clsPais\n-->";
 		}
 
 		if( class_exists( "clsUf" ) )
@@ -109,8 +109,8 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["sigla_uf"] = "Erro na geracao";
-			echo "<!--\nErro\nClasse nao existente: clsUf\n-->";
+			$registro["sigla_uf"] = "Erro na gera√ß√£o";
+			echo "<!--\nErro\nClasse n√£o existente: clsUf\n-->";
 		}
 
 		if( class_exists( "clsMunicipio" ) )
@@ -122,7 +122,7 @@ class indice extends clsDetalhe
 		else
 		{
 			$registro["idmun_pai"] = "Erro na geracao";
-			echo "<!--\nErro\nClasse nao existente: clsMunicipio\n-->";
+			echo "<!--\nErro\nClasse n√£o existente: clsMunicipio\n-->";
 		}
 
 		
@@ -152,11 +152,11 @@ class indice extends clsDetalhe
 		}		
 		if( $registro["origem_gravacao"] )
 		{
-			$this->addDetalhe( array( "Origem Grava&ccedil;&atilde;o", "{$registro["origem_gravacao"]}") );
+			$this->addDetalhe( array( "Origem Grava√ß√£o", "{$registro["origem_gravacao"]}") );
 		}
 		if( $registro["operacao"] )
 		{
-			$this->addDetalhe( array( "Operac&atilde;o", "{$registro["operacao"]}") );
+			$this->addDetalhe( array( "Opera√ß√£o", "{$registro["operacao"]}") );
 		}
 /*		if( $registro["idsis_cad"] )
 		{

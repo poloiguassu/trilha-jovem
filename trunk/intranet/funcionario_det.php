@@ -34,7 +34,7 @@ class clsIndex extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Usu&aacute;rios" );
+		$this->SetTitulo( "{$this->_instituicao} Usuários" );
 		$this->processoAp = "36";
 	}
 }
@@ -43,7 +43,7 @@ class indice extends clsDetalhe
 {
 	function Gerar()
 	{
-		$this->titulo = "Detalhe do usu&aacute;rio";
+		$this->titulo = "Detalhe do usuário";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$cod_pessoa = @$_GET['ref_pessoa'];
@@ -168,11 +168,11 @@ class indice extends clsDetalhe
 
 		if ( $det_funcionario["proibido"] )
 		{
-			$this->addDetalhe( array("M&oacute;dulos", "<b>Banido</b>") );
+			$this->addDetalhe( array("Módulos", "<b>Banido</b>") );
 		}
 		if ($super_user)
 		{
-			$this->addDetalhe( array("M&oacute;dulos", "<b>Super Usu&aacute;rio</b>") );
+			$this->addDetalhe( array("Módulos", "<b>Super Usuário</b>") );
 		}
 		else
 		{
@@ -181,7 +181,7 @@ class indice extends clsDetalhe
 				$dba->Consulta( "SELECT nm_submenu FROM menu_submenu WHERE cod_menu_submenu={$cod}" );
 				$dba->ProximoRegistro();
 				list($nm_item) = $dba->Tupla();
-				$this->addDetalhe( array("M&oacute;dulos", $nm_item) );
+				$this->addDetalhe( array("Módulos", $nm_item) );
 
 			}
 		}

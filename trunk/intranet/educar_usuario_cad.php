@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Usu&aacute;rio" );
+		$this->SetTitulo( "{$this->_instituicao} i-Educar - Usu√°rio" );
 		$this->processoAp = "555";
 	}
 }
@@ -107,7 +107,7 @@ class indice extends clsCadastro
 		// primary keys
 		$this->campoOculto( "cod_usuario", $this->cod_usuario );
 		// foreign keys
-		$opcoes = array( "" => "Pesquise o funcion&aacute;rio clicando na lupa ao lado" );
+		$opcoes = array( "" => "Pesquise o funcion√°rio clicando na lupa ao lado" );
 		if( $this->cod_usuario )
 		{
 			$objTemp = new clsFuncionario( $this->cod_usuario );
@@ -118,7 +118,7 @@ class indice extends clsCadastro
 		$parametros = new clsParametrosPesquisas();
 		$parametros->setSubmit( 0 );
 		$parametros->adicionaCampoSelect( "cod_usuario_", "ref_cod_pessoa_fj", "nome" );
-		$this->campoListaPesq( "cod_usuario_", "Usu&aacute;rio", $opcoes, $this->cod_usuario, "pesquisa_funcionario_lst.php", "", false, "", "", null, null, "", false, $parametros->serializaCampos() );
+		$this->campoListaPesq( "cod_usuario_", "Usu√°rio", $opcoes, $this->cod_usuario, "pesquisa_funcionario_lst.php", "", false, "", "", null, null, "", false, $parametros->serializaCampos() );
 
 		$opcoes = array( "" => "Selecione" );
 		if( class_exists( "clsPmieducarTipoUsuario" ) )
@@ -129,7 +129,7 @@ class indice extends clsCadastro
 			$obj_libera_menu = new clsMenuFuncionario($this->pessoa_logada,false,false,0);
 			$obj_super_usuario = $obj_libera_menu->detalhe();
 
-			// verifica se pessoa logada È super-usuario
+			// verifica se pessoa logada √© super-usuario
 			if ($obj_super_usuario) {
 				$lista = $objTemp->lista(null,null,null,null,null,null,null,null,1);
 			}else{
@@ -147,8 +147,8 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsPmieducarTipoUsuario n&atilde;o encontrada\n-->";
-			$opcoes = array( "" => "Erro na geraÁ„o" );
+			echo "<!--\nErro\nClasse clsPmieducarTipoUsuario n√£o encontrada\n-->";
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
 		$tamanho = sizeof($opcoes_);
 		echo "<script>\nvar cod_tipo_usuario = new Array({$tamanho});\n";
@@ -156,7 +156,7 @@ class indice extends clsCadastro
 			echo "cod_tipo_usuario[{$key}] = {$valor};\n";
 		echo "</script>";
 
-		$this->campoLista( "ref_cod_tipo_usuario", "Tipo Usu&aacute;rio", $opcoes, $this->ref_cod_tipo_usuario,"",null,null,null,null,true );
+		$this->campoLista( "ref_cod_tipo_usuario", "Tipo Usu√°rio", $opcoes, $this->ref_cod_tipo_usuario,"",null,null,null,null,true );
 
 		$nivel = $obj_permissao->nivel_acesso($this->cod_usuario);
 
@@ -177,15 +177,15 @@ class indice extends clsCadastro
 		 $this->pessoa_logada = $_SESSION['id_pessoa'];
 		@session_write_close();
 
-		// verifica se usuario È escolar
+		// verifica se usuario √© escolar
 		if ($this->ref_cod_instituicao && $this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario_, $this->ref_cod_escola, $this->ref_cod_instituicao, $this->pessoa_logada,  $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
-		} // verifica se usuario È institucional
+		} // verifica se usuario √© institucional
 		else if ($this->ref_cod_instituicao && !$this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario_, null, $this->ref_cod_instituicao, $this->pessoa_logada,  $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
-		} // verifica se usuario È poli-institucional
+		} // verifica se usuario √© poli-institucional
 		else if (!$this->ref_cod_instituicao && !$this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario_, null, null, $this->pessoa_logada,  $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
@@ -220,8 +220,8 @@ class indice extends clsCadastro
 			return true;
 		}
 
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
-		echo "<!--\nErro ao cadastrar clsPmieducarUsuario\nvalores obrigat&oacute;rios\n is_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_cod_tipo_usuario )\n-->";
+		$this->mensagem = "Cadastro n√£o realizado.<br>";
+		echo "<!--\nErro ao cadastrar clsPmieducarUsuario\nvalores obrigat√≥rios\n is_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_cod_tipo_usuario )\n-->";
 		return false;
 	}
 
@@ -231,15 +231,15 @@ class indice extends clsCadastro
 		 $this->pessoa_logada = $_SESSION['id_pessoa'];
 		@session_write_close();
 
-		// verifica se usuario È escolar
+		// verifica se usuario √© escolar
 		if ($this->ref_cod_instituicao && $this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario, $this->ref_cod_escola, $this->ref_cod_instituicao, null, $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
-		} // verifica se usuario È institucional
+		} // verifica se usuario √© institucional
 		else if ($this->ref_cod_instituicao && !$this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario, null, $this->ref_cod_instituicao, null, $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
-		} // verifica se usuario È poli-institucional
+		} // verifica se usuario √© poli-institucional
 		else if (!$this->ref_cod_instituicao && !$this->ref_cod_escola)
 		{
 			$obj = new clsPmieducarUsuario( $this->cod_usuario, null, null, null, $this->pessoa_logada, $this->ref_cod_tipo_usuario,null,null,1 );
@@ -299,13 +299,13 @@ class indice extends clsCadastro
 
 		if( $editou )
 		{
-			$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 			header( "Location: educar_usuario_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao editar clsPmieducarUsuario\nvalores obrigat&oacute;rios\nif( is_numeric( $this->cod_usuario ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -336,19 +336,19 @@ class indice extends clsCadastro
 				{
 					$obj_usuario_bib = new clsPmieducarBibliotecaUsuario($usuario['ref_cod_biblioteca'],$this->pessoa_logada);
 					if(!$obj_usuario_bib->excluir()){
-						echo "<!--\nErro ao excluir usuarios biblioteca\n-->";
+						echo "<!--\nErro ao excluir usu√°rio da biblioteca\n-->";
 						return false;
 					}
 				}
 			}
 
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclus√£o efetuada com sucesso.<br>";
 			header( "Location: educar_usuario_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclus√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmieducarUsuario\nvalores obrigat&oacute;rios\nif( is_numeric( $this->cod_usuario ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -545,7 +545,7 @@ function valida()
 	{
 		if( campo_instituicao.options[campo_instituicao.selectedIndex].value == "" )
 		{
-			alert("… obrigatÛrio a escolha de uma InstituiÁ„o!");
+			alert("√â obrigat√≥rio a escolha de uma Institui√ß√£o");
 			return false;
 		}
 	}
@@ -553,14 +553,14 @@ function valida()
 	{
 		if( campo_instituicao.options[campo_instituicao.selectedIndex].value == "" )
 		{
-			alert("… obrigatÛrio a escolha de uma InstituiÁ„o!");
+			alert("√â obrigat√≥rio a escolha de uma Institui√ß√£o");
 			return false;
 		}
 		else if( cod_tipo_usuario[campo_instituicao.options[campo_instituicao.selectedIndex].value] != "")
 		{
 			if( campo_escola.options[campo_escola.selectedIndex].value == "" && campo_tipo_usuario.value != 6)
 			{
-				alert("… obrigatÛrio a escolha de uma Escola!");
+				alert("√â obrigat√≥rio a escolha de uma Escola");
 				return false;
 			}
 		}
@@ -569,7 +569,7 @@ function valida()
 	{
 		if( campo_instituicao.options[campo_instituicao.selectedIndex].value == "" )
 		{
-			alert("… obrigatÛrio a escolha de uma InstituiÁ„o! ");
+			alert("√â obrigat√≥rio a escolha de uma Institui√ß√£o");
 			return false;
 		}
 	}

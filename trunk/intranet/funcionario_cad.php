@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -32,7 +32,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Cadastro de Funcion&aacute;rios" );
+		$this->SetTitulo( "{$this->_instituicao} Cadastro de Funcion√°rios" );
 		$this->processoAp = "36";
 	}
 }
@@ -178,9 +178,9 @@ class indice extends clsCadastro
 			$this->campoOculto("ref_pessoa", $this->ref_pessoa);
 		}
 
-		$this->campoTexto("matricula", "Matr&iacute;cula", $this->matricula, 12, 12, true);
+		$this->campoTexto("matricula", "Matr√≠cula", $this->matricula, 12, 12, true);
 		$this->campoSenha("_senha", "Senha", $this->_senha, true);
-		$this->campoEmail("email", "E-mail usu·rio", $this->email, 50, 50, false, false, false, 'Utilizado para redefinir a senha, caso o us˙ario esqueÁa<br />Este campo pode ser gravado em branco, neste caso ser· solicitado um e-mail ao usu·rio, apÛs entrar no sistema.');
+		$this->campoEmail("email", "E-mail usu√°rio", $this->email, 50, 50, false, false, false, 'Utilizado para redefinir a senha, caso o us√∫ario esque√ßa<br />Este campo pode ser gravado em branco, neste caso ser√° solicitado um e-mail ao usu√°rio, ap√≥s entrar no sistema.');
 
 		$obj_setor = new clsSetor();
 		$lst_setor = $obj_setor->lista(null, null, null, null, null, null, null, null, null, 1, 0);
@@ -266,7 +266,7 @@ class indice extends clsCadastro
 		$opcoes = array(0 => "Inativo", 1 => "Ativo");
 		$this->campoLista("ativo", "Status", $opcoes, $this->ativo);
 
-		$opcoes = array("" => "Selecione", 5 => "Comissionado", 4 => "Contratado", 3 => "Efetivo", 6 => "Estagi&aacute;rio");
+		$opcoes = array("" => "Selecione", 5 => "Comissionado", 4 => "Contratado", 3 => "Efetivo", 6 => "Estagi√°rio");
 		$this->campoLista("ref_cod_funcionario_vinculo", "V&iacute;nculo", $opcoes, $this->ref_cod_funcionario_vinculo);
 
 		$opcoes = array("" => "Selecione",
@@ -304,13 +304,13 @@ class indice extends clsCadastro
 		}
 
 		$this->campoTexto("ramal", "Ramal", $this->ramal, 11, 30);
-		$this->campoCheck("super", "Super usu&aacute;rio", $this->super);
+		$this->campoCheck("super", "Super usu√°rio", $this->super);
 		$this->campoCheck("proibido", "Banido", $this->proibido);
-		$this->campoCheck("matricula_permanente", "Matr&iacute;cula permanente", $this->matricula_permanente);
+		$this->campoCheck("matricula_permanente", "Matr√≠cula permanente", $this->matricula_permanente);
 
 		//-----------------------------------------------------------------------------------------------
 
-		$this->campoRotulo("rotulo_permissoes", "<b><i>Permiss&otilde;es</i></b>", "");
+		$this->campoRotulo("rotulo_permissoes", "<b><i>Permiss√µes</i></b>", "");
 
 		$obj_menu = new clsPortalMenuMenu();
 		$obj_menu->setOrderby("nm_menu ASC");
@@ -414,7 +414,7 @@ class indice extends clsCadastro
 							$obj_menu_funcionario = new clsPortalMenuFuncionario($this->ref_pessoa, $cadastrar, $excluir, $id_submenu);
 							if(!$obj_menu_funcionario->cadastra())
 							{
-								$this->mensagem = "Cadastro de menu n&atilde;o realizado.<br>";
+								$this->mensagem = "Cadastro de menu n√£o realizado.<br>";
 								echo "<!--\nErro ao cadastrar clsPortalMenuFuncionario-->";
 								return false;
 							}
@@ -459,11 +459,11 @@ class indice extends clsCadastro
 				header( "Location: funcionario_lst.php" );
 				return true;
 			}
-			$this->mensagem = "Cadastro de menus n&atilde;o realizado.<br>";
+			$this->mensagem = "Cadastro de menus n√£o realizado.<br>";
 			echo "<!--\nErro ao cadastrar clsPortalMenuFuncionario-->";
 			return false;
 		}
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+		$this->mensagem = "Cadastro n√£o realizado.<br>";
 		echo "<!--\nErro ao cadastrar -->";
 		return false;
 	}
@@ -504,12 +504,12 @@ class indice extends clsCadastro
 			$obj_menu_funcionario->excluir();
 			if( $this->cadastrarTabelas() )
 			{
-				$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+				$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 				header( "Location: funcionario_lst.php" );
 			}
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao editar clsPortalFuncionario-->";
 		return false;
 	}
@@ -523,11 +523,11 @@ class indice extends clsCadastro
 		$obj_funcionario = new clsPortalFuncionario($this->ref_pessoa);
 		if($obj_funcionario->excluir())
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclus√£o efetuada com sucesso.<br>";
 			header( "Location: funcionario_lst.php" );
 			return true;
 		}
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclus√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao excluir clsPortalFuncionario\n-->";
 		return false;
 	}
@@ -538,7 +538,7 @@ class indice extends clsCadastro
     $db = new clsBanco();
 
 		if ($db->CampoUnico($sql) == '1') {
-      $this->mensagem = "A matrÌcula '$matricula' j· foi usada, por favor, informe outra.";
+      $this->mensagem = "A matr√≠cula '$matricula' j√° foi usada, por favor, informe outra.";
       return false;
     }
     return true;

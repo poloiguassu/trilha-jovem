@@ -65,7 +65,7 @@
 		{
 			if( $html )
 			{
-				$retorno = "<table border=\"1\" cellpadding=\"2\"><tr><td>Nome</td><td>Tempo Absoluto</td><td>Diferenca Ultimo</td><td>MicroTime</td></tr>";
+				$retorno = "<table border=\"1\" cellpadding=\"2\"><tr><td>Nome</td><td>Tempo Absoluto</td><td>Diferença Último</td><td>MicroTime</td></tr>";
 				foreach ( $this->tomadas AS $tomada )
 				{
 					$retorno .= "<tr>";
@@ -84,7 +84,7 @@
 				{
 					$retorno .= "\tnome: {$tomada["nome"]}\n";
 					$retorno .= "\ttempo absoluto: " . number_format( $tomada["tempo_absoluto"], 10, ",", "." ) . "\n";
-					$retorno .= "\tdiferenca ultimo: " . number_format( $tomada["diferenca_ultimo"], 10, ",", "." ) . "\n";
+					$retorno .= "\tdiferença ultimo: " . number_format( $tomada["diferenca_ultimo"], 10, ",", "." ) . "\n";
 					$retorno .= "\tmicrotime: {$tomada["mictime"]}\n\n";
 				}
 			}

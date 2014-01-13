@@ -111,7 +111,7 @@ class indice extends clsCadastro
 		else
 		{
 			echo "<!--\nErro\nClasse clsPmicontrolesisMenuPortal nao encontrada\n-->";
-			$opcoes = array( "" => "Erro na geracao" );
+			$opcoes = array( "" => "Erro na geração" );
 		}
 		$this->campoLista( "ref_cod_menu_portal", "Menu Portal", $opcoes, $this->ref_cod_menu_portal );
 		// text
@@ -146,7 +146,7 @@ class indice extends clsCadastro
 			return true;
 		}
 
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+		$this->mensagem = "Cadastro não realizado.<br>";
 		echo "<!--\nErro ao cadastrar clsPmicontrolesisSubmenuPortal\nvalores obrigatorios\nis_numeric( $this->ref_funcionario_cad ) && is_numeric( $this->ref_cod_menu_portal ) && is_string( $this->nm_submenu ) && is_string( $this->arquivo ) && is_string( $this->_target ) && is_numeric( $this->ordem ) && is_string( $this->data_cadastro ) && is_numeric( $this->ativo )\n-->";
 		return false;
 	}
@@ -161,13 +161,13 @@ class indice extends clsCadastro
 		$editou = $obj->edita();
 		if( $editou )
 		{
-			$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Edição efetuada com sucesso.<br>";
 			header( "Location: controlesis_submenu_portal_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edição não realizada.<br>";
 		echo "<!--\nErro ao editar clsPmicontrolesisSubmenuPortal\nvalores obrigatorios\nif( is_numeric( $this->cod_submenu_portal ) && is_numeric( $this->ref_funcionario_exc ) )\n-->";
 		return false;
 	}
@@ -182,13 +182,13 @@ class indice extends clsCadastro
 		$excluiu = $obj->excluir();
 		if( $excluiu )
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclusão efetuada com sucesso.<br>";
 			header( "Location: controlesis_submenu_portal_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclusão não realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmicontrolesisSubmenuPortal\nvalores obrigatorios\nif( is_numeric( $this->cod_submenu_portal ) && is_numeric( $this->ref_funcionario_exc ) )\n-->";
 		return false;
 	}

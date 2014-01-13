@@ -81,6 +81,6 @@ $xml->criaTag( "rss", "version=\"2.0\"", "", true );
 			$xml->voltaPai();
 		}
 
-$xml->codificacaoXML = "ISO-8859-1";
+$xml->codificacaoXML = "utf-8";
 echo $xml->geraXml();
 ?>

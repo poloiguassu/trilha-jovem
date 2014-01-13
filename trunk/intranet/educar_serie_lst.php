@@ -48,7 +48,7 @@ class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - S&eacute;rie');
+    $this->SetTitulo($this->_instituicao . ' i-Educar - Série');
     $this->processoAp = '583';
     $this->addEstilo( "localizacaoSistema" );
   }
@@ -111,7 +111,7 @@ class indice extends clsListagem
     $nivel_usuario = $obj_permissoes->nivel_acesso($this->pessoa_logada);
 
     if ($nivel_usuario == 1) {
-      $lista_busca[] = 'Institui&ccedil;&atilde;o';
+      $lista_busca[] = 'Instituição';
     }
 
     $this->addCabecalhos($lista_busca);
@@ -121,7 +121,7 @@ class indice extends clsListagem
     include('include/pmieducar/educar_campo_lista.php');
 
     // outros Filtros
-    $this->campoTexto('nm_serie', 'S&eacute;rie', $this->nm_serie, 30, 255, FALSE);
+    $this->campoTexto('nm_serie', 'Série', $this->nm_serie, 30, 255, FALSE);
 
     // Paginador
     $this->limite = 20;
@@ -188,8 +188,8 @@ class indice extends clsListagem
     
     $localizacao = new LocalizacaoSistema();
     $localizacao->entradaCaminhos( array(
-                    $_SERVER['SERVER_NAME']."/intranet" => "i-Educar",
-                    "educar_index.php"                  => "Escola",
+                    $_SERVER['SERVER_NAME']."/intranet" => "Trilha Jovem",
+                    "educar_index.php"                  => "Gerenciador",
                     ""                                  => "Lista de Séries"
                 ));
                 $this->enviaLocalizacao($localizacao->montar());

@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Infra Predio" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Infra Pr√©dio" );
 		$this->processoAp = "567";
                 $this->addEstilo( "localizacaoSistema" );
 	}
@@ -128,7 +128,7 @@ class indice extends clsListagem
 
 				$this->addCabecalhos( array(
 					"Escola",
-					"Nome Predio",
+					"Nome Pr√©dio",
 				) );
 
 
@@ -191,7 +191,7 @@ class indice extends clsListagem
 				//poli-institucional
 
 				$this->addCabecalhos( array(
-					"Institui&ccedil;&atilde;o",
+					"Institui√ß√£o",
 					"Escola",
 					"Nome Predio",
 				) );
@@ -224,7 +224,7 @@ class indice extends clsListagem
 			default:
 				break;
 		}
-		$this->titulo = "Infra Predio - Listagem";
+		$this->titulo = "Infra Pr√©dio - Listagem";
 
 		foreach( $_GET AS $var => $val ) // passa todos os valores obtidos no GET para atributos do objeto
 			$this->$var = ( $val === "" ) ? null: $val;
@@ -236,7 +236,7 @@ class indice extends clsListagem
 
 
 		// outros Filtros
-		$this->campoTexto( "nm_predio", "Nome Pr&eacute;dio", $this->nm_predio, 30, 255, false );
+		$this->campoTexto( "nm_predio", "Nome Pr√©dio", $this->nm_predio, 30, 255, false );
 
 
 
@@ -266,8 +266,8 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$registro["ref_cod_instituicao"] = "Erro na geracao";
-					echo "<!--\nErro\nClasse nao existente: clsPmieducarIntituicao\n-->";
+					$registro["ref_cod_instituicao"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarIntituicao\n-->";
 				}
 
 				// pega detalhes de foreign_keys
@@ -279,8 +279,8 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$registro["ref_cod_escola"] = "Erro na geracao";
-					echo "<!--\nErro\nClasse nao existente: clsPmieducarEscola\n-->";
+					$registro["ref_cod_escola"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarEscola\n-->";
 				}
 
 
@@ -327,9 +327,9 @@ class indice extends clsListagem
                 
                 $localizacao = new LocalizacaoSistema();
                 $localizacao->entradaCaminhos( array(
-                    $_SERVER['SERVER_NAME']."/intranet" => "i-Educar",
+                    $_SERVER['SERVER_NAME']."/intranet" => "Trilha Jovem",
                     "educar_index.php"                  => "Escola",
-                    ""                                  => "Lista de PrÈdios"
+                    ""                                  => "Lista de Pr√©dios"
                 ));
                 $this->enviaLocalizacao($localizacao->montar());
 	}

@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -34,11 +34,11 @@ require_once 'include/clsAgenda.inc.php';
 /**
  * clsIndex class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndex extends clsBase
@@ -52,11 +52,11 @@ class clsIndex extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice
@@ -86,19 +86,19 @@ class indice
       $width  = 40;
 
       if (isset($_GET['negado'])) {
-        $temp .= "<center><h3>Acesso negado para este usu&aacute;rio.</h3><br>Caso persista nas tentativas sua conta na intranet poder&aacute; ser bloqueada por tempo indeterminado.</center>";
+        $temp .= "<center><h3>Acesso negado para este usu√°rio.</h3><br>Caso persista nas tentativas sua conta na intranet poder√° ser bloqueada por tempo indeterminado.</center>";
       }
 
       $temp .= '<table width="100%" height="400" align="center" border="0" cellspacing="4" cellpadding="0">';
       $temp .= '
         <tr>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_dom.jpg" width="43" height="24" border="0" alt="DOM" title="Domingo"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_seg.jpg" width="43" height="24" border="0" alt="SEG" title="Segunda Feira"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_ter.jpg" width="43" height="24" border="0" alt="TER" title="Terca Feira"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_qua.jpg" width="43" height="24" border="0" alt="QUA" title="Quarta Feira"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_qui.jpg" width="43" height="24" border="0" alt="QUI" title="Quinta Feira"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_st.jpg"  width="43" height="24" border="0" alt="SEX" title="Sexta Feira"></td>
-          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_sab.jpg" width="43" height="24" border="0" alt="SAB" title="Sabado"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_dom.png" width="43" height="24" border="0" alt="DOM" title="Domingo"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_seg.png" width="43" height="24" border="0" alt="SEG" title="Segunda Feira"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_ter.png" width="43" height="24" border="0" alt="TER" title="Terca Feira"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_qua.png" width="43" height="24" border="0" alt="QUA" title="Quarta Feira"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_qui.png" width="43" height="24" border="0" alt="QUI" title="Quinta Feira"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_st.png"  width="43" height="24" border="0" alt="SEX" title="Sexta Feira"></td>
+          <td class="fundoCalendarioTopo" style="padding:0px;"><img src="imagens/nvp_agn_sab.png" width="43" height="24" border="0" alt="SAB" title="Sabado"></td>
         </tr>';
 
       $mes = ($_GET['mes']) ? $_GET['mes'] : date('m');
@@ -132,7 +132,7 @@ class indice
         }
       }
 
-      // Faz loop da quantidade de dias do M√™s
+      // Faz loop da quantidade de dias do M√É¬™s
       $max_comp_dia = 5;
       for ($i=1; $i <= date('t', mktime(0, 0, 0, $mes, 1, $ano)); $i++) {
         $qtd = 0;
@@ -175,7 +175,7 @@ class indice
                   }
 
                   $qtd++;
-                  $compromisso_geral .= "<a href='juris_processo_det.php?cod_processo={$encaminha['ref_cod_juris_processo']}&versao_processo={$encaminha['ref_versao_processo']}' ><span class='textoAgenda' $id>- Pasta n¬∫ {$encaminha['ref_cod_juris_processo']}</span></a><br>";
+                  $compromisso_geral .= "<a href='juris_processo_det.php?cod_processo={$encaminha['ref_cod_juris_processo']}&versao_processo={$encaminha['ref_versao_processo']}' ><span class='textoAgenda' $id>- Pasta n√Ç¬∫ {$encaminha['ref_cod_juris_processo']}</span></a><br>";
                 }
               }
               else {
@@ -193,7 +193,7 @@ class indice
                   }
 
                   $qtd++;
-                  $compromisso_geral .= "<a href='juris_tramite_det.php?cod_tramite={$encaminha['ref_cod_juris_tramite']}&versao_tramite={$encaminha['ref_versao_tramite']}' ><span class='textoAgenda' $id>- Processo n¬∫ {$encaminha['ref_cod_juris_tramite']}</span></a><br>";
+                  $compromisso_geral .= "<a href='juris_tramite_det.php?cod_tramite={$encaminha['ref_cod_juris_tramite']}&versao_tramite={$encaminha['ref_versao_tramite']}' ><span class='textoAgenda' $id>- Processo n√Ç¬∫ {$encaminha['ref_cod_juris_tramite']}</span></a><br>";
                 }
               }
             }
@@ -367,7 +367,7 @@ class indice
 
       $temp .= "</tr>
       <tr>
-        <td colspan=\"6\" align=\"center\" class=\"fundoCalendarioTopo\"><a href='index.php?mes=$anterior&ano=$ano_anterior'><img src=\"imagens/nvp_agn_anterior.jpg\" width=\"84\" height=\"20\" border=\"0\" style=\"padding-top:4px;\"></a> &nbsp;&nbsp;<a href='index.php?mes=$proximo&ano=$proximo_ano'><img src=\"imagens/nvp_agn_proximo.jpg\" width=\"84\" height=\"20\" border=\"0\" style=\"padding-top:4px;\"></a></td>
+        <td colspan=\"6\" align=\"center\" class=\"fundoCalendarioTopo\"><a href='index.php?mes=$anterior&ano=$ano_anterior'><img src=\"imagens/nvp_agn_anterior.png\" width=\"84\" height=\"20\" border=\"0\" style=\"padding-top:4px;\"></a> &nbsp;&nbsp;<a href='index.php?mes=$proximo&ano=$proximo_ano'><img src=\"imagens/nvp_agn_proximo.png\" width=\"84\" height=\"20\" border=\"0\" style=\"padding-top:4px;\"></a></td>
         <td align=center class='fundoCalendarioTopo'>$mes/$ano</td>
       </tr>
       <tr>
@@ -383,14 +383,14 @@ class indice
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndex();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡  p·gina
+// Atribui o conte√∫do √†  p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();

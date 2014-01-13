@@ -1393,8 +1393,8 @@ function replace_all(palavra, array_procura, array_substitui)
 function setXY()
 {
 
-	document.getElementById('menu_suspenso').style.height = '20px';
-	document.getElementById('menu_suspenso').style.backgroundColor = '#E4E9ED';
+	document.getElementById('menu_suspenso').style.height = '18px';
+	document.getElementById('menu_suspenso').style.backgroundColor = '#341803';
 
 
 

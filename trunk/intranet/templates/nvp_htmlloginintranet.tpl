@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Intranet</title>
-    <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="-1" />
@@ -62,7 +62,7 @@
     <div id="flash-container">
 
       <!--[if lt IE 7]>
-      <p style="min-height: 32px;" class="flash update-browser"><strong>Seu navegador est&aacute desatualizado.</strong> Para melhor navega&ccedil;&atildeo  no sistema, por favor, atualize seu navegador.<a href="http://br.mozdev.org/download/" target="_blank"><img style="margin-top:4px;" src="http://www.mozilla.org/contribute/buttons/110x32bubble_r_pt.png" alt="Firefox" width="110" height="32" style="border-style:none;" title="Mozilla Firefox" /></a></p>
+      <p style="min-height: 32px;" class="flash update-browser"><strong>Seu navegador está desatualizado.</strong> Para melhor navegação  no sistema, por favor, atualize seu navegador.<a href="http://br.mozdev.org/download/" target="_blank"><img style="margin-top:4px;" src="http://www.mozilla.org/contribute/buttons/110x32bubble_r_pt.png" alt="Firefox" width="110" height="32" style="border-style:none;" title="Mozilla Firefox" /></a></p>
       <![endif]-->
 
       <!-- #&ERROLOGIN&# -->
@@ -77,7 +77,7 @@
         <table>
           <tbody><tr>
     		    <td>
-              <label class="" for="login">Matr&iacute;cula:</label>
+              <label class="" for="login">Matrícula:</label>
               <input type="text" name="login" id="login"></td>
     	    </tr>
 

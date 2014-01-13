@@ -80,8 +80,8 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["idpais"] = "Erro na geracao";
-			echo "<!--\nErro\nClasse nao existente: clsPais\n-->";
+			$registro["idpais"] = "Erro na geração";
+			echo "<!--\nErro\nClasse não existente: clsPais\n-->";
 		}
 
 

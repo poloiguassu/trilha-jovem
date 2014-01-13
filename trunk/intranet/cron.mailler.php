@@ -34,7 +34,7 @@
 	$verbose = true;
 	$limite = 300;
 	
-	if( $verbose ) echo "verbose!\n";
+	if( $verbose ) echo "verbose\n";
 	
 	$emails_enviados = array();
 	$conteudos = array();

@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Institui&ccedil;&atilde;o" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Institui√ß√£o" );
 		$this->processoAp = "559";
 	}
 }
@@ -72,7 +72,7 @@ class indice extends clsDetalhe
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Institui&ccedil;&atilde;o - Detalhe";
+		$this->titulo = "Institui√ß√£o - Detalhe";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$this->cod_instituicao=$_GET["cod_instituicao"];
@@ -88,24 +88,24 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["ref_idtlog"] = "Erro na geracao";
-			echo "<!--\nErro\nClasse nao existente: clsUrbanoTipoLogradouro\n-->";
+			$registro["ref_idtlog"] = "Erro na gera√ß√£o";
+			echo "<!--\nErro\nClasse n√£o existente: clsUrbanoTipoLogradouro\n-->";
 		}
 
 		$registro["cep"] = int2CEP( $registro["cep"] );
-		$this->addDetalhe( array( "CÛdigo InstituiÁ„o", "{$registro["cod_instituicao"]}") );
-		$this->addDetalhe( array( "Nome da InstituiÁ„o", "{$registro["nm_instituicao"]}") );
+		$this->addDetalhe( array( "C√≥digo Institui√ß√£o", "{$registro["cod_instituicao"]}") );
+		$this->addDetalhe( array( "Nome da Institui√ß√£o", "{$registro["nm_instituicao"]}") );
 		$this->addDetalhe( array( "CEP", "{$registro["cep"]}") );
 		$this->addDetalhe( array( "Logradouro", "{$registro["logradouro"]}") );
 		$this->addDetalhe( array( "Bairro", "{$registro["bairro"]}") );
 		$this->addDetalhe( array( "Cidade", "{$registro["cidade"]}") );
 		$this->addDetalhe( array( "Tipo do Logradouro", "{$registro["ref_idtlog"]}") );
 		$this->addDetalhe( array( "UF", "{$registro["ref_sigla_uf"]}") );
-		$this->addDetalhe( array( "N˙mero", "{$registro["numero"]}") );
+		$this->addDetalhe( array( "N√∫mero", "{$registro["numero"]}") );
 		$this->addDetalhe( array( "Complemento", "{$registro["complemento"]}") );
 		$this->addDetalhe( array( "DDD Telefone", "{$registro["ddd_telefone"]}") );
 		$this->addDetalhe( array( "Telefone", "{$registro["telefone"]}") );
-		$this->addDetalhe( array( "Nome do Respons·vel", "{$registro["nm_responsavel"]}") );
+		$this->addDetalhe( array( "Nome do Respons√°vel", "{$registro["nm_responsavel"]}") );
 
 		$obj_permissoes = new clsPermissoes();
 		if ( $obj_permissoes->permissao_cadastra( 559, $this->pessoa_logada, 1 ) ) {

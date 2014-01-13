@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -66,7 +66,7 @@ class indice extends clsDetalhe
 		}
 		if( $strVersoes )
 		{
-			$this->addDetalhe( array( "Vers&otilde;es Anteriores", $strVersoes ) );
+			$this->addDetalhe( array( "Vers√µes Anteriores", $strVersoes ) );
 		}
 		
 		if( ! $visivel )
@@ -75,17 +75,17 @@ class indice extends clsDetalhe
 		}
 		else 
 		{
-			$this->addDetalhe( array( "Visivel" , "Este edital esta visivel" ) );
+			$this->addDetalhe( array( "Visivel" , "Este edital esta vis√≠vel" ) );
 		}
 		
 		$motivo_alteracao = str_replace( "\n", "<br>", $motivo_alteracao );
-		$this->addDetalhe( array("Motivo da altea&ccedil;&atilde;o", $motivo_alteracao ) );
+		$this->addDetalhe( array("Motivo da altera√ß√£o", $motivo_alteracao ) );
 		
-		$this->addDetalhe( array("Vers„o do Edital", $versao ) );
-		$this->addDetalhe( array("Data da alteraÁ„o", date( "d/m/Y H:i", strtotime(substr( $data_hora,0,19) ) ) ) );
+		$this->addDetalhe( array("Vers√£o do Edital", $versao ) );
+		$this->addDetalhe( array("Data da altera√ß√£o", date( "d/m/Y H:i", strtotime(substr( $data_hora,0,19) ) ) ) );
 		$objPessoa = new clsPessoaFisica();
 		$resp_nome = $objPessoa->queryRapida( $ref_pessoa, "nome" );
-		$this->addDetalhe( array( "Respons·vel", $resp_nome[0] ) );
+		$this->addDetalhe( array( "Respons√°vel", $resp_nome[0] ) );
 		$extensao = substr( $arquivo, -3 );
 		switch ( $extensao )
 		{
@@ -110,9 +110,9 @@ class indice extends clsDetalhe
 		{
 			list ($nm_modalidade, $numero, $objeto, $data ) = $db->Tupla();
 
-			$this->addDetalhe( array("Numero da LicitaÁ„o",$numero) );
+			$this->addDetalhe( array("Numero da Licita√ß√£o",$numero) );
 			$this->addDetalhe( array("Modalidade",$nm_modalidade) );
-			$this->addDetalhe( array("Data da LicitaÁ„o", date( 'd/m/Y', strtotime(substr( $data,0,19) ) ) ) );
+			$this->addDetalhe( array("Data da Licita√ß√£o", date( 'd/m/Y', strtotime(substr( $data,0,19) ) ) ) );
 		}
 		$this->url_novo = "licitacoes_edital_cad.php";
 		$this->url_editar = "licitacoes_edital_cad.php?cod_edital=$cod_edital";
