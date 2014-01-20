@@ -170,12 +170,12 @@ class clsFuncionario extends clsPessoaFisica
 
 		if( is_string( $str_matricula ) && $str_matricula != '')
 		{
-			$filtros .= "{$whereAnd} to_ascii(f.matricula) LIKE to_ascii('%{$str_matricula}%')";
+			$filtros .= "{$whereAnd} sem_acento(f.matricula) LIKE sem_acento('%{$str_matricula}%')";
 			$whereAnd = " AND ";
 		}
 		if( is_string( $str_nome ) )
 		{
-			$filtros .= "{$whereAnd} to_ascii(f.nome) LIKE  to_ascii('%{$str_nome}%%')";
+			$filtros .= "{$whereAnd} sem_acento(f.nome) LIKE  sem_acento('%{$str_nome}%%')";
 			$whereAnd = " AND ";
 			$filtro_pessoa =true;
 		}
@@ -223,7 +223,7 @@ class clsFuncionario extends clsPessoaFisica
 
 		if($int_inicio_limit !== false  && $int_qtd_registros !== false)
 		{
-			$sql .= "{$filtros}"." ORDER BY to_ascii(f.nome) ASC ".$limite;
+			$sql .= "{$filtros}"." ORDER BY sem_acento(f.nome) ASC ".$limite;
 		}
 		else
 		{
@@ -231,7 +231,6 @@ class clsFuncionario extends clsPessoaFisica
 		}
 
 		$this->_total = $db->CampoUnico( "SELECT COUNT(0) FROM {$this->schema_portal}.v_funcionario f {$filtros}" );
-		
 		$db->Consulta( $sql );
 
 		if( $countCampos > 1 )
