@@ -453,7 +453,6 @@ abstract class clsBancoSQL_
       }
     }
 
-
     $cronometro->marca('fim');
 
     $tempoTotal = $cronometro->getTempoTotal();

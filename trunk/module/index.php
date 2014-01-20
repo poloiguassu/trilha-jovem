@@ -74,16 +74,20 @@ try
 catch (Exception $e) {
   echo $e->getMessage();
   $lastError = error_get_last();
-
+  echo "teset de erro 1";
+  
   @session_start();
   $_SESSION['last_error_message']     = $e->getMessage();
   $_SESSION['last_php_error_message'] = $lastError['message'];
   $_SESSION['last_php_error_line']    = $lastError['line'];
   $_SESSION['last_php_error_file']    = $lastError['file'];
   @session_write_close();
+  echo "teset de erro 2";
 
   error_log("Erro inesperado (pego em /module/index.php): " . $e->getMessage());
+  echo "teset de erro 3";
   NotificationMailer::unexpectedError($e->getMessage());
+  echo "teset de erro 4";
 
   die("<script>document.location.href = '/module/Error/unexpected';</script>");
 }
