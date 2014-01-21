@@ -32,7 +32,7 @@ ini_set("display_errors", 1);
  * @version   $Id$
  */
 
-require_once 'Portabilis/Controller/ErrorCoreController.php';
+require_once 'lib/Portabilis/Controller/ErrorCoreController.php';
 
 class UnauthorizedController extends Portabilis_Controller_ErrorCoreController
 {
