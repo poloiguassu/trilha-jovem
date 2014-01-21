@@ -1,7 +1,7 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 /**
  * i-Educar - Sistema de gestão escolar
@@ -32,9 +32,9 @@
  * @version   $Id$
  */
 
-//require_once 'lib/Portabilis/Controller/ErrorCoreController.php';
+require_once 'lib/Portabilis/Controller/ErrorCoreController.php';
 
-/*
+
 class UnexpectedController extends Portabilis_Controller_ErrorCoreController
 {
   protected $_titulo = 'Erro inesperado';
@@ -44,9 +44,9 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
   }
 
   public function Gerar() {
-    $linkToSupport = $GLOBALS['coreExt']['Config']->modules->error->link_to_support;*/
+    $linkToSupport = $GLOBALS['coreExt']['Config']->modules->error->link_to_support;
 
-    /*if ($GLOBALS['coreExt']['Config']->modules->error->show_details) {
+    if ($GLOBALS['coreExt']['Config']->modules->error->show_details) {
       $detail  = "<br /><h3>Erro app</h3>{$this->getSession()->last_error_message}";
       $detail .= "<br /><h3>Erro php</h3>{$this->getSession()->last_php_error_message}";
       $detail .= "<br /><h3>Arquivo</h3>(linha: {$this->getSession()->last_php_error_line}) ";
@@ -64,12 +64,10 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
                   <p>$detail</p>";
     }
     else
-      $detail = '<p>Visualização de detalhes do erro desativada.</p>';*/
+      $detail = '<p>Visualização de detalhes do erro desativada.</p>';
 
-  /*}
-}*/
-
-    /*echo "
+	  
+    echo "
       <div id='error' class='small'>
         <div class='content'>
          <h1>Erro inesperado</h1>
@@ -90,5 +88,7 @@ class UnexpectedController extends Portabilis_Controller_ErrorCoreController
         </div>
 
         </div>
-      </div>";*/
+      </div>";
+  }
+}
 ?>

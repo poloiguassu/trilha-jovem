@@ -37,8 +37,6 @@ require_once 'lib/Core/Controller/Page/ViewController.php';
 require_once 'lib/Portabilis/View/Helper/Application.php';
 //require_once 'lib/CoreExt/Controller/Page/Interface.php';
 
-echo "teste error 1";
-
 class Portabilis_Controller_ErrorCoreController extends Core_Controller_Page_ViewController
 {
   protected $_titulo = 'Error';
