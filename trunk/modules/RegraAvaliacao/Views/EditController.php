@@ -1,31 +1,31 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author      Eriksen Costa Paix„o <eriksen.paixao_bs@cobra.com.br>
+ * @author      Eriksen Costa Paix√£o <eriksen.paixao_bs@cobra.com.br>
  * @category    i-Educar
  * @license     @@license@@
  * @package     RegraAvaliacao
  * @subpackage  Modules
- * @since       Arquivo disponÌvel desde a vers„o 1.1.0
+ * @since       Arquivo dispon√≠vel desde a vers√£o 1.1.0
  * @version     $Id$
  */
 
@@ -35,18 +35,18 @@ require_once 'RegraAvaliacao/Model/RegraDataMapper.php';
 /**
  * EditController class.
  *
- * @author      Eriksen Costa Paix„o <eriksen.paixao_bs@cobra.com.br>
+ * @author      Eriksen Costa Paix√£o <eriksen.paixao_bs@cobra.com.br>
  * @category    i-Educar
  * @license     @@license@@
  * @package     RegraAvaliacao
  * @subpackage  Modules
- * @since       Classe disponÌvel desde a vers„o 1.1.0
+ * @since       Classe dispon√≠vel desde a vers√£o 1.1.0
  * @version     @@package_version@@
  */
 class EditController extends Core_Controller_Page_EditController
 {
   protected $_dataMapper        = 'RegraAvaliacao_Model_RegraDataMapper';
-  protected $_titulo            = 'Cadastro de regra de avaliaÁ„o';
+  protected $_titulo            = 'Cadastro de regra de avalia√ß√£o';
   protected $_processoAp        = 947;
   protected $_nivelAcessoOption = App_Model_NivelAcesso::INSTITUCIONAL;
   protected $_saveOption        = TRUE;
@@ -54,7 +54,7 @@ class EditController extends Core_Controller_Page_EditController
 
   protected $_formMap = array(
     'instituicao' => array(
-      'label'  => 'InstituiÁ„o',
+      'label'  => 'Institui√ß√£o',
       'help'   => '',
     ),
     'nome' => array(
@@ -66,39 +66,39 @@ class EditController extends Core_Controller_Page_EditController
       'help'   => ''
     ),
     'tipoProgressao' => array(
-      'label'  => 'Progress„o',
-      'help'   => 'Selecione o mÈtodo de progress„o para a regra.'
+      'label'  => 'Progress√£o',
+      'help'   => 'Selecione o m√©todo de progress√£o para a regra.'
     ),
     'tabelaArredondamento' => array(
       'label'  => 'Tabela de arredondamento de nota',
       'help'   => ''
     ),
     'media' => array(
-      'label'  => 'MÈdia final para promoÁ„o',
-      'help'   => 'Informe a mÈdia necess·ria para promoÁ„o<br />
-                   do aluno, aceita atÈ 3 casas decimais. Exemplos: 5,00; 6,725, 6.<br >
-                   Se o tipo de progress„o for <b>"Progressiva"</b>, esse<br />
-                   valor n„o ser· considerado.'
+      'label'  => 'M√©dia final para promo√ß√£o',
+      'help'   => 'Informe a m√©dia necess√°ria para promo√ß√£o<br />
+                   do aluno, aceita at√© 3 casas decimais. Exemplos: 5,00; 6,725, 6.<br >
+                   Se o tipo de progress√£o for <b>"Progressiva"</b>, esse<br />
+                   valor n√£o ser√° considerado.'
     ),
     'mediaRecuperacao' => array(
-      'label'  => 'MÈdia exame final para promoÁ„o',
-      'help'   => 'Informe a mÈdia necess·ria para promoÁ„o<br />
-                   do aluno, aceita atÈ 3 casas decimais. Exemplos: 5,00; 6,725, 6.<br >
+      'label'  => 'M√©dia exame final para promo√ß√£o',
+      'help'   => 'Informe a m√©dia necess√°ria para promo√ß√£o<br />
+                   do aluno, aceita at√© 3 casas decimais. Exemplos: 5,00; 6,725, 6.<br >
                    Desconsidere esse campo caso selecione o tipo de nota "conceitual"'
     ),
     'formulaMedia' => array(
-      'label'  => 'FÛrmula de c·lculo da mÈdia',
+      'label'  => 'F√≥rmula de c√°lculo da m√©dia',
       'help'   => '',
     ),
     'formulaRecuperacao' => array(
-      'label'  => 'FÛrmula de c·lculo da mÈdia de recuperaÁ„o',
+      'label'  => 'F√≥rmula de c√°lculo da m√©dia de recupera√ß√£o',
       'help'   => '',
     ),
     'porcentagemPresenca' => array(
-      'label'  => 'Porcentagem de presenÁa',
-      'help'   => 'A porcentagem de presenÁa necess·ria para o aluno ser aprovado.<br />
-                   Esse valor È desconsiderado caso o campo "Progress„o" esteja como<br />
-                   "N„o progressiva autom·tica - Somente mÈdia".<br />
+      'label'  => 'Porcentagem de presen√ßa',
+      'help'   => 'A porcentagem de presen√ßa necess√°ria para o aluno ser aprovado.<br />
+                   Esse valor √© desconsiderado caso o campo "Progress√£o" esteja como<br />
+                   "N√£o progressiva autom√°tica - Somente m√©dia".<br />
                    Em porcentagem, exemplo: <b>75</b> ou <b>80,750</b>'
     ),
     'parecerDescritivo' => array(
@@ -106,7 +106,7 @@ class EditController extends Core_Controller_Page_EditController
       'help'   => '',
     ),
     'tipoPresenca' => array(
-      'label'  => 'ApuraÁ„o de presenÁa',
+      'label'  => 'Apura√ß√£o de presen√ßa',
       'help'   => ''
     )
   );
@@ -168,7 +168,7 @@ var tabela_arredondamento = new function() {
 
     if (tabelas.length == 0) {
       docObj.options[0] = new Option(
-        \'O tipo de nota n„o possui tabela de arredondamento.\', \'\', false, false
+        \'O tipo de nota n√£o possui tabela de arredondamento.\', \'\', false, false
       );
     }
   }
@@ -179,7 +179,7 @@ var tabela_arredondamento = new function() {
   {
     parent::_preRender();
 
-    // Adiciona o cÛdigo Javascript de controle do formul·rio.
+    // Adiciona o c√≥digo Javascript de controle do formul√°rio.
     $js = sprintf('
       <script type="text/javascript">
         %s
@@ -214,7 +214,7 @@ var tabela_arredondamento = new function() {
   {
     $this->campoOculto('id', $this->getEntity()->id);
 
-    // InstituiÁ„o
+    // Institui√ß√£o
     $instituicoes = App_Model_IedFinder::getInstituicoes();
     $this->campoLista('instituicao', $this->_getLabel('instituicao'), $instituicoes,
       $this->getEntity()->instituicao);
@@ -233,42 +233,42 @@ var tabela_arredondamento = new function() {
     $tabelaArredondamento = CoreExt_Entity::entityFilterAttr($tabelaArredondamento, 'id', 'nome');
 
     if (empty($tabelaArredondamento)) {
-      $tabelaArredondamento = array(0 => 'O tipo de nota n„o possui tabela de arredondamento.');
+      $tabelaArredondamento = array(0 => 'O tipo de nota n√£o possui tabela de arredondamento.');
     }
 
     $this->campoLista('tabelaArredondamento', $this->_getLabel('tabelaArredondamento'),
       $tabelaArredondamento, $this->getEntity()->get('tabelaArredondamento'), '',
       FALSE, $this->_getHelp('tabelaArredondamento'), '', FALSE, FALSE);
 
-    // Tipo progress„o
+    // Tipo progress√£o
     $tipoProgressao = RegraAvaliacao_Model_TipoProgressao::getInstance();
     $this->campoRadio('tipoProgressao', $this->_getLabel('tipoProgressao'),
       $tipoProgressao->getEnums(), $this->getEntity()->get('tipoProgressao'), '',
       $this->_getHelp('tipoProgressao'));
 
-    // MÈdia
+    // M√©dia
     $this->campoTexto('media', $this->_getLabel('media'), $this->getEntity()->media,
       5, 50, FALSE, FALSE, FALSE, $this->_getHelp('media'));
 
     $this->campoTexto('mediaRecuperacao', $this->_getLabel('mediaRecuperacao'), $this->getEntity()->mediaRecuperacao, 5, 50, FALSE, FALSE, FALSE, $this->_getHelp('mediaRecuperacao'));
 
-    // C·lculo mÈdia
+    // C√°lculo m√©dia
     $formulas = $this->getDataMapper()->findFormulaMediaFinal();
     $formulas = CoreExt_Entity::entityFilterAttr($formulas, 'id', 'nome');
     $this->campoLista('formulaMedia', $this->_getLabel('formulaMedia'),
       $formulas, $this->getEntity()->get('formulaMedia'), '', FALSE,
       $this->_getHelp('formulaMedia'), '', FALSE, FALSE);
 
-    // C·lculo mÈdia recuperaÁ„o
+    // C√°lculo m√©dia recupera√ß√£o
     $formulas = $this->getDataMapper()->findFormulaMediaRecuperacao();
-    $formulasArray = array(0 => 'N„o usar recuperaÁ„o');
+    $formulasArray = array(0 => 'N√£o usar recupera√ß√£o');
     $formulasArray = $formulasArray + CoreExt_Entity::entityFilterAttr($formulas, 'id', 'nome');
 
     $this->campoLista('formulaRecuperacao', $this->_getLabel('formulaRecuperacao'),
       $formulasArray, $this->getEntity()->get('formulaRecuperacao'), '', FALSE,
       $this->_getHelp('formulaRecuperacao'), '', FALSE, FALSE);
 
-    // Porcentagem presenÁa
+    // Porcentagem presen√ßa
     $this->campoTexto('porcentagemPresenca', $this->_getLabel('porcentagemPresenca'),
       $this->getEntity()->porcentagemPresenca, 5, 50, TRUE, FALSE, FALSE,
       $this->_getHelp('porcentagemPresenca'));
@@ -279,7 +279,7 @@ var tabela_arredondamento = new function() {
       $parecerDescritivo->getEnums(), $this->getEntity()->get('parecerDescritivo'), '',
       $this->_getHelp('parecerDescritivo'));
 
-    // PresenÁa
+    // Presen√ßa
     $tipoPresenca = RegraAvaliacao_Model_TipoPresenca::getInstance();
     $this->campoRadio('tipoPresenca', $this->_getLabel('tipoPresenca'),
       $tipoPresenca->getEnums(), $this->getEntity()->get('tipoPresenca'), '',

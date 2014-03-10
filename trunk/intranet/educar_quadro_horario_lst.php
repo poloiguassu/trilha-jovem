@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
  * @author    Adriano Erik Weiguert Nagasava <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -41,14 +41,14 @@ require_once 'ComponenteCurricular/Model/ComponenteDataMapper.php';
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Quadro de Hor·rio');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Quadro de Hor√°rio');
     $this->processoAp = "641";
   }
 }
@@ -60,7 +60,7 @@ class clsIndexBase extends clsBase
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsConfig
@@ -99,7 +99,7 @@ class indice extends clsConfig
           <tbody>
             <tr>
               <td colspan="2" valig="center" height="50">
-                <center class="formdktd">Usu·rio sem permiss„o para acessar esta p·gina</center>
+                <center class="formdktd">Usu√°rio sem permiss√£o para acessar esta p√°gina</center>
               </td>
             </tr>
           </tbody>
@@ -180,7 +180,7 @@ class indice extends clsConfig
 
                 $det_servidor = array_shift($obj_servidor->lista(
                   $registro['ref_servidor'], NULL, NULL, NULL, NULL, NULL, NULL,
-                  NULL, NULL, NULL, NULL,†NULL, NULL, NULL, NULL, NULL, TRUE));
+                  NULL, NULL, NULL, NULL,¬†NULL, NULL, NULL, NULL, NULL, TRUE));
 
                 $det_servidor['nome'] = array_shift(explode(' ',$det_servidor['nome']));
 
@@ -207,7 +207,7 @@ class indice extends clsConfig
           $retorno .= "<tr><td colspan='2' ><center><b></b>{$quadro_horario}</center></td></tr>";
         }
         else {
-          $retorno .= "<tr><td colspan='2' ><b><center>N&atilde;o existe nenhum quadro de hor&aacute;rio cadastrado para esta turma.</center></b></td></tr>";
+          $retorno .= "<tr><td colspan='2' ><b><center>N√£o existe nenhum quadro de hor√°rio cadastrado para esta turma.</center></b></td></tr>";
         }
       }
     }
@@ -217,11 +217,11 @@ class indice extends clsConfig
             <td align=\"center\" colspan=\"2\">";
 
       if (!$det_quadro) {
-        $retorno .= "<input type=\"button\" value=\"Novo Quadro de Hor&aacute;rios\" onclick=\"window.location='educar_quadro_horario_cad.php?ref_cod_turma={$this->ref_cod_turma}&ref_cod_serie={$this->ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}&ref_cod_escola={$this->ref_cod_escola}&ref_cod_instituicao={$this->ref_cod_instituicao};'\" class=\"botaolistagem\"/>";
+        $retorno .= "<input type=\"button\" value=\"Novo Quadro de Hor√°rios\" onclick=\"window.location='educar_quadro_horario_cad.php?ref_cod_turma={$this->ref_cod_turma}&ref_cod_serie={$this->ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}&ref_cod_escola={$this->ref_cod_escola}&ref_cod_instituicao={$this->ref_cod_instituicao};'\" class=\"botaolistagem\"/>";
       }
       else {
         if ($obj_permissoes->permissao_excluir(641, $this->pessoa_logada, 7))
-          $retorno .= "<input type=\"button\" value=\"Excluir Quadro de Hor&aacute;rios\" onclick=\"window.location='educar_quadro_horario_cad.php?ref_cod_turma={$this->ref_cod_turma}&ref_cod_serie={$this->ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}&ref_cod_escola={$this->ref_cod_escola}&ref_cod_instituicao={$this->ref_cod_instituicao}&ref_cod_quadro_horario={$det_quadro["cod_quadro_horario"]}'\" class=\"botaolistagem\"/>";
+          $retorno .= "<input type=\"button\" value=\"Excluir Quadro de Hor√°rios\" onclick=\"window.location='educar_quadro_horario_cad.php?ref_cod_turma={$this->ref_cod_turma}&ref_cod_serie={$this->ref_cod_serie}&ref_cod_curso={$this->ref_cod_curso}&ref_cod_escola={$this->ref_cod_escola}&ref_cod_instituicao={$this->ref_cod_instituicao}&ref_cod_quadro_horario={$det_quadro["cod_quadro_horario"]}'\" class=\"botaolistagem\"/>";
       }
 
       $retorno .= "</td>
@@ -235,16 +235,16 @@ class indice extends clsConfig
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡† p·gina
+// Atribui o conte√∫do √†¬† p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();
 ?>
 <script type="text/javascript">
@@ -260,19 +260,19 @@ campoInstituicao.onchange = function()
 
   campoEscola.length = 1;
   campoEscola.disabled = true;
-  campoEscola.options[0].text = 'Carregando escola';
+  campoEscola.options[0].text = 'Carregando institui√ß√µes';
 
   campoCurso.length = 1;
   campoCurso.disabled = true;
-  campoCurso.options[0].text = 'Selecione uma escola antes';
+  campoCurso.options[0].text = 'Selecione uma institui√ß√£o antes';
 
   campoSerie.length = 1;
   campoSerie.disabled = true;
-  campoSerie.options[0].text = 'Selecione um curso antes';
+  campoSerie.options[0].text = 'Selecione um Projeto antes';
 
   campoTurma.length = 1;
   campoTurma.disabled = true;
-  campoTurma.options[0].text = 'Selecione uma SÈrie antes';
+  campoTurma.options[0].text = 'Selecione uma Eixo antes';
 
   var xml_escola = new ajax(getEscola);
   xml_escola.envia('educar_escola_xml2.php?ins=' + campoInstituicao_);
@@ -284,15 +284,15 @@ campoEscola.onchange = function()
 
   campoCurso.length = 1;
   campoCurso.disabled = true;
-  campoCurso.options[0].text = 'Carregando curso';
+  campoCurso.options[0].text = 'Carregando Projetos';
 
   campoSerie.length = 1;
   campoSerie.disabled = true;
-  campoSerie.options[0].text = 'Selecione um curso antes';
+  campoSerie.options[0].text = 'Selecione um Projeto antes';
 
   campoTurma.length = 1;
   campoTurma.disabled = true;
-  campoTurma.options[0].text = 'Selecione uma sÈrie antes';
+  campoTurma.options[0].text = 'Selecione uma Eixo antes';
 
   var xml_curso = new ajax(getCurso);
   xml_curso.envia('educar_curso_xml.php?esc=' + campoEscola_);
@@ -305,11 +305,11 @@ campoCurso.onchange = function()
 
   campoSerie.length = 1;
   campoSerie.disabled = true;
-  campoSerie.options[0].text = 'Carregando sÈrie';
+  campoSerie.options[0].text = 'Carregando Eixo';
 
   campoTurma.length = 1;
   campoTurma.disabled = true;
-  campoTurma.options[0].text = 'Selecione uma SÈrie antes';
+  campoTurma.options[0].text = 'Selecione um Eixo antes';
 
   var xml_serie = ajax(getSerie);
   xml_serie.envia('educar_escola_curso_serie_xml.php?esc=' + campoEscola_ + '&cur=' + campoCurso_);
@@ -322,7 +322,7 @@ campoSerie.onchange = function()
 
   campoTurma.length = 1;
   campoTurma.disabled = true;
-  campoTurma.options[0].text = 'Carregando turma';
+  campoTurma.options[0].text = 'Carregando Turma';
 
   var xml_turma = new ajax(getTurma);
   xml_turma.envia('educar_turma_xml.php?esc=' + campoEscola_ + '&ser=' + campoSerie_);

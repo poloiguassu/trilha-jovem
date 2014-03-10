@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Sequ&ecirc;ncia Enturma&ccedil;&atilde;o" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Enturma√ß√£o" );
 		$this->processoAp = "587";
 	}
 }
@@ -86,7 +86,7 @@ class indice extends clsListagem
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Sequ&ecirc;ncia Enturma&ccedil;&atilde;o - Listagem";
+		$this->titulo = "Enturma√ß√£o - Listagem";
 
 		foreach( $_GET AS $var => $val ) // passa todos os valores obtidos no GET para atributos do objeto
 			$this->$var = ( $val === "" ) ? null: $val;
@@ -94,16 +94,16 @@ class indice extends clsListagem
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$lista_busca = array(
-			"Curso Origem",
-			"S&eacute;rie Origem",
-			"Curso Destino",
-			"S&eacute;rie Destino"
+			"Projeto de Origem",
+			"Eixo de Origem",
+			"Projeto de Destino",
+			"Eixo de Destino"
 		);
 
 		$obj_permissoes = new clsPermissoes();
 		$nivel_usuario = $obj_permissoes->nivel_acesso($this->pessoa_logada);
 		if ($nivel_usuario == 1)
-			$lista_busca[] = "Institui&ccedil;&atilde;o";
+			$lista_busca[] = "Institui√ß√£o executora";
 		$this->addCabecalhos($lista_busca);
 
 		// Filtros de Foreign Keys
@@ -120,7 +120,7 @@ class indice extends clsListagem
 					$opcoes[$linha["cod_instituicao"]] = $linha["nm_instituicao"];
 				}
 			}
-			$this->campoLista( "ref_cod_instituicao", "Institui&ccedil;&atilde;o", $opcoes, $this->ref_cod_instituicao, "",null,null,null,null,false );
+			$this->campoLista( "ref_cod_instituicao", "Institui√ß√£o executora", $opcoes, $this->ref_cod_instituicao, "",null,null,null,null,false );
 		}
 		else
 		{
@@ -164,11 +164,11 @@ class indice extends clsListagem
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsPmieducarCurso n&atilde;o encontrada\n-->";
-			$opcoes = array( "" => "Erro na gera&ccedil;&atilde;o" );
+			echo "<!--\nErro\nClasse clsPmieducarCurso n√£o encontrada\n-->";
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
-		$this->campoLista( "ref_curso_origem", "Curso Origem", $opcoes, $this->ref_curso_origem,"",true,"","",false,false);
-		$this->campoLista( "ref_curso_destino", " Curso Destino", $opcoes_, $this->ref_curso_destino,"",false,"","",false,false);
+		$this->campoLista( "ref_curso_origem", "Projeto de Origem", $opcoes, $this->ref_curso_origem,"",true,"","",false,false);
+		$this->campoLista( "ref_curso_destino", " Projeto de Destino", $opcoes_, $this->ref_curso_destino,"",false,"","",false,false);
 
 		// primary keys
 
@@ -215,12 +215,12 @@ class indice extends clsListagem
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsPmieducarSerie n&atilde;o encontrada\n-->";
+			echo "<!--\nErro\nClasse clsPmieducarSerie n√£o encontrada\n-->";
 			$opcoes = array( "" => "Erro na geracao" );
 			$opcoes_ = array( "" => "Erro na geracao" );
 		}
-		$this->campoLista( "ref_serie_origem", "S&eacute;rie Origem", $opcoes, $this->ref_serie_origem,null,true,"","",false,false);
-		$this->campoLista( "ref_serie_destino", " S&eacute;rie Destino", $opcoes_, $this->ref_serie_destino,"",false,"","",false,false);
+		$this->campoLista( "ref_serie_origem", "Eixo de Origem", $opcoes, $this->ref_serie_origem,null,true,"","",false,false);
+		$this->campoLista( "ref_serie_destino", " Eixo de Destino", $opcoes_, $this->ref_serie_destino,"",false,"","",false,false);
 
 
 		// Paginador
@@ -274,20 +274,20 @@ class indice extends clsListagem
 						}
 						else
 						{
-							$registro["ref_cod_instituicao"] = "Erro na gera&ccedil;&atilde;o";
-							echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarInstituicao\n-->";
+							$registro["ref_cod_instituicao"] = "Erro na gera√ß√£o";
+							echo "<!--\nErro\nClasse n√£o existente: clsPmieducarInstituicao\n-->";
 						}
 					}
 					else
 					{
-						$registro["ref_cod_origem"] = "Erro na gera&ccedil;&atilde;o";
-						echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarCurso\n-->";
+						$registro["ref_cod_origem"] = "Erro na gera√ß√£o";
+						echo "<!--\nErro\nClasse n√£o existente: clsPmieducarCurso\n-->";
 					}
 				}
 				else
 				{
-					$registro["ref_serie_origem"] = "Erro na gera&ccedil;&atilde;o";
-					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarSerie\n-->";
+					$registro["ref_serie_origem"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarSerie\n-->";
 				}
 				if( class_exists( "clsPmieducarSerie" ) )
 				{
@@ -303,14 +303,14 @@ class indice extends clsListagem
 					}
 					else
 					{
-						$registro["ref_cod_destino"] = "Erro na gera&ccedil;&atilde;o";
-						echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarCurso\n-->";
+						$registro["ref_cod_destino"] = "Erro na gera√ß√£o";
+						echo "<!--\nErro\nClasse n√£o existente: clsPmieducarCurso\n-->";
 					}
 				}
 				else
 				{
-					$registro["ref_serie_destino"] = "Erro na gera&ccedil;&atilde;o";
-					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarSerie\n-->";
+					$registro["ref_serie_destino"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarSerie\n-->";
 				}
 
 				$lista_busca = array(
@@ -388,8 +388,8 @@ function getCurso(xml_curso)
 	}
 	else
 	{
-		campoCurso.options[0].text = 'A instituiÁ„o n„o possui nenhum curso';
-		campoCurso_.options[0].text = 'A instituiÁ„o n„o possui nenhum curso';
+		campoCurso.options[0].text = 'A institui√ß√£o n√£o possui nenhum curso';
+		campoCurso_.options[0].text = 'A institui√ß√£o n√£o possui nenhum curso';
 	}
 }
 
@@ -401,7 +401,7 @@ function getSerie(xml_serie)
 	if(DOM_array.length)
 	{
 		campoSerie.length = 1;
-		campoSerie.options[0].text = 'Selecione uma sÈrie origem';
+		campoSerie.options[0].text = 'Selecione uma s√©rie origem';
 		campoSerie.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -410,7 +410,7 @@ function getSerie(xml_serie)
 		}
 	}
 	else
-		campoSerie.options[0].text = 'O curso origem n„o possui nenhuma sÈrie';
+		campoSerie.options[0].text = 'O curso origem n√£o possui nenhuma s√©rie';
 }
 
 function getSerie_(xml_serie_)
@@ -421,7 +421,7 @@ function getSerie_(xml_serie_)
 	if(DOM_array.length)
 	{
 		campoSerie_.length = 1;
-		campoSerie_.options[0].text = 'Selecione uma sÈrie destino';
+		campoSerie_.options[0].text = 'Selecione uma s√©rie destino';
 		campoSerie_.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -430,7 +430,7 @@ function getSerie_(xml_serie_)
 		}
 	}
 	else
-		campoSerie_.options[0].text = 'O curso origem n„o possui nenhuma sÈrie';
+		campoSerie_.options[0].text = 'O curso origem n√£o possui nenhuma s√©rie';
 }
 /*
 function getSerie( tipo )
@@ -495,7 +495,7 @@ document.getElementById('ref_curso_origem').onchange = function()
 	var campoSerie = document.getElementById('ref_serie_origem');
 	campoSerie.length = 1;
 	campoSerie.disabled = true;
-	campoSerie.options[0].text = 'Carregando sÈrie origem';
+	campoSerie.options[0].text = 'Carregando s√©rie origem';
 
 	var xml_serie = new ajax( getSerie );
 	xml_serie.envia( "educar_serie_xml.php?cur="+campoCurso )
@@ -508,7 +508,7 @@ document.getElementById('ref_curso_destino').onchange = function()
 	var campoSerie_ = document.getElementById('ref_serie_destino');
 	campoSerie_.length = 1;
 	campoSerie_.disabled = true;
-	campoSerie_.options[0].text = 'Carregando sÈrie destino';
+	campoSerie_.options[0].text = 'Carregando s√©rie destino';
 
 	var xml_serie_ = new ajax( getSerie_ );
 	xml_serie_.envia( "educar_serie_xml.php?cur="+campoCurso_ )

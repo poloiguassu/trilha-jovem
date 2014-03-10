@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006 Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006 Prefeitura Municipal de Itaja√≠
  * <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -36,18 +36,18 @@ require_once 'include/pmieducar/geral.inc.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - MatrÌcula');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Matr√≠cula');
     $this->processoAp = 578;
   }
 }
@@ -55,11 +55,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsCadastro
@@ -140,19 +140,14 @@ class indice extends clsCadastro
     }
 
     /*
-     * Verifica se existem matrÌculas para o aluno para apresentar o campo
-     * transferÍncia, necess·rio para o relatÛrio de movimentaÁ„o mensal.
+     * Verifica se existem matr√≠culas para o aluno para apresentar o campo
+     * transfer√™ncia, necess√°rio para o relat√≥rio de movimenta√ß√£o mensal.
      */
     $obj_matricula = new clsPmieducarMatricula();
     $lst_matricula = $obj_matricula->lista(NULL, NULL, NULL, NULL, NULL, NULL,
       $this->ref_cod_aluno);
 
-    // Primeira matrÌcula do sistema exibe campo check
-    if (! $lst_matricula) {
-      $this->campoCheck('matricula_transferencia',
-        'MatrÌcula de TransferÍncia', '',
-        'Caso seja transfÍncia externa por favor marque esta opÁ„o.');
-    }
+    // Primeira matr√≠cula do sistema exibe campo check
 
     // inputs
 
@@ -224,7 +219,7 @@ class indice extends clsCadastro
         $curso = $this->getCurso($this->ref_cod_curso);
 
         if ($m['ref_ref_cod_serie'] == $this->ref_cod_serie) {
-          $this->mensagem .= "Este aluno j· est· matriculado nesta sÈrie e curso, n„o È possivel matricular um aluno mais de uma vez na mesma sÈrie.<br />";
+          $this->mensagem .= "Este aluno j√° est√° matriculado neste eixo e projeto, n√£o √© possivel matricular um aluno mais de uma vez no mesmo eixo.<br />";
 
           return false;
         }
@@ -238,7 +233,7 @@ class indice extends clsCadastro
           else
             $nomeSerie = '';
 
-          $this->mensagem .= "Este aluno j· est· matriculado no(a) '$nomeSerie' deste curso e escola. Como este curso n„o È multi seriado, n„o È possivel manter mais de uma matricula em andamento para o mesmo curso.<br />";
+          $this->mensagem .= "Este aluno j√° est√° matriculado no(a) '$nomeSerie' deste projeto e institui√ß√£o. Como este projeto n√£o √© multi seriado, n√£o √© possivel manter mais de uma matricula em andamento para o mesmo projeto.<br />";
 
           return false;
         }
@@ -282,7 +277,7 @@ class indice extends clsCadastro
           else
             $curso = '';
 
-          $this->mensagem .= "Este aluno j· est· matriculado no(a) '$serie' do curso '$curso' na escola '$escola', para matricular este aluno na sua escola solicite transferÍncia ao secret·rio(a) da escola citada.<br />";
+          $this->mensagem .= "Este aluno j√° est√° matriculado no(a) '$serie' do projeto '$curso' na institui√ß√£o '$escola', para matricular este institui√ß√£o na sua escola solicite transfer√™ncia a coordena√ß√£o(a) da institui√ß√£o citada.<br />";
 
           return false;
         }
@@ -303,7 +298,7 @@ class indice extends clsCadastro
 
         $editou = $obj_reserva_vaga->edita();
         if (! $editou) {
-          $this->mensagem = 'EdiÁ„o n„o realizada.<br />';
+          $this->mensagem = 'Edi√ß√£o n√£o realizada.<br />';
           return FALSE;
         }
       }
@@ -324,7 +319,7 @@ class indice extends clsCadastro
           }
         }
         else {
-          $this->mensagem = 'A sÈrie selecionada n„o possui turmas cadastradas.<br />';
+          $this->mensagem = 'O eixo selecionada n√£o possui turmas cadastradas.<br />';
           return FALSE;
         }
 
@@ -353,11 +348,11 @@ class indice extends clsCadastro
         echo sprintf('
           <script>
             var msg = \'\';
-            msg += \'Excedido o n˙mero de total de vagas para Matricula!\\n\';
-            msg += \'N˙mero total de matriculados: %d\\n\';
-            msg += \'N˙mero total de vagas reservadas: %d\\n\';
-            msg += \'N˙mero total de vagas: %d\\n\';
-            msg += \'Deseja mesmo assim realizar a MatrÌcula?\';
+            msg += \'Excedido o n√∫mero de total de vagas para Matricula!\\n\';
+            msg += \'N√∫mero total de matriculados: %d\\n\';
+            msg += \'N√∫mero total de vagas reservadas: %d\\n\';
+            msg += \'N√∫mero total de vagas: %d\\n\';
+            msg += \'Deseja mesmo assim realizar a Matr√≠cula?\';
 
             if (! confirm(msg)) {
               window.location = \'educar_aluno_det.php?cod_aluno=%d\';
@@ -372,7 +367,7 @@ class indice extends clsCadastro
         NULL, NULL, $this->ref_cod_aluno);
 
       if (! $lst_matricula_aluno) {
-        // Primeira matrÌcula do sistema, consistÍncia (?)
+        // Primeira matr√≠cula do sistema, consist√™ncia (?)
         $this->matricula_transferencia =
           $this->matricula_transferencia == 'on' ? TRUE : FALSE;
       }
@@ -405,13 +400,13 @@ class indice extends clsCadastro
         $obj_transferencia = new clsPmieducarTransferenciaSolicitacao();
 
 
-        #Se encontrar solicitaÁıes de transferencia externa (com data de transferencia sem codigo de matricula de entrada), inativa estas
+        #Se encontrar solicita√ß√µes de transferencia externa (com data de transferencia sem codigo de matricula de entrada), inativa estas
         /*$lst_transferencia = $obj_transferencia->lista(NULL, NULL, NULL, NULL,
           NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL,
           $this->ref_cod_aluno, FALSE, NULL, NULL, NULL, TRUE, FALSE);
 
         if (is_array($lst_transferencia)) {
-          echo 'Encontrou solicitaÁıes de transferencia externa (saida) com data de transferencia';
+          echo 'Encontrou solicita√ß√µes de transferencia externa (saida) com data de transferencia';
           $det_transferencia = array_shift($lst_transferencia);
 
           $obj_transferencia = new clsPmieducarTransferenciaSolicitacao(
@@ -427,16 +422,16 @@ class indice extends clsCadastro
             $editou3 = $obj->edita();
 
             if (! $editou3) {
-              $this->mensagem = 'EdiÁ„o n„o realizada.<br />';
+              $this->mensagem = 'Edi√ß√£o n√£o realizada.<br />';
               return FALSE;
             }
           }
           else {
-            $this->mensagem = 'EdiÁ„o n„o realizada.<br />';
+            $this->mensagem = 'Edi√ß√£o n√£o realizada.<br />';
             return FALSE;
           }
         }
-        #sen„o pega as solicitacoes de transferencia internas (sem data de transferencia e sem codigo de matricula de entrada) e
+        #sen√£o pega as solicitacoes de transferencia internas (sem data de transferencia e sem codigo de matricula de entrada) e
         #seta a data de transferencia e codigo de matricula de entrada, atualiza a situacao da matricula para transferido e inativa a matricula turma
         else {
         */
@@ -446,10 +441,10 @@ class indice extends clsCadastro
             $this->ref_cod_aluno, FALSE, NULL, NULL, NULL, FALSE, FALSE);
 
           #TODO interna ?
-          // Verifica se existe solicitaÁ„o de transferÍncia (interna) do aluno
+          // Verifica se existe solicita√ß√£o de transfer√™ncia (interna) do aluno
           if (is_array($lst_transferencia)) {
-            #echo 'Encontrou solicitaÁıes de transferencia interna  (saida) com data de transferencia';
-            // Verifica cada solicitaÁ„o de transferÍncia do aluno
+            #echo 'Encontrou solicita√ß√µes de transferencia interna  (saida) com data de transferencia';
+            // Verifica cada solicita√ß√£o de transfer√™ncia do aluno
             foreach ($lst_transferencia as $transferencia) {
               $obj_matricula = new clsPmieducarMatricula(
                 $transferencia['ref_cod_matricula_saida']
@@ -457,12 +452,12 @@ class indice extends clsCadastro
 
               $det_matricula = $obj_matricula->detalhe();
 
-              // Caso a solicitaÁ„o seja para uma mesma sÈrie
+              // Caso a solicita√ß√£o seja para uma mesma s√©rie
               if ($det_matricula['ref_ref_cod_serie'] == $this->ref_cod_serie) {
                 $ref_cod_transferencia = $transferencia['cod_transferencia_solicitacao'];
                 break;
               }
-              // Caso a solicitaÁ„o seja para a sÈrie da sequÍncia
+              // Caso a solicita√ß√£o seja para a s√©rie da sequ√™ncia
               else {
                 $obj_sequencia = new clsPmieducarSequenciaSerie(
                   $det_matricula['ref_ref_cod_serie'], $this->ref_cod_serie,
@@ -497,7 +492,7 @@ class indice extends clsCadastro
                 $obj_matricula = new clsPmieducarMatricula($matricula_saida);
                 $det_matricula = $obj_matricula->detalhe();
 
-                // Caso a situaÁ„o da matrÌcula do aluno esteja em andamento
+                // Caso a situa√ß√£o da matr√≠cula do aluno esteja em andamento
                 if ($det_matricula['aprovado'] == 3) {
                   $obj_matricula = new clsPmieducarMatricula(
                     $cadastrou, NULL, NULL, NULL, $this->pessoa_logada, NULL,
@@ -516,12 +511,12 @@ class indice extends clsCadastro
                 $editou3 = $obj->edita();
 
                 if (! $editou3) {
-                  $this->mensagem = 'EdiÁ„o n„o realizada.<br />';
+                  $this->mensagem = 'Edi√ß√£o n√£o realizada.<br />';
                   return FALSE;
                 }
               }
               else {
-                $this->mensagem = 'EdiÁ„o n„o realizada.<br />';
+                $this->mensagem = 'Edi√ß√£o n√£o realizada.<br />';
                 return FALSE;
               }
             }
@@ -535,11 +530,11 @@ class indice extends clsCadastro
         #return true;
       }
       
-      $this->mensagem = 'Cadastro n„o realizado.<br />';
+      $this->mensagem = 'Cadastro n√£o realizado.<br />';
       return FALSE;
     }
     else {
-      $this->mensagem = 'O ano (letivo) selecionado n„o esta em andamento na escola selecionada.<br />';
+      $this->mensagem = 'O ano selecionado n√£o esta em andamento na institui√ß√£o selecionada.<br />';
       return FALSE;
     }
   }
@@ -565,8 +560,8 @@ class indice extends clsCadastro
     }
 
     if(! $result) {
-		  $this->mensagem = "N&atilde;o foi poss&iacute;vel desativar as " .
-                        "enturma&ccedil;&otilde;es da matr&iacute;cula.";
+		  $this->mensagem = "N√£o foi poss√≠vel desativar as " .
+                        "enturma√ß√µes da matr√≠cula.";
     }
 
     return $result;
@@ -595,7 +590,7 @@ class indice extends clsCadastro
       NULL, $ref_cod_serie, NULL, NULL, NULL, NULL, NULL, NULL, 1
     );
 
-    // Verifica se a sÈrie da matrÌcula cancelada È sequÍncia de alguma outra sÈrie
+    // Verifica se a s√©rie da matr√≠cula cancelada √© sequ√™ncia de alguma outra s√©rie
     if (is_array($lst_sequencia)) {
       $det_sequencia    = array_shift($lst_sequencia);
       $ref_serie_origem = $det_sequencia['ref_serie_origem'];
@@ -606,7 +601,7 @@ class indice extends clsCadastro
         NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0
       );
 
-      // Verifica se o aluno tem matrÌcula na sÈrie encontrada
+      // Verifica se o aluno tem matr√≠cula na s√©rie encontrada
       if (is_array($lst_matricula)) {
         $det_matricula     = array_shift($lst_matricula);
         $ref_cod_matricula = $det_matricula['cod_matricula'];
@@ -618,7 +613,7 @@ class indice extends clsCadastro
 
         $editou1 = $obj->edita();
         if (! $editou1) {
-          $this->mensagem = 'N„o foi possÌvel editar a "⁄ltima MatrÌcula da SequÍncia".<br />';
+          $this->mensagem = 'N√£o foi poss√≠vel editar a "√öltima Matr√≠cula da Sequ√™ncia".<br />';
           return FALSE;
         }
       }
@@ -632,12 +627,12 @@ class indice extends clsCadastro
     $excluiu = $obj->excluir();
 
     if ($excluiu) {
-      $this->mensagem .= 'Exclus„o efetuada com sucesso.<br />';
+      $this->mensagem .= 'Exclus√£o efetuada com sucesso.<br />';
       header('Location: educar_aluno_det.php?cod_aluno=' . $this->ref_cod_aluno);
       die();
     }
 
-    $this->mensagem = 'Exclus„o n„o realizada.<br />';
+    $this->mensagem = 'Exclus√£o n√£o realizada.<br />';
     return FALSE;
   }
 
@@ -688,15 +683,15 @@ class indice extends clsCadastro
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡ p·gina
+// Atribui o conte√∫do √† p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();
 ?>

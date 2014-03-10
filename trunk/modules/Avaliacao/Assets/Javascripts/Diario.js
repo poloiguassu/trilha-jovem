@@ -793,13 +793,13 @@ function showNextSelectionButton() {
   var $matriculaField = $j('#ref_cod_matricula');
 
   if ($ccField.val() != '') {
-    $j("<a href='#'>Proximo componente curricular</a>").bind('click', nextComponenteCurricular)
+    $j("<a href='#'>Próximo componente curricular</a>").bind('click', nextComponenteCurricular)
                                 .attr('style', 'text-decoration: underline')
                                 .appendTo($navActions);
   }
 
   if ($matriculaField.val() != '') {
-    $j("<a href='#'>Proxima matricula</a>").bind('click', nextMatricula)
+    $j("<a href='#'>Próxima matricula</a>").bind('click', nextMatricula)
                                 .attr('style', 'text-decoration: underline')
                                 .appendTo($navActions);
   }

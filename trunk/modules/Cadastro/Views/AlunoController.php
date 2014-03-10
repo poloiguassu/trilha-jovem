@@ -125,15 +125,6 @@ class AlunoController extends Portabilis_Controller_Page_EditController
                      'required' => false, 'size' => 25);
     $this->inputsHelper()->integer('id', $options);
 
-
-    // código aluno inep
-    $options = array('label' => $this->_getLabel('aluno_inep_id'), 'required' => false, 'size' => 25, 'max_length' => 14);
-    $this->inputsHelper()->integer('aluno_inep_id', $options);
-
-    // código aluno rede estadual
-    $options = array('label' => $this->_getLabel('aluno_estado_id'), 'required' => false, 'size' => 25, 'max_length' => 25);
-    $this->inputsHelper()->text('aluno_estado_id', $options);
-
     // nome
     $options = array('label' => $this->_getLabel('pessoa'), 'size' => 68);
     $this->inputsHelper()->simpleSearchPessoa('nome', $options);
@@ -160,11 +151,11 @@ class AlunoController extends Portabilis_Controller_Page_EditController
 
     // tipo
 
-    $label = Portabilis_String_Utils::toLatin1($this->_getLabel('responsavel'));
+    $label = Portabilis_String_Utils::toUtf8($this->_getLabel('responsavel'));
 
     $tiposResponsavel = array(null           => $label,
                               'pai'          => 'Pai',
-                              'mae'          => 'M&atilde;e',
+                              'mae'          => 'Mãe',
                               'outra_pessoa' => 'Outra pessoa');
 
     $options = array('label'     => $this->_getLabel('responsavel'),
@@ -184,10 +175,10 @@ class AlunoController extends Portabilis_Controller_Page_EditController
 
     // transporte publico
 
-    $label = Portabilis_String_Utils::toLatin1($this->_getLabel('transporte'));
+    $label = Portabilis_String_Utils::toUtf8($this->_getLabel('transporte'));
 
     $tiposTransporte = array(null        => $label,
-                             'nenhum'    => 'N&atilde;o utiliza',
+                             'nenhum'    => 'Não utiliza',
                              'municipal' => 'Municipal',
                              'estadual'  => 'Estadual');
 

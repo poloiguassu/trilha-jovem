@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Sequ&ecirc;ncia Enturma&ccedil;&atilde;o" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Enturma√ß√£o" );
 		$this->processoAp = "587";
 	}
 }
@@ -61,7 +61,7 @@ class indice extends clsDetalhe
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Sequ&ecirc;ncia Enturma&ccedil;&atilde;o - Detalhe";
+		$this->titulo = "Enturma√ß√£o - Detalhe";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$this->ref_serie_origem = $_GET["ref_serie_origem"];
@@ -96,20 +96,20 @@ class indice extends clsDetalhe
 				}
 				else
 				{
-					$registro["ref_cod_instituicao"] = "Erro na gera&ccedil;&atilde;o";
-					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarInstituicao\n-->";
+					$registro["ref_cod_instituicao"] = "Erro na gera√ß√£o";
+					echo "<!--\nErro\nClasse n√£o existente: clsPmieducarInstituicao\n-->";
 				}
 			}
 			else
 			{
-				$registro["ref_cod_origem"] = "Erro na gera&ccedil;&atilde;o";
-				echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarCurso\n-->";
+				$registro["ref_cod_origem"] = "Erro na gera√ß√£o";
+				echo "<!--\nErro\nClasse n√£o existente: clsPmieducarCurso\n-->";
 			}
 		}
 		else
 		{
-			$registro["ref_serie_origem"] = "Erro na gera&ccedil;&atilde;o";
-			echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarSerie\n-->";
+			$registro["ref_serie_origem"] = "Erro na gera√ß√£o";
+			echo "<!--\nErro\nClasse n√£o existente: clsPmieducarSerie\n-->";
 		}
 		if( class_exists( "clsPmieducarSerie" ) )
 		{
@@ -125,14 +125,14 @@ class indice extends clsDetalhe
 			}
 			else
 			{
-				$registro["ref_cod_destino"] = "Erro na gera&ccedil;&atilde;o";
-				echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarCurso\n-->";
+				$registro["ref_cod_destino"] = "Erro na gera√ß√£o";
+				echo "<!--\nErro\nClasse n√£o existente: clsPmieducarCurso\n-->";
 			}
 		}
 		else
 		{
-			$registro["ref_serie_destino"] = "Erro na gera&ccedil;&atilde;o";
-			echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarSerie\n-->";
+			$registro["ref_serie_destino"] = "Erro na gera√ß√£o";
+			echo "<!--\nErro\nClasse n√£o existente: clsPmieducarSerie\n-->";
 		}
 
 		$obj_permissoes = new clsPermissoes();
@@ -141,24 +141,24 @@ class indice extends clsDetalhe
 		{
 			if( $registro["ref_cod_instituicao"] )
 			{
-				$this->addDetalhe( array( "Institui&ccedil;&atilde;o", "{$registro["ref_cod_instituicao"]}") );
+				$this->addDetalhe( array( "Institui√ß√£o Executora", "{$registro["ref_cod_instituicao"]}") );
 			}
 		}
 		if( $nm_curso_origem )
 		{
-			$this->addDetalhe( array( "Curso Origem", "{$nm_curso_origem}") );
+			$this->addDetalhe( array( "Projeto de Origem", "{$nm_curso_origem}") );
 		}
 		if( $nm_serie_origem )
 		{
-			$this->addDetalhe( array( "S&eacute;rie Origem", "{$nm_serie_origem}") );
+			$this->addDetalhe( array( "Eixo de Origem", "{$nm_serie_origem}") );
 		}
 		if( $nm_curso_destino )
 		{
-			$this->addDetalhe( array( "Curso Destino", "{$nm_curso_destino}") );
+			$this->addDetalhe( array( "Projeto de Destino", "{$nm_curso_destino}") );
 		}
 		if( $nm_serie_destino )
 		{
-			$this->addDetalhe( array( "S&eacute;rie Destino", "{$nm_serie_destino}") );
+			$this->addDetalhe( array( "Eixo de Destino", "{$nm_serie_destino}") );
 		}
 
 		$obj_permissoes = new clsPermissoes();

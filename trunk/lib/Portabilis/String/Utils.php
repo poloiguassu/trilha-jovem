@@ -100,7 +100,7 @@ class Portabilis_String_Utils {
       $str = ucwords(mb_strtolower($str));
 
 
-    $str = utf8_encode($str);
+    //$str = utf8_encode($str);
 
     if ($options['convert_html_special_chars'])
       $str = htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -126,11 +126,11 @@ class Portabilis_String_Utils {
     // apenas converte para latin1, strings utf-8
     // impedindo assim, converter para latin1 strings que já sejam latin1
 
-    if (Portabilis_String_Utils::encoding($str) == 'UTF-8')
-      $str = utf8_decode($str);
+    /*if (Portabilis_String_Utils::encoding($str) == 'UTF-8')
+      $str = utf8_decode($str);*/
 
-    if ($options['convert_html_special_chars'])
-      $str = htmlspecialchars($str, ENT_QUOTES, 'ISO-8859-1');
+    /*if ($options['convert_html_special_chars'])
+      $str = htmlspecialchars($str, ENT_QUOTES, 'ISO-8859-1');*/
 
     return $str;
   }

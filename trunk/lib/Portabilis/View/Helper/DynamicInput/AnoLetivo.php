@@ -73,7 +73,7 @@ class Portabilis_View_Helper_DynamicInput_AnoLetivo extends Portabilis_View_Help
       $resources = Portabilis_Array_Utils::setAsIdValue($resources, 'ano', 'ano');
     }
 
-    return $this->insertOption(null, "Selecione um ano letivo", $resources);
+    return $this->insertOption(null, "Selecione uma etapa", $resources);
   }
 
   protected function defaultOptions() {

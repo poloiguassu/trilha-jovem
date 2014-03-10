@@ -720,7 +720,7 @@ class ProcessamentoApiController extends Core_Controller_Page_EditController
       $dadosMatricula['escola_id']          = $matriculaTurma['ref_ref_cod_escola'];
       $dadosMatricula['nome_serie']         = $this->getNomeSerie($matriculaTurma['ref_ref_cod_serie']);
 
-      $dadosMatricula['nome_curso']         = Portabilis_String_Utils::toLatin1(
+      $dadosMatricula['nome_curso']         = Portabilis_String_Utils::toUtf8(
         $matriculaTurma['nm_curso']
       );
     }
@@ -749,7 +749,7 @@ class ProcessamentoApiController extends Core_Controller_Page_EditController
   protected function getNomeSerie($serieId){
     $sql = "select nm_serie from pmieducar.serie where cod_serie = $1";
 
-    return Portabilis_String_Utils::toLatin1(Portabilis_Utils_Database::selectField($sql, $serieId));
+    return Portabilis_String_Utils::toUtf8(Portabilis_Utils_Database::selectField($sql, $serieId));
   }
 
 

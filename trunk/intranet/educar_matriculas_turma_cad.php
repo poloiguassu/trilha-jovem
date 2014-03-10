@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gestão escolar
+ * i-Educar - Sistema de gestÃ£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de Itajaí
+ * Copyright (C) 2006  Prefeitura Municipal de ItajaÃ­
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa é software livre; você pode redistribuí-lo e/ou modificá-lo
- * sob os termos da Licença Pública Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a versão 2 da Licença, como (a seu critério)
- * qualquer versão posterior.
+ * Este programa Ã© software livre; vocÃª pode redistribuÃ­-lo e/ou modificÃ¡-lo
+ * sob os termos da LicenÃ§a PÃºblica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a versÃ£o 2 da LicenÃ§a, como (a seu critÃ©rio)
+ * qualquer versÃ£o posterior.
  *
- * Este programa é distribuí­do na expectativa de que seja útil, porém, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implí­cita de COMERCIABILIDADE OU
- * ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA. Consulte a Licença Pública Geral
+ * Este programa Ã© distribuÃ­Â­do na expectativa de que seja Ãºtil, porÃ©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia implÃ­Â­cita de COMERCIABILIDADE OU
+ * ADEQUAÃ‡ÃƒO A UMA FINALIDADE ESPECÃFICA. Consulte a LicenÃ§a PÃºblica Geral
  * do GNU para mais detalhes.
  *
- * Você deve ter recebido uma cópia da Licença Pública Geral do GNU junto
- * com este programa; se não, escreva para a Free Software Foundation, Inc., no
- * endereço 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral do GNU junto
+ * com este programa; se nÃ£o, escreva para a Free Software Foundation, Inc., no
+ * endereÃ§o 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de Itajaí <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de ItajaÃ­ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponível desde a versão 1.0.0
+ * @since     Arquivo disponÃ­vel desde a versÃ£o 1.0.0
  * @version   $Id$
  */
 
@@ -36,18 +36,18 @@ require_once 'include/pmieducar/geral.inc.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de Itajaí <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de ItajaÃ­ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponível desde a versão 1.0.0
+ * @since     Classe disponÃ­vel desde a versÃ£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Matriculas Turma');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - MatrÃ­cula de Turma');
     $this->processoAp = 659;
   }
 }
@@ -55,11 +55,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de Itajaí <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de ItajaÃ­ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponível desde a versão 1.0.0
+ * @since     Classe disponÃ­vel desde a versÃ£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsCadastro
@@ -145,7 +145,7 @@ class indice extends clsCadastro
       $obj_cod_instituicao = new clsPmieducarInstituicao($this->ref_cod_instituicao);
       $obj_cod_instituicao_det = $obj_cod_instituicao->detalhe();
       $nm_instituicao = $obj_cod_instituicao_det['nm_instituicao'];
-      $this->campoRotulo('nm_instituicao', 'Institui&ccedil;&atilde;o', $nm_instituicao);
+      $this->campoRotulo('nm_instituicao', 'InstituiÃ§Ã£o Executora', $nm_instituicao);
     }
 
     if ($nivel_usuario == 1 || $nivel_usuario == 2) {
@@ -153,7 +153,7 @@ class indice extends clsCadastro
         $obj_ref_cod_escola = new clsPmieducarEscola($this->ref_ref_cod_escola);
         $det_ref_cod_escola = $obj_ref_cod_escola->detalhe();
         $nm_escola = $det_ref_cod_escola['nome'];
-        $this->campoRotulo('nm_escola', 'Escola', $nm_escola);
+        $this->campoRotulo('nm_escola', 'InstituiÃ§Ã£o', $nm_escola);
       }
     }
 
@@ -161,14 +161,14 @@ class indice extends clsCadastro
       $obj_ref_cod_curso = new clsPmieducarCurso($this->ref_cod_curso);
       $det_ref_cod_curso = $obj_ref_cod_curso->detalhe();
       $nm_curso = $det_ref_cod_curso['nm_curso'];
-      $this->campoRotulo('nm_curso', 'Curso', $nm_curso);
+      $this->campoRotulo('nm_curso', 'Projeto', $nm_curso);
     }
 
     if ($this->ref_ref_cod_serie) {
       $obj_ref_cod_serie = new clsPmieducarSerie($this->ref_ref_cod_serie);
       $det_ref_cod_serie = $obj_ref_cod_serie->detalhe();
       $nm_serie = $det_ref_cod_serie["nm_serie"];
-      $this->campoRotulo('nm_serie', 'S&eacute;rie', $nm_serie);
+      $this->campoRotulo('nm_serie', 'Eixo', $nm_serie);
 
       // busca o ano em q a escola esta em andamento
       $obj_ano_letivo = new clsPmieducarEscolaAnoLetivo();
@@ -180,7 +180,7 @@ class indice extends clsCadastro
         $ano_letivo = $det_ano_letivo['ano'];
       }
       else {
-        $this->mensagem = 'Não foi possível encontrar o ano letivo em andamento da escola.';
+        $this->mensagem = 'NÃ£o foi possÃ­vel encontrar o ano letivo em andamento na instituiÃ§Ã£o.';
         return FALSE;
       }
     }
@@ -267,7 +267,7 @@ class indice extends clsCadastro
       }
     }
     else {
-      $this->campoRotulo('rotulo_1', '-', 'Todos os alunos matriculados na série já se encontram enturmados.');
+      $this->campoRotulo('rotulo_1', '-', 'Todos os alunos matriculados no eixo jÃ¡ se encontram enturmados.');
     }
 
     $this->campoQuebra();
@@ -294,7 +294,7 @@ class indice extends clsCadastro
           $cadastrou = $obj->cadastra();
 
           if (!$cadastrou) {
-            $this->mensagem = 'Cadastro n&atilde;o realizado.<br>';
+            $this->mensagem = 'Cadastro nÃ£o realizado.<br>';
             return FALSE;
           }
         }
@@ -314,14 +314,14 @@ class indice extends clsCadastro
   }
 }
 
-// Instancia objeto de página
+// Instancia objeto de pÃ¡gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conteúdo
+// Instancia objeto de conteÃºdo
 $miolo = new indice();
 
-// Atribui o conteúdo à  página
+// Atribui o conteÃºdo Ã   pÃ¡gina
 $pagina->addForm($miolo);
 
-// Gera o código HTML
+// Gera o cÃ³digo HTML
 $pagina->MakeAll();

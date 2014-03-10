@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -36,18 +36,18 @@ require_once 'include/pmieducar/geral.inc.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Curso');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Projeto');
     $this->processoAp = '566';
   }
 }
@@ -55,11 +55,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsDetalhe
@@ -93,7 +93,7 @@ class indice extends clsDetalhe
     $this->pessoa_logada = $_SESSION['id_pessoa'];
     session_write_close();
 
-    $this->titulo = 'Curso - Detalhe';
+    $this->titulo = 'Projeto - Detalhe';
     $this->addBanner('imagens/nvp_top_intranet.jpg',
       'imagens/nvp_vert_intranet.jpg', 'Intranet');
 
@@ -128,7 +128,7 @@ class indice extends clsDetalhe
 
     if ($nivel_usuario == 1) {
       if ($registro['ref_cod_instituicao']) {
-        $this->addDetalhe(array('Institui&ccedil;&atilde;o', $registro['ref_cod_instituicao']));
+        $this->addDetalhe(array('Institui√ß√£o Executora', $registro['ref_cod_instituicao']));
       }
     }
 
@@ -137,19 +137,19 @@ class indice extends clsDetalhe
     }
 
     if ($registro['ref_cod_nivel_ensino']) {
-      $this->addDetalhe(array('N&iacute;vel Ensino', $registro['ref_cod_nivel_ensino']));
+      $this->addDetalhe(array('N√≠vel de Ensino', $registro['ref_cod_nivel_ensino']));
     }
 
     if ($registro['ref_cod_tipo_ensino']) {
-      $this->addDetalhe(array('Tipo Ensino', $registro['ref_cod_tipo_ensino']));
+      $this->addDetalhe(array('Tipo de Ensino', $registro['ref_cod_tipo_ensino']));
     }
 
     if ($registro['nm_curso']) {
-      $this->addDetalhe(array('Curso', $registro['nm_curso']));
+      $this->addDetalhe(array('Projeto', $registro['nm_curso']));
     }
 
     if ($registro['sgl_curso']) {
-      $this->addDetalhe(array('Sigla Curso', $registro['sgl_curso']));
+      $this->addDetalhe(array('Sigla do Projeto', $registro['sgl_curso']));
     }
 
     if ($registro['qtd_etapas']) {
@@ -163,11 +163,7 @@ class indice extends clsDetalhe
 
     if ($registro['carga_horaria']) {
       $registro['carga_horaria'] = number_format($registro['carga_horaria'], 2, ',', '.');
-      $this->addDetalhe(array('Carga Hor&aacute;ria', $registro['carga_horaria']));
-    }
-
-    if ($registro['ato_poder_publico']) {
-      $this->addDetalhe(array('Ato Poder P&uacute;blico', $registro['ato_poder_publico']));
+      $this->addDetalhe(array('Carga Hor√°ria', $registro['carga_horaria']));
     }
 
     $obj = new clsPmieducarHabilitacaoCurso(NULL, $this->cod_curso);
@@ -201,10 +197,6 @@ class indice extends clsDetalhe
       $tabela .= '</TABLE>';
     }
 
-    if ($habilitacao) {
-      $this->addDetalhe(array('Habilita&ccedil;&atilde;o', $tabela));
-    }
-
     if ($registro['padrao_ano_escolar']) {
       if ($registro['padrao_ano_escolar'] == 0) {
         $registro['padrao_ano_escolar'] = 'n&atilde;o';
@@ -212,8 +204,6 @@ class indice extends clsDetalhe
       else if ($registro['padrao_ano_escolar'] == 1) {
         $registro['padrao_ano_escolar'] = 'sim';
       }
-
-      $this->addDetalhe(array('Padr&atilde;o Ano Escolar', $registro['padrao_ano_escolar']));
     }
 
     if ($registro['objetivo_curso']) {
@@ -221,7 +211,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['publico_alvo']) {
-      $this->addDetalhe(array('P&uacute;blico Alvo', $registro['publico_alvo']));
+      $this->addDetalhe(array('P√∫blico Alvo', $registro['publico_alvo']));
     }
 
     if ($obj_permissoes->permissao_cadastra(566, $this->pessoa_logada, 3)) {
@@ -234,14 +224,14 @@ class indice extends clsDetalhe
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡† p·gina
+// Atribui o conte√∫do √†¬† p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();

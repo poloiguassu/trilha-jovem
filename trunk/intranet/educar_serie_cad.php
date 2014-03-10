@@ -48,7 +48,7 @@ class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Série');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Eixos');
     $this->processoAp = '583';
   }
 }
@@ -149,7 +149,7 @@ class indice extends clsCadastro
     $get_curso = TRUE;
     include('include/pmieducar/educar_campo_lista.php');
 
-    $this->campoTexto("nm_serie", "Série", $this->nm_serie, 30, 255, TRUE);
+    $this->campoTexto("nm_serie", "Eixo", $this->nm_serie, 30, 255, TRUE);
 
     $opcoes = array("" => "Selecione");
 
@@ -170,7 +170,7 @@ class indice extends clsCadastro
       }
     }
 
-    $this->campoLista('etapa_curso', 'Etapa Curso', $opcoes, $this->etapa_curso);
+    $this->campoLista('etapa_curso', 'Etapa do Projeto', $opcoes, $this->etapa_curso);
 
     // Regra de avaliação
     $mapper = new RegraAvaliacao_Model_RegraDataMapper();
@@ -322,7 +322,7 @@ function EtapasCurso(xml_qtd_etapas)
     }
   }
   else {
-    campoEtapas.options[0].text = 'O curso não possui nenhuma etapa';
+    campoEtapas.options[0].text = 'O Projeto não possui nenhuma etapa';
   }
 }
 

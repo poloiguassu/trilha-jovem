@@ -178,7 +178,7 @@ class indice extends clsCadastro
 			$this->campoOculto("ref_pessoa", $this->ref_pessoa);
 		}
 
-		$this->campoTexto("matricula", "Matrícula", $this->matricula, 12, 12, true);
+		$this->campoTexto("matricula", "Nome de Usuário", $this->matricula, 12, 12, true);
 		$this->campoSenha("_senha", "Senha", $this->_senha, true);
 		$this->campoEmail("email", "E-mail usuário", $this->email, 50, 50, false, false, false, 'Utilizado para redefinir a senha, caso o usúario esqueça<br />Este campo pode ser gravado em branco, neste caso será solicitado um e-mail ao usuário, após entrar no sistema.');
 

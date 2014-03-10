@@ -2,7 +2,7 @@
 class PHPJasperXML {
     private $adjust=1.2;
     public $debugsql=false;
-    public function PHPJasperXML($lang="en") {
+    public function PHPJasperXML($lang="pt") {
         $this->lang=$lang;
     }
 
@@ -360,7 +360,7 @@ class PHPJasperXML {
 
          while ( $conexao->ProximoRegistro() ) {
             foreach ($this->arrayfield as $out) {
-                $this->arraysqltable[$this->m]["$out"] = $conexao->Campo("$out");
+                $this->arraysqltable[$this->m]["$out"] = utf8_decode($conexao->Campo("$out"));
             }
             $this->m++;
         }
@@ -437,12 +437,12 @@ class PHPJasperXML {
         if($this->lang=="cn") {
             if($this->arrayPageSetting[orientation]=="P") {
                 // line updated to offer support to ISO-8859-1 encoding (@ Tiago de Oliveira Camargo, Portabilis Tecnologia. E-mail: tiago.camargo@portabilis.com.br)
-				$this->pdf=new PDF_Unicode($this->arrayPageSetting[orientation],'pt',array($this->arrayPageSetting[pageWidth],$this->arrayPageSetting[pageHeight]), 'ISO-8859-1');
+				$this->pdf=new PDF_Unicode($this->arrayPageSetting[orientation],'pt',array($this->arrayPageSetting[pageWidth],$this->arrayPageSetting[pageHeight]), 'UTF-8');
                 $this->pdf->AddUniGBhwFont("uGB");
             }
             else {
                 // line updated to offer support to ISO-8859-1 encoding (@ Tiago de Oliveira Camargo, Portabilis Tecnologia. E-mail: tiago.camargo@portabilis.com.br)
-				$this->pdf=new PDF_Unicode($this->arrayPageSetting[orientation],'pt',array($this->arrayPageSetting[pageHeight],$this->arrayPageSetting[pageWidth]), 'ISO-8859-1');
+				$this->pdf=new PDF_Unicode($this->arrayPageSetting[orientation],'pt',array($this->arrayPageSetting[pageWidth],$this->arrayPageSetting[pageHeight]), 'UTF-8');
                 $this->pdf->AddUniGBhwFont("uGB");
             }
         }
@@ -647,7 +647,7 @@ class PHPJasperXML {
         $checkpoint=$this->arraydetail[0][y_axis];
         $tempY=$this->arraydetail[0][y_axis];
 
-		if (is_array($this->arraysqltable) && count($this->arraysqltable) > 0){//mudei aqui para resolver o erro e tua dúvida sobre quando vier vaziu.
+		if (is_array($this->arraysqltable) && count($this->arraysqltable) > 0){//mudei aqui para resolver o erro e tua dÃºvida sobre quando vier vaziu.
 
 			foreach($this->arraysqltable as $row) {
 
@@ -661,7 +661,6 @@ class PHPJasperXML {
 					$biggestY=0;
 					$tempY=$this->arraydetail[0][y_axis];
 				}
-
 				//foreach($this->arraydetail as $compare)	//this loop is to count possible biggest Y of the coming row
 				{
 					switch($compare[hidden_type]) {
@@ -742,7 +741,6 @@ class PHPJasperXML {
 							$this->relativebottomline($out,$biggestY);
 							break;
 						default:
-
 							$this->display($out,$checkpoint);
 
 							//$checkpoint=$this->pdf->GetY();

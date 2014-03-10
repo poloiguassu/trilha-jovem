@@ -79,7 +79,7 @@ class DiarioApiController extends ApiCoreController
                           $ano['ativo'] == 1 && $ano['andamento'] == 2;
 
     if ($escola['bloquear_lancamento_diario_anos_letivos_encerrados'] == '1' && $anoLetivoEncerrado) {
-      $this->messenger->append("O ano letivo '{$this->getRequest()->ano}' está encerrado, esta escola está configurada para não permitir alterar o diário de anos letivos encerrados.");
+      $this->messenger->append("O ano letivo '{$this->getRequest()->ano}' está encerrado, esta instituição está configurada para não permitir alterar o diário de anos letivos encerrados.");
       return false;
     }
 

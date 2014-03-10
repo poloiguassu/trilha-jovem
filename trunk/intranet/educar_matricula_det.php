@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -39,18 +39,18 @@ require_once 'Portabilis/View/Helper/Application.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - MatrÌcula');
+    $this->SetTitulo($this->_instituicao . ' i-Educar - Matr√≠cula');
     $this->processoAp = 578;
   }
 }
@@ -58,11 +58,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsDetalhe
@@ -93,7 +93,7 @@ class indice extends clsDetalhe
     $this->pessoa_logada = $_SESSION['id_pessoa'];
     session_write_close();
 
-    $this->titulo = "MatrÌcula - Detalhe";
+    $this->titulo = "Matr√≠cula - Detalhe";
     $this->addBanner("imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet");
 
     $this->ref_cod_matricula = $_GET["cod_matricula"];
@@ -115,12 +115,12 @@ class indice extends clsDetalhe
     $det_ref_cod_curso = $obj_ref_cod_curso->detalhe();
     $registro['ref_cod_curso'] = $det_ref_cod_curso['nm_curso'];
 
-    // SÈrie
+    // S√©rie
     $obj_serie = new clsPmieducarSerie($registro['ref_ref_cod_serie']);
     $det_serie = $obj_serie->detalhe();
     $registro['ref_ref_cod_serie'] = $det_serie['nm_serie'];
 
-    // Nome da instituiÁ„o
+    // Nome da institui√ß√£o
     $obj_cod_instituicao = new clsPmieducarInstituicao( $registro['ref_cod_instituicao'] );
     $obj_cod_instituicao_det = $obj_cod_instituicao->detalhe();
     $registro['ref_cod_instituicao'] = $obj_cod_instituicao_det['nm_instituicao'];
@@ -141,7 +141,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['cod_matricula']) {
-      $this->addDetalhe(array('N˙mero MatrÌcula', $registro['cod_matricula']));
+      $this->addDetalhe(array('N√∫mero Matr√≠cula', $registro['cod_matricula']));
     }
 
     if ($nm_aluno) {
@@ -149,7 +149,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['ref_cod_instituicao']) {
-      $this->addDetalhe(array('InstituiÁ„o', $registro['ref_cod_instituicao']));
+      $this->addDetalhe(array('Institui√ß√£o', $registro['ref_cod_instituicao']));
     }
 
     if ($registro['ref_ref_cod_escola']) {
@@ -161,7 +161,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['ref_ref_cod_serie']) {
-      $this->addDetalhe(array('SÈrie', $registro['ref_ref_cod_serie']));
+      $this->addDetalhe(array('Eixo', $registro['ref_ref_cod_serie']));
     }
 
     // Nome da turma
@@ -183,7 +183,7 @@ class indice extends clsDetalhe
       $this->addDetalhe(array('Turma', ''));
 
     if ($registro['ref_cod_reserva_vaga']) {
-      $this->addDetalhe(array('N˙mero Reserva Vaga', $registro['ref_cod_reserva_vaga']));
+      $this->addDetalhe(array('N√∫mero Reserva Vaga', $registro['ref_cod_reserva_vaga']));
     }
 
     $campoObs = false;
@@ -211,11 +211,11 @@ class indice extends clsDetalhe
         $aprovado = 'Em Exame';
       }
 
-      $this->addDetalhe(array('SituaÁ„o', $aprovado));
+      $this->addDetalhe(array('Situa√ß√£o', $aprovado));
     }
 
     if($campoObs)
-      $this->addDetalhe(array('ObservaÁ„o',$registro['observacao']));
+      $this->addDetalhe(array('Observa√ß√£o',$registro['observacao']));
 
     $this->addDetalhe(array('Formando', $registro['formando'] == 0 ? 'N&atilde;o' : 'Sim'));
 
@@ -240,10 +240,10 @@ class indice extends clsDetalhe
       if ($registro['aprovado'] == 3 &&
          (!is_array($lst_transferencia) && !isset($data_transferencia))
       ) {
-        $this->array_botao[]            = 'Cancelar MatrÌcula';
-        $this->array_botao_url_script[] = "if(confirm(\"Deseja realmente cancelar esta matrÌcula?\"))go(\"educar_matricula_cad.php?cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}\")";
+        $this->array_botao[]            = 'Cancelar Matr√≠cula';
+        $this->array_botao_url_script[] = "if(confirm(\"Deseja realmente cancelar esta matr√≠cula?\"))go(\"educar_matricula_cad.php?cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}\")";
 
-        $this->array_botao[]            = 'OcorrÍncias Disciplinares';
+        $this->array_botao[]            = 'Ocorr√™ncias Disciplinares';
         $this->array_botao_url_script[] = "go(\"educar_matricula_ocorrencia_disciplinar_lst.php?ref_cod_matricula={$registro['cod_matricula']}\")";
 
         // Apenas libera a dispensa de disciplina quando o aluno estiver enturmado
@@ -265,38 +265,18 @@ class indice extends clsDetalhe
       }
 
       if ($registro['aprovado'] != 4 && $registro['aprovado'] != 6) {
-        if (is_array($lst_transferencia) && !isset($data_transferencia)) {
-          $this->array_botao[]            = 'Cancelar SolicitaÁ„o TransferÍncia (escola do sistema)';
-          $this->array_botao_url_script[] = "go(\"educar_transferencia_solicitacao_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&cancela=true\")";
-        }
-        else {
-          if ($registro['ref_ref_cod_serie']) {
-            $this->array_botao[]            = 'Solicitar TransferÍncia';
-            $this->array_botao_url_script[] = "go(\"educar_transferencia_solicitacao_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}\")";
-          }
-        }
-
         if ($registro['aprovado'] == 3 &&
            (!is_array($lst_transferencia) && !isset($data_transferencia))
         ) {
           if ($registro['formando'] == 0) {
             $this->array_botao[]            = 'Formando';
-            $this->array_botao_url_script[] = "if(confirm(\"Deseja marcar a matrÌcula como formando?\"))go(\"educar_matricula_formando_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&formando=1\")";
+            $this->array_botao_url_script[] = "if(confirm(\"Deseja marcar a matr√≠cula como formando?\"))go(\"educar_matricula_formando_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&formando=1\")";
           }
           else {
             $this->array_botao[]            = "Desmarcar como Formando";
-            $this->array_botao_url_script[] = "if(confirm(\"Deseja desmarcar a matrÌcula como formando?\"))go(\"educar_matricula_formando_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&formando=0\")";
+            $this->array_botao_url_script[] = "if(confirm(\"Deseja desmarcar a matr√≠cula como formando?\"))go(\"educar_matricula_formando_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&formando=0\")";
           }
         }
-      }
-
-      if($registro['aprovado'] == 4 &&
-         $this->canCancelTransferenciaExterna($registro['cod_matricula'], $registro['ref_cod_aluno'])) {
-        $this->array_botao[]            = 'Cancelar transferÍncia (escola externa)';
-
-
-        # TODO ver se cÛdigo, seta matricula como em andamento, ativa ultima matricula_turma for matricula, e desativa transferencia solicitacao
-        $this->array_botao_url_script[] = "go(\"educar_transferencia_solicitacao_cad.php?ref_cod_matricula={$registro['cod_matricula']}&ref_cod_aluno={$registro['ref_cod_aluno']}&cancela=true&reabrir_matricula=true\")";
       }
 
       if ($registro['aprovado'] == App_Model_MatriculaSituacao::ABANDONO) {
@@ -331,14 +311,14 @@ class indice extends clsDetalhe
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡  p·gina
+// Atribui o conte√∫do √†  p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();

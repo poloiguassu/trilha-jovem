@@ -49,7 +49,7 @@ require_once "Reports/Reports/FichaAlunoReport.php";
 class FichaAlunoController extends Portabilis_Controller_ReportCoreController
 {
 
-  protected $_titulo = 'Relat&oacute;rio Ficha do Aluno';
+  protected $_titulo = 'Relatório Ficha do Aluno';
 
 	function form() {
     $this->inputsHelper()->dynamic(array('instituicao', 'escola'));//, 'pesquisaAluno'));

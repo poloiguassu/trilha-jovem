@@ -53,7 +53,7 @@ class Portabilis_View_Helper_Input_Resource_SimpleSearchMunicipio extends Portab
       $nome      = $municipio['nome'];
       $siglaUf   = $municipio['sigla_uf'];
 
-      return Portabilis_String_Utils::toLatin1($nome, array('transform' => true, 'escape' => false)) . " ($siglaUf)";
+      return Portabilis_String_Utils::toUtf8($nome, array('transform' => true, 'escape' => false)) . " ($siglaUf)";
     }
   }
 

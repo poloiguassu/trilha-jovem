@@ -89,5 +89,5 @@ catch (Exception $e) {
   NotificationMailer::unexpectedError($e->getMessage());
   echo "teset de erro 4";
 
-  die("<script>document.location.href = '/modules/Error/unexpected';</script>");
+  die("<script>document.location.href = '/module/Error/unexpected';</script>");
 }

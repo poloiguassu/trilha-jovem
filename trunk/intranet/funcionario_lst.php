@@ -50,7 +50,7 @@ class indice extends clsListagem
 
 		// Filtros de Busca
 		$this->campoTexto("nm_pessoa", "Nome", "", 50, 255);
-		$this->campoTexto("matricula", "Matricula", "", 10, 15);
+		$this->campoTexto("matricula", "Nome de Usuário", "", 10, 15);
 
 		// Paginador
 		$limite = 10;

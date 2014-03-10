@@ -172,7 +172,7 @@ class Portabilis_Controller_ReportCoreController extends Core_Controller_Page_Ed
 
 
   function onValidationError() {
-    $msg = Portabilis_String_Utils::toLatin1('O relatório não pode ser emitido, dica(s):\n\n');
+    $msg = Portabilis_String_Utils::toUtf8('O relatório não pode ser emitido, dica(s):\n\n');
 
     foreach ($this->validationErrors as $e) {
       $error = Portabilis_String_Utils::escape($e['message']);
@@ -181,16 +181,16 @@ class Portabilis_Controller_ReportCoreController extends Core_Controller_Page_Ed
 
     $msg .= '\nPor favor, verifique esta(s) situação(s) e tente novamente.';
 
-    $msg = Portabilis_String_Utils::toLatin1($msg, array('escape' => false));
+    $msg = Portabilis_String_Utils::toUtf8($msg, array('escape' => false));
     echo "<script type='text/javascript'>alert('$msg'); close();</script> ";
   }
 
 
   function renderError($details = "") {
     $details = Portabilis_String_Utils::escape($details);
-    $msg     = Portabilis_String_Utils::toLatin1('Ocorreu um erro ao emitir o relatório.') . '\n\n' . $details;
+    $msg     = Portabilis_String_Utils::toUtf8('Ocorreu um erro ao emitir o relatório.') . '\n\n' . $details;
 
-    $msg = Portabilis_String_Utils::toLatin1($msg, array('escape' => false));
+    $msg = Portabilis_String_Utils::toUtf8($msg, array('escape' => false));
     $msg = "<script type='text/javascript'>alert('$msg'); close();</script>";
 
     echo $msg;

@@ -347,7 +347,7 @@ class AlunoController extends ApiCoreController
 
     $aluno                          = new clsPmieducarAluno();
     $aluno->cod_aluno               = $id;
-    $aluno->aluno_estado_id         = Portabilis_String_Utils::toLatin1($this->getRequest()->aluno_estado_id);
+    $aluno->aluno_estado_id         = Portabilis_String_Utils::toUtf8($this->getRequest()->aluno_estado_id);
 
     // após cadastro não muda mais id pessoa
     if (is_null($id))
@@ -529,7 +529,7 @@ class AlunoController extends ApiCoreController
      $sqls[] = "select distinct aluno.cod_aluno as id,
                 pessoa.nome as name from pmieducar.aluno, cadastro.pessoa where
                 pessoa.idpes = aluno.ref_idpes and aluno.ativo = 1 and
-                lower(to_ascii(pessoa.nome)) like lower(to_ascii($1))||'%' and $2 = $2
+                lower(sem_acento(pessoa.nome)) like lower(sem_acento($1))||'%' and $2 = $2
                 order by nome limit 15";
     }
 
@@ -541,7 +541,7 @@ class AlunoController extends ApiCoreController
             pessoa.idpes = aluno.ref_idpes and aluno.ativo = matricula.ativo and
             matricula.ativo = 1 and (select case when $2 != 0 then matricula.ref_ref_cod_escola = $2
             else 1=1 end) and
-            lower(to_ascii(pessoa.nome)) like lower(to_ascii($1))||'%' and matricula.aprovado in
+            lower(sem_acento(pessoa.nome)) like lower(sem_acento($1))||'%' and matricula.aprovado in
             (1, 2, 3, 4, 7, 8, 9) limit 15) as alunos order by name";
 
     return $sqls;

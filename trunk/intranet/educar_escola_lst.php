@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itajaí								 *
+	*	@author Prefeitura Municipal de ItajaÃ­								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software PÃºblico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÃ­			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
-	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
-	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
+	*	Este  programa  Ã©  software livre, vocÃª pode redistribuÃ­-lo e/ou	 *
+	*	modificÃ¡-lo sob os termos da LicenÃ§a PÃºblica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versÃ£o 2 da	 *
+	*	LicenÃ§a   como  (a  seu  critÃ©rio)  qualquer  versÃ£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
-	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  Ã© distribuÃ­do na expectativa de ser Ãºtil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implÃ­cita de COMERCIALI-	 *
+	*	ZAÃ‡ÃƒO  ou  de ADEQUAÃ‡ÃƒO A QUALQUER PROPÃ“SITO EM PARTICULAR. Con-	 *
+	*	sulte  a  LicenÃ§a  PÃºblica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
-	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
+	*	VocÃª  deve  ter  recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU	 *
+	*	junto  com  este  programa. Se nÃ£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -35,7 +35,7 @@ class clsIndexBase extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Escola" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - InstituiÃ§Ã£o" );
 		$this->processoAp = "561";
                 $this->addEstilo( "localizacaoSistema" );
 	}
@@ -90,7 +90,7 @@ class indice extends clsListagem
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Escola - Listagem";
+		$this->titulo = "InstituiÃ§Ã£o - Listagem";
 
 		$obj_permissoes = new clsPermissoes();
 
@@ -99,11 +99,11 @@ class indice extends clsListagem
 
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
-		$cabecalhos = array("Escola");
+		$cabecalhos = array("InstituiÃ§Ã£o");
 		$nivel = $obj_permissoes->nivel_acesso($this->pessoa_logada);
 		if( $nivel == 1 )
 		{
-			$cabecalhos[] = "Institui&ccedil;&atilde;o";
+			$cabecalhos[] = "InstituiÃ§Ã£o Executora";
 			$objInstituicao = new clsPmieducarInstituicao();
 			$opcoes = array( "" => "Selecione" );
 			$objInstituicao->setOrderby( "nm_instituicao ASC" );
@@ -115,7 +115,7 @@ class indice extends clsListagem
 					$opcoes[$linha["cod_instituicao"]] = $linha["nm_instituicao"];
 				}
 			}
-			$this->campoLista( "ref_cod_instituicao", "Institui&ccedil;&atilde;o", $opcoes, $this->ref_cod_instituicao, false, false, false, false, false, false );
+			$this->campoLista( "ref_cod_instituicao", "InstituiÃ§Ã£o Executora", $opcoes, $this->ref_cod_instituicao, false, false, false, false, false, false );
 		}
 		else
 		{
@@ -126,12 +126,12 @@ class indice extends clsListagem
 			}
 			else
 			{
-				die( "Erro: Usuário não é do nivel poli-institucional e não possui uma instituição" );
+				die( "Erro: UsuÃ¡rio nÃ£o Ã© do nivel poli-institucional ou nÃ£o possui uma instituiÃ§Ã£o" );
 			}
 		}
 		$this->addCabecalhos( $cabecalhos );
 
-		$this->campoTexto( "nm_escola", "Escola", $this->nm_escola, 30, 255, false );
+		$this->campoTexto( "nm_escola", "InstituiÃ§Ã£o", $this->nm_escola, 30, 255, false );
 
 		// Filtros de Foreign Keys
 		$this->limite = 10;
@@ -186,9 +186,9 @@ class indice extends clsListagem
                 
                 $localizacao = new LocalizacaoSistema();
                 $localizacao->entradaCaminhos( array(
-                    $_SERVER['SERVER_NAME']."/intranet" => "i-Educar",
-                    "educar_index.php"                  => "Escola",
-                    ""                                  => "Lista de Escola"
+                    $_SERVER['SERVER_NAME']."/intranet" => "Trilha Jovem",
+                    "educar_index.php"                  => "InstituiÃ§Ã£o",
+                    ""                                  => "Lista de InstituiÃ§Ãµes"
                 ));
                 $this->enviaLocalizacao($localizacao->montar());
 	}

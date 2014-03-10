@@ -51,7 +51,7 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
 
   protected $_formMap = array(
     'matricula' => array(
-      'label'  => 'Matr&iacute;cula',
+      'label'  => 'Nome de Usuário',
       'help'   => '',
     ),
     'nova_senha' => array(
@@ -59,7 +59,7 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
       'help'   => '',
     ),
     'confirmacao_senha' => array(
-      'label'  => 'Confirma&ccedil;&atilde;o de senha',
+      'label'  => 'Confirmação de senha',
       'help'   => '',
     ),
   );
@@ -76,8 +76,8 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
   {
     require_once 'Core/View.php';
     $viewBase = new Core_View($instance);
-    $viewBase->titulo = 'i-Educar - Redefini&ccedil;&atilde;o senha';
-    $instance->titulo = 'Redefini&ccedil;&atilde;o senha';
+    $viewBase->titulo = 'Trilha Jovem - Redefinição de senha';
+    $instance->titulo = 'Redefinição de senha';
     $viewBase->addForm($instance);
     //$viewBase->Formular();
 
@@ -150,7 +150,7 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
   {
     if (! $this->messenger()->hasMsgWithType('error')) {
       if (! Portabilis_Utils_ReCaptcha::getWidget()->validate()) {
-        $this->messenger()->append('Por favor, informe a confirma&ccedil;&atilde;o visual no respectivo campo.', 'error');
+        $this->messenger()->append('Por favor, informe a confirmação visual no respectivo campo.', 'error');
       }
       elseif ($this->loadUserByMatricula($_POST['matricula']))
         $this->sendResetPasswordMail();
@@ -239,11 +239,11 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
           $result = true;
         }
         else
-          $this->messenger()->append('Link inv&aacutelido ou j&aacute utilizado, por favor, <a class="light decorated" href="RedefinirSenha">solicite a redefini&ccedil;&atilde;o de senha novamente</a>.', 'error', false, 'error');
+          $this->messenger()->append('Link inválido ou já utilizado, por favor, <a class="light decorated" href="RedefinirSenha">solicite a redefinição de senha novamente</a>.', 'error', false, 'error');
       }
     }
     catch (Exception $e) {
-      $this->messenger()->append('Ocorreu um erro inesperado ao recuperar o usu&aacute;rio, por favor, ' .
+      $this->messenger()->append('Ocorreu um erro inesperado ao recuperar o usuário, por favor, ' .
                        'tente novamente.', 'error');
 
       error_log("Exception ocorrida ao redefinir senha (loadUserByStatusToken), " .
@@ -260,7 +260,7 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
 
     try {
       if(empty($matricula) && ! is_numeric($matricula))
-        $this->messenger()->append('Informe uma matr&iacute;cula.', 'error');
+        $this->messenger()->append('Informe um nome de usuário.', 'error');
       else {
         $user = $this->getDataMapper()->findAllUsingPreparedQuery(array(),
                                                                array('matricula' => '$1'),
@@ -273,12 +273,12 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
           $result = true;
         }
         else
-          $this->messenger()->append('Nenhum usu&aacute;rio encontrado com a matr&iacute;cula informada.',
+          $this->messenger()->append('Nenhum usuário encontrado com o nome de usuário informado.',
                            'error', false, 'error');
       }
     }
     catch (Exception $e) {
-      $this->messenger()->append('Ocorreu um erro inesperado ao recuperar o usu&aacute;rio, por favor, ' .
+      $this->messenger()->append('Ocorreu um erro inesperado ao recuperar o usuário, por favor, ' .
                        'verifique o valor informado e tente novamente.', 'error');
 
       error_log("Exception ocorrida ao redefinir senha (loadUserByMatricula), " .
@@ -293,9 +293,9 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
     $user = $this->getEntity();
 
     if(empty($user->email)) {
-      $this->messenger()->append('Parece que seu usu&aacute;rio n&atilde;o possui um e-mail definido, por favor, '.
+      $this->messenger()->append('Parece que seu usuário não possui um e-mail definido, por favor, '.
                        'solicite ao administrador do sistema para definir seu e-mail (em DRH > Cadastro '.
-                       'de funcion&aacute;rios) e tente novamente.', 'error');
+                       'de funcionários) e tente novamente.', 'error');
     }
     else {
       $token = $this->setTokenRedefinicaoSenha();
@@ -304,11 +304,11 @@ class RedefinirSenhaController extends Portabilis_Controller_Page_EditController
         $link = $_SERVER['HTTP_REFERER'] . "?token=$token";
 
         if(UsuarioMailer::passwordReset($user, $link)) {
-          $successMsg = 'Enviamos um e-mail para voc&ecirc;, por favor, clique no link recebido para redefinir sua senha.';
+          $successMsg = 'Enviamos um e-mail para você, por favor, clique no link recebido para redefinir sua senha.';
           $this->messenger()->append($successMsg, 'success');
         }
         else {
-          $errorMsg = 'N&atilde;o conseguimos enviar um e-mail para voc&ecirc;, por favor, tente novamente mais tarde.';
+          $errorMsg = 'N&atilde;o conseguimos enviar um e-mail para você, por favor, tente novamente mais tarde.';
           $this->messenger()->append($errorMsg, 'error');
         }
 

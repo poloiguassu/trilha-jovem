@@ -9,7 +9,7 @@
 
     var handleGetSeries = function(resources) {
       var selectOptions = xmlResourcesToSelectOptions(resources, 'query', 'cod_serie');
-      updateSelect($serieField, selectOptions, "Selecione uma s&eacute;rie");
+      updateSelect($serieField, selectOptions, "Selecione um eixo");
     }
 
     var updateSeries = function(){

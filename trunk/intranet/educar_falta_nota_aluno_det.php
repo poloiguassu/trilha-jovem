@@ -1,25 +1,25 @@
 	<?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Faltas/Notas Aluno" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Faltas/Notas Aluno" );
 		$this->processoAp = "642";
 	}
 }
@@ -159,7 +159,7 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["ref_cod_instituicao"] = "Erro na gera&ccedil;&atilde;o";
+			$registro["ref_cod_instituicao"] = "Erro na gera√ß√£o";
 			echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarInstituicao\n-->";
 		}
 		if( class_exists( "clsPmieducarEscola" ) )
@@ -170,7 +170,7 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["ref_ref_cod_escola"] = "Erro na gera&ccedil;&atilde;o";
+			$registro["ref_ref_cod_escola"] = "Erro na gera√ß√£o";
 			echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarEscola\n-->";
 		}
 		if( class_exists( "clsPmieducarAluno" ) )
@@ -185,7 +185,7 @@ class indice extends clsDetalhe
 		}
 		else
 		{
-			$registro["ref_cod_aluno"] = "Erro na gera&ccedil;&atilde;o";
+			$registro["ref_cod_aluno"] = "Erro na gera√ß√£o";
 			echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarAluno\n-->";
 		}
 
@@ -195,7 +195,7 @@ class indice extends clsDetalhe
 		}
 		if( $registro["ref_cod_matricula"] )
 		{
-			$this->addDetalhe( array( "Matr&iacute;cula", "{$registro["ref_cod_matricula"]}") );
+			$this->addDetalhe( array( "Matr√≠cula", "{$registro["ref_cod_matricula"]}") );
 		}
 
 
@@ -205,23 +205,23 @@ class indice extends clsDetalhe
 		{
 			if( $registro["ref_cod_instituicao"] )
 			{
-				$this->addDetalhe( array( "Institui&ccedil;&atilde;o", "{$registro["ref_cod_instituicao"]}") );
+				$this->addDetalhe( array( "Institui√ß√£o Executora", "{$registro["ref_cod_instituicao"]}") );
 			}
 		}
 		if ($nivel_usuario == 1 || $nivel_usuario == 2)
 		{
 			if( $nm_escola )
 			{
-				$this->addDetalhe( array( "Escola", "{$nm_escola}") );
+				$this->addDetalhe( array( "Institui√ß√£o", "{$nm_escola}") );
 			}
 		}
 		if( $nm_curso )
 		{
-			$this->addDetalhe( array( "Curso", "{$nm_curso}") );
+			$this->addDetalhe( array( "Projeto", "{$nm_curso}") );
 		}
 		if( $nm_serie )
 		{
-			$this->addDetalhe( array( "S&eacute;rie", "{$nm_serie}") );
+			$this->addDetalhe( array( "Eixo", "{$nm_serie}") );
 		}
 		if( $nm_turma )
 		{
@@ -229,7 +229,7 @@ class indice extends clsDetalhe
 		}
 		if( $qtd_modulos )
 		{
-			$this->addDetalhe( array( "Quantidade de M&oacute;dulos", "{$qtd_modulos}") );
+			$this->addDetalhe( array( "Quantidade de M√≥dulos", "{$qtd_modulos}") );
 		}
 
 		$obj_matricula = new clsPmieducarMatricula( $registro["ref_cod_matricula"] );
@@ -286,7 +286,7 @@ class indice extends clsDetalhe
 					if ($qtd_modulos < $i)
 						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Exame</b></td>";
 					else
-						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>M&oacute;dulo {$i}</b></td>";
+						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>M√≥dulo {$i}</b></td>";
 				}
 				$tabela .= "</tr>";
 
@@ -294,7 +294,7 @@ class indice extends clsDetalhe
 				for ( $i = 1; $i <= $max_qtd_nota; $i++ )
 				{
 					if ($qtd_modulos < $i)
-						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Nota</b></td>";
+						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Avalia√ß√£o</b></td>";
 					else
 						$tabela .= "<td bgcolor='#a1b3bd'><b>Nota</b></td><td bgcolor='#a1b3bd'><b>Faltas</b></td>";
 				}
@@ -307,7 +307,7 @@ class indice extends clsDetalhe
 				{
 //					echo "<pre>"; print_r($lst_disciplinas); die();
 					$parar=false;
-					if (!strcmp($valor["nm_disciplina"], "Matem·tica")) {
+					if (!strcmp($valor["nm_disciplina"], "Matem√°tica")) {
 						$parar = true;
 					}
 					if ( !$dispensa[$valor["ref_cod_disciplina"]] )
@@ -468,7 +468,7 @@ class indice extends clsDetalhe
 					if ($qtd_modulos < $i)
 						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Exame</b></td>";
 					else
-						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>M&oacute;dulo {$i}</b></td>";
+						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>M√≥dulo {$i}</b></td>";
 				}
 				$tabela .= "</tr>";
 
@@ -476,7 +476,7 @@ class indice extends clsDetalhe
 				for ( $i = 1; $i <= $max_qtd_nota; $i++ )
 				{
 					if ($qtd_modulos < $i)
-						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Nota</b></td>";
+						$tabela .= "<td colspan='2' bgcolor='#a1b3bd'><b>Avalia√ß√£o</b></td>";
 					else
 						$tabela .= "<td bgcolor='#a1b3bd'><b>Nota</b></td><td bgcolor='#a1b3bd'><b>Faltas</b></td>";
 				}
@@ -637,7 +637,7 @@ class indice extends clsDetalhe
 					$aprovado_ = "Em Andamento";
 				}
 			}
-			$this->addDetalhe( array( "Situa&ccedil;&atilde;o", "{$aprovado_}") );
+			$this->addDetalhe( array( "Situa√ß√£o", "{$aprovado_}") );
 		}
 
 		if( $obj_permissoes->permissao_cadastra( 642, $this->pessoa_logada, 7 ) )

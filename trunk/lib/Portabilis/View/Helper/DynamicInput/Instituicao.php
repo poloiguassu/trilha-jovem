@@ -58,12 +58,12 @@ class Portabilis_View_Helper_DynamicInput_Instituicao extends Portabilis_View_He
     if (empty($resources))
       $resources = App_Model_IedFinder::getInstituicoes();
 
-    return $this->insertOption(null, "Selecione uma institui&ccedil;&atilde;o", $resources);
+    return $this->insertOption(null, "Selecione uma instituição executora", $resources);
   }
 
 
   protected function defaultOptions(){
-    return array('options' => array('label' => 'Institui&ccedil;&atilde;o'));
+    return array('options' => array('label' => 'Instituição executora'));
   }
 
 

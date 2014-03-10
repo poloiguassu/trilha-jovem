@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itaja�								 *
+	*	@author Prefeitura Municipal de Itajaí								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P�blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja�			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  �  software livre, voc� pode redistribu�-lo e/ou	 *
-	*	modific�-lo sob os termos da Licen�a P�blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers�o 2 da	 *
-	*	Licen�a   como  (a  seu  crit�rio)  qualquer  vers�o  mais  nova.	 *
+	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
+	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
+	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
 	*																		 *
-	*	Este programa  � distribu�do na expectativa de ser �til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia impl�cita de COMERCIALI-	 *
-	*	ZA��O  ou  de ADEQUA��O A QUALQUER PROP�SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licen�a  P�blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
+	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Voc�  deve  ter  recebido uma c�pia da Licen�a P�blica Geral GNU	 *
-	*	junto  com  este  programa. Se n�o, escreva para a Free Software	 *
+	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
+	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -109,7 +109,7 @@ class indice extends clsCadastro
 				$det_curso = $obj_curso->detalhe();
 				if(!$det_curso['edicao_final'])
 				{
-					echo "<script language='javascript'>alert('Edi��o de nota n�o permitido');window.location='educar_falta_nota_aluno_det.php?ref_cod_matricula={$registro["ref_cod_matricula"]}&ref_cod_turma={$registro["ref_cod_turma"]}&sequencial={$registro["sequencial"]}';</script>"	;
+					echo "<script language='javascript'>alert('Edição de nota não permitido');window.location='educar_falta_nota_aluno_det.php?ref_cod_matricula={$registro["ref_cod_matricula"]}&ref_cod_turma={$registro["ref_cod_turma"]}&sequencial={$registro["sequencial"]}';</script>"	;
 					die();
 				}
 
@@ -175,7 +175,7 @@ class indice extends clsCadastro
 			}
 			else
 			{
-				$this->mensagem = "N&atilde;o foi poss&iacute;vel encontrar o Ano Letivo.";
+				$this->mensagem = "Não foi possível encontrar o Ano Letivo.";
 				return false;
 			}
 		}
@@ -250,7 +250,7 @@ class indice extends clsCadastro
 					// guarda a qtd de modulos a serem cursados
 					$this->qtd_modulos = count($lst_ano_letivo_modulo);
 				}
-			}// Caso o curso N�O siga o padrao da escola
+			}// Caso o curso NÃO siga o padrao da escola
 			else
 			{
 				$obj_turma_modulo = new clsPmieducarTurmaModulo();
@@ -348,7 +348,7 @@ class indice extends clsCadastro
 			}
 			$this->campoOculto( "mat_modulo", $this->mat_modulo );
 
-			$this->campoRotulo( "modulo_", "M&oacute;dulo", $this->modulo );
+			$this->campoRotulo( "modulo_", "Módulo", $this->modulo );
 			$this->campoOculto( "modulo", $this->modulo );
 
 			// caso o aluno esteja de EXAME
@@ -442,7 +442,7 @@ class indice extends clsCadastro
 						$prenche_edicao_obrigatorio = $lst_disciplina[$disciplina]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 
-						$this->campoMonetario( "disciplina_modulo[{$key}][nota]", " Nota Exame", $lst_disciplina[$disciplina]['nota'], 5, 5, $prenche_edicao_obrigatorio);
+						$this->campoMonetario( "disciplina_modulo[{$key}][nota]", " Reavaliação", $lst_disciplina[$disciplina]['nota'], 5, 5, $prenche_edicao_obrigatorio);
 					}
 					$this->campoOculto("qtd_disciplinas_aluno_exame", $qtd_disciplinas_aluno_exame);
 					$this->campoOculto("aluno_esta_em_exame", 1);
@@ -477,14 +477,14 @@ class indice extends clsCadastro
 								$prenche_edicao_obrigatorio = $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 								/**
-								 * existe nota? mostra a op��o para remove-la
+								 * existe nota? mostra a opção para remove-la
 								 */
 								if( $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'] && $this->mat_modulo <= $this->modulo + 1 )
 								{
 									$opcoes_valores = $opcoes_valores_remover;
 								}
 
-								$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
+								$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
 
 								$opcoes_valores = $opcoes_valores_;
 
@@ -515,7 +515,7 @@ class indice extends clsCadastro
 								$prenche_edicao_obrigatorio = $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 								/**
-								 * existe nota? mostra a op��o para remove-la
+								 * existe nota? mostra a opção para remove-la
 								 */
 								if($lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'] && $this->mat_modulo <= $this->modulo + 1)
 								{
@@ -524,13 +524,13 @@ class indice extends clsCadastro
 
 								if ($apura_falta)
 								{
-									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'], "",true,"","",false,$prenche_edicao_obrigatorio );
+									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'], "",true,"","",false,$prenche_edicao_obrigatorio );
 									$this->campoOculto( "disciplina_modulo[{$key}][cod_falta_aluno]", $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['cod_falta_aluno'] );
 									$this->campoNumero( "disciplina_modulo[{$key}][faltas]", " Faltas", $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['faltas'], 2, 2, $prenche_edicao_obrigatorio );
 								}
 								else
 								{
-									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
+									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["ref_cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
 								}
 
 								$opcoes_valores = $opcoes_valores_;
@@ -542,8 +542,8 @@ class indice extends clsCadastro
 
 				if ( ($this->qtd_modulos == $this->modulo) && $this->conceitual )
 				{
-					$opcoes = array( "" => "Selecione", 1 => "Aprovado", 2 => "Reprovado" );
-					$this->campoLista( "aprovado", "Situa&ccedil;&atilde;o", $opcoes, $this->situacao );
+					$opcoes = array( "" => "Selecione", 1 => "Avançou", 2 => "Não Avançou" );
+					$this->campoLista( "Avançou", "Não Avançou", $opcoes, $this->situacao );
 				}
 			}
 		}
@@ -633,7 +633,7 @@ class indice extends clsCadastro
 			}
 			$this->campoOculto( "mat_modulo", $this->mat_modulo );
 
-			$this->campoRotulo( "modulo_", "M&oacute;dulo", $this->modulo );
+			$this->campoRotulo( "modulo_", "Módulo", $this->modulo );
 			$this->campoOculto( "modulo", $this->modulo );
 
 			// caso o aluno esteja de EXAME
@@ -727,14 +727,14 @@ class indice extends clsCadastro
 						$prenche_edicao_obrigatorio = $lst_disciplina[$disciplina]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 						/**
-						 * existe nota? mostra a op��o para remove-la
+						 * existe nota? mostra a opção para remove-la
 						 */
 						if($lst_disciplina[$disciplina]['nota'] && $this->mat_modulo <= $this->modulo + 1)
 						{
 							$opcoes_valores = $opcoes_valores_remover;
 						}
 
-						$this->campoMonetario( "disciplina_modulo[{$key}][nota]", " Nota Exame", $lst_disciplina[$disciplina]['nota'], 5, 5, $prenche_edicao_obrigatorio );
+						$this->campoMonetario( "disciplina_modulo[{$key}][nota]", " Reavaliação", $lst_disciplina[$disciplina]['nota'], 5, 5, $prenche_edicao_obrigatorio );
 
 						$opcoes_valores = $opcoes_valores_;
 					}
@@ -762,14 +762,14 @@ class indice extends clsCadastro
 								$prenche_edicao_obrigatorio = $lst_disciplina[$disciplinas["cod_disciplina"]]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 								/**
-								 * existe nota? mostra a op��o para remove-la
+								 * existe nota? mostra a opção para remove-la
 								 */
 								if($lst_disciplina[$disciplinas["cod_disciplina"]]['nota'] && $this->mat_modulo <= $this->modulo + 1)
 								{
 									$opcoes_valores = $opcoes_valores_remover;
 								}
 
-								$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
+								$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
 
 								$opcoes_valores = $opcoes_valores_;
 							}
@@ -793,7 +793,7 @@ class indice extends clsCadastro
 								$prenche_edicao_obrigatorio = $lst_disciplina[$disciplinas["cod_disciplina"]]['nota']  || strtolower($this->tipoacao) == 'novo' ? true : false;
 
 									/**
-								 * existe nota? mostra a op��o para remove-la
+								 * existe nota? mostra a opção para remove-la
 								 */
 								if($lst_disciplina[$disciplinas["cod_disciplina"]]['nota'] && $this->mat_modulo <= $this->modulo + 1)
 								{
@@ -802,13 +802,13 @@ class indice extends clsCadastro
 
 								if ($disciplinas["apura_falta"])
 								{
-									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'], "",true, "","",false,$prenche_edicao_obrigatorio );
+									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'], "",true, "","",false,$prenche_edicao_obrigatorio );
 									$this->campoOculto( "disciplina_modulo[{$key}][cod_falta_aluno]", $lst_disciplina[$disciplinas["cod_disciplina"]]['cod_falta_aluno'] );
 									$this->campoNumero( "disciplina_modulo[{$key}][faltas]", " Faltas", $lst_disciplina[$disciplinas["cod_disciplina"]]['faltas'], 2, 2, $prenche_edicao_obrigatorio);
 								}
 								else
 								{
-									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Nota", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
+									$this->campoLista( "disciplina_modulo[{$key}][nota]", " Avaliação", $opcoes_valores, $lst_disciplina[$disciplinas["cod_disciplina"]]['nota'],"",false,"","",false,$prenche_edicao_obrigatorio );
 								}
 
 								$opcoes_valores = $opcoes_valores_;
@@ -819,7 +819,7 @@ class indice extends clsCadastro
 				if ( ($this->qtd_modulos == $this->modulo) && $this->conceitual )
 				{
 					$opcoes = array( "" => "Selecione", 1 => "Aprovado", 2 => "Reprovado" );
-					$this->campoLista( "aprovado", "Situa&ccedil;&atilde;o", $opcoes, $this->situacao );
+					$this->campoLista( "aprovado", "Situação", $opcoes, $this->situacao );
 				}
 			}
 		}
@@ -850,7 +850,7 @@ class indice extends clsCadastro
 
 			/**
 			 * Antes era obrigatorio o preenchimento de todas as notas
-			 * agora nao � mais.. logo � preciso verificar a quantidade
+			 * agora nao é mais.. logo é preciso verificar a quantidade
 			 * de disciplinas que estao sem notas
 			 * somente prosseguir caso nao tenha mais nenhuma disciplina
 			 * sem nota
@@ -986,7 +986,7 @@ class indice extends clsCadastro
 						if ( ($faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&falta=s';
 									}
@@ -1027,7 +1027,7 @@ class indice extends clsCadastro
 						if ( ($total_faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&falta=s';
 									}
@@ -1247,20 +1247,20 @@ class indice extends clsCadastro
 								$cadastrou3 = $obj->cadastra();
 								if( !$cadastrou3 )
 								{
-									$this->mensagem = "Cadastro do Hist&oacute;rico Disciplinas n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro do Histórico Disciplinas não realizado.<br>";
 									return false;
 								}
 							}
 							else
 							{
-								$this->mensagem = "N&atilde;o foi poss&iacute;vel encontrar os Valores do Tipo de Avalia&ccedil;&atilde;o.<br>";
+								$this->mensagem = "Não foi possível encontrar os Valores do Tipo de Avaliação.<br>";
 								return false;
 							}
 						}
 					}
 					else if( !$cadastrou2 )
 					{
-						$this->mensagem = "Cadastro do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro do Histórico Escolar não realizado.<br>";
 						return false;
 					}
 				}
@@ -1271,7 +1271,7 @@ class indice extends clsCadastro
 				return true;
 			}
 			
-			$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada (Matr&iacute;cula).<br>";
+			$this->mensagem = "Edição não realizada (Matrícula).<br>";
 			echo "<!--\nErro ao editar clsPmieducarMatricula\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->modulo )\n-->";
 			return false;
 		}
@@ -1379,7 +1379,7 @@ class indice extends clsCadastro
 						if ( ($faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&falta=s';
 									}
@@ -1417,7 +1417,7 @@ class indice extends clsCadastro
 						if ( ($total_faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&falta=s';
 									}
@@ -1591,20 +1591,20 @@ class indice extends clsCadastro
 								$cadastrou3 = $obj->cadastra();
 								if( !$cadastrou3 )
 								{
-									$this->mensagem = "Cadastro do Hist&oacute;rico Disciplinas n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro do Histórico Disciplinas não realizado.<br>";
 									return false;
 								}
 							}
 							else
 							{
-								$this->mensagem = "N&atilde;o foi poss&iacute;vel encontrar os Valores do Tipo de Avalia&ccedil;&atilde;o.<br>";
+								$this->mensagem = "Não foi possível encontrar os Valores do Tipo de Avaliação.<br>";
 								return false;
 							}
 						}
 					}
 					else if( !$cadastrou2 )
 					{
-						$this->mensagem = "Cadastro do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro do Histórico Escolar não realizado.<br>";
 						return false;
 					}
 				}
@@ -1614,7 +1614,7 @@ class indice extends clsCadastro
 				die();
 				return true;
 			}
-			$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada (Matr&iacute;cula).<br>";
+			$this->mensagem = "Edição não realizada (Matrícula).<br>";
 			echo "<!--\nErro ao editar clsPmieducarMatricula\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->modulo )\n-->";
 			return false;
 		}
@@ -1649,8 +1649,8 @@ class indice extends clsCadastro
 			$obj_nota_aluno = new clsPmieducarNotaAluno();
 			$total = $obj_nota_aluno->getQtdRestanteNotasAlunoNaoApuraFaltas($this->ref_cod_matricula,$this->ref_ref_cod_serie,$this->ref_cod_turma,$this->modulo,$this->ref_ref_cod_escola);
 			
-			/* verifica se o aluno est� em exame
-			 * e se todas as mat�rias do exame est�o com notas
+			/* verifica se o aluno está em exame
+			 * e se todas as matérias do exame estão com notas
 			 */
 			
 			$aluno_esta_em_exame = $_POST["aluno_esta_em_exame"];
@@ -1685,7 +1685,7 @@ class indice extends clsCadastro
 				/**
 				 * caso NENHUMA materia tenha nota
 				 * (por motivo de exclusao) verificar se o modulo da matricula
-				 * � maior que o ultimo modulo com nota
+				 * é maior que o ultimo modulo com nota
 				 * entao decrementar o modulo da matricula
 				 */
 
@@ -1705,7 +1705,7 @@ class indice extends clsCadastro
 							$excluiu_hd = $obj_hd->excluirTodos( $this->ref_cod_aluno, $det_hst_escolar["sequencial"] );
 							if (!$excluiu_hd)
 							{
-								$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Disciplina n&atilde;o realizado.<br>";
+								$this->mensagem = "Exclusão do Histórico Disciplina não realizado.<br>";
 								return false;
 							}
 
@@ -1713,7 +1713,7 @@ class indice extends clsCadastro
 							$excluiu_he = $obj_hst_escolar->excluir();
 							if (!$excluiu_he)
 							{
-								$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+								$this->mensagem = "Exclusão do Histórico Escolar não realizado.<br>";
 								return false;
 							}
 						}
@@ -1825,7 +1825,7 @@ class indice extends clsCadastro
 						if ( ($faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&modulo=$this->modulo&falta=s';
 									}
@@ -1867,7 +1867,7 @@ class indice extends clsCadastro
 						if ( ($total_faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&modulo=$this->modulo&falta=s';
 									}
@@ -1905,7 +1905,7 @@ class indice extends clsCadastro
 
 
 			$db2 = new clsBanco();
-			//retorna quantas mat�rias o aluno cursa n�o contabilizando as mat�rias com dispensa
+			//retorna quantas matérias o aluno cursa não contabilizando as matérias com dispensa
 			$sql = "SELECT COUNT(0) FROM pmieducar.escola_serie_disciplina WHERE ref_ref_cod_serie = {$this->ref_ref_cod_serie} 
 					AND ref_ref_cod_escola = {$this->ref_ref_cod_escola} AND escola_serie_disciplina.ativo = 1
 					AND ref_cod_disciplina NOT IN (
@@ -1915,7 +1915,7 @@ class indice extends clsCadastro
 						AND ref_cod_escola = {$this->ref_ref_cod_escola} AND ativo = 1
 					)";			
 			$qtd_materias = $db2->CampoUnico($sql);
-			//retorna quantas notas notas o aluno possui n�o contabilizandoa das mat�rias dispensadas
+			//retorna quantas notas notas o aluno possui não contabilizandoa das matérias dispensadas
 			$sql = "SELECT COUNT(0) FROM pmieducar.nota_aluno 
 					WHERE ref_cod_matricula = {$this->ref_cod_matricula} AND ativo = 1
 					AND ref_cod_disciplina NOT IN (
@@ -1923,7 +1923,7 @@ class indice extends clsCadastro
 							ref_cod_matricula = {$this->ref_cod_matricula} AND ref_cod_serie = {$this->ref_ref_cod_serie} 
 							AND ref_cod_escola = {$this->ref_ref_cod_escola} AND ativo = 1
 					)";
-			//vari�vel em uma edi��o para verificar se o aluno possui todas as notas
+			//variável em uma edição para verificar se o aluno possui todas as notas
 			//para mudar o estado de aprovado dele		
 			$qtd_notas_possui = $db2->CampoUnico($sql);
 			
@@ -2062,7 +2062,7 @@ class indice extends clsCadastro
 						$excluiu_hd = $obj_hd->excluirTodos( $this->ref_cod_aluno, $det_hst_escolar["sequencial"] );
 						if (!$excluiu_hd)
 						{
-							$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Disciplina n&atilde;o realizado.<br>";
+							$this->mensagem = "Exclusão do Histórico Disciplina não realizado.<br>";
 							return false;
 						}
 
@@ -2070,7 +2070,7 @@ class indice extends clsCadastro
 						$excluiu_he = $obj_hst_escolar->excluir();
 						if (!$excluiu_he)
 						{
-							$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+							$this->mensagem = "Exclusão do Histórico Escolar não realizado.<br>";
 							return false;
 						}
 					}
@@ -2176,13 +2176,13 @@ class indice extends clsCadastro
 								}
 								if( !$hst_disciplina )
 								{
-									$this->mensagem = "Cadastro/Edi&ccedil;&atilde;o do Hist&oacute;rico Disciplinas n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro/Edição do Histórico Disciplinas não realizado.<br>";
 									return false;
 								}
 							}
 							else
 							{
-								$this->mensagem = "N&atilde;o foi poss&iacute;vel encontrar os Valores do Tipo de Avalia&ccedil;&atilde;o.<br>";
+								$this->mensagem = "Não foi possível encontrar os Valores do Tipo de Avaliação.<br>";
 								return false;
 							}
 						}
@@ -2190,7 +2190,7 @@ class indice extends clsCadastro
 					/*
 					else if( (!$editou_he || !$cadastrou_he) && (!$this->conceitual) )
 					{
-						$this->mensagem = "Cadastro/Edi&ccedil;&atilde;o do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro/Edição do Histórico Escolar não realizado.<br>";
 						return false;
 					}
 					*/
@@ -2201,7 +2201,7 @@ class indice extends clsCadastro
 				die();
 				return true;
 			}
-			$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada (Matr&iacute;cula).<br>";
+			$this->mensagem = "Edição não realizada (Matrícula).<br>";
 			echo "<!--\nErro ao editar clsPmieducarMatricula\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->modulo )\n-->";
 			return false;
 		}
@@ -2309,7 +2309,7 @@ class indice extends clsCadastro
 						if ( ($faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&modulo=$this->modulo&falta=s';
 									}
@@ -2348,7 +2348,7 @@ class indice extends clsCadastro
 						if ( ($total_faltas > $max_falta) && !$this->reprova_falta )
 						{
 							echo "<script>
-									if( confirm('O aluno excedeu o valor m�ximo de faltas permitidas, \\n deseja reprov�-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor m�ximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprov�-lo ou em CANCELAR para ignorar.') )
+									if( confirm('O aluno excedeu o valor máximo de faltas permitidas, \\n deseja reprová-lo? \\n Quantidade de faltas do aluno: $total_faltas \\n Valor máximo de faltas permitido: $max_falta \\n \\n Clique em OK para reprová-lo ou em CANCELAR para ignorar.') )
 									{
 										window.location = 'educar_falta_nota_aluno_cad.php?ref_cod_matricula=$this->ref_cod_matricula&ref_cod_turma=$this->ref_cod_turma&ref_sequencial_matricula_turma=$this->ref_sequencial_matricula_turma&modulo=$this->modulo&falta=s';
 									}
@@ -2489,7 +2489,7 @@ class indice extends clsCadastro
 						$excluiu_hd = $obj_hd->excluirTodos( $this->ref_cod_aluno, $det_hst_escolar["sequencial"] );
 						if (!$excluiu_hd)
 						{
-							$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Disciplina n&atilde;o realizado.<br>";
+							$this->mensagem = "Exclusão do Histórico Disciplina não realizado.<br>";
 							return false;
 						}
 
@@ -2497,7 +2497,7 @@ class indice extends clsCadastro
 						$excluiu_he = $obj_hst_escolar->excluir();
 						if (!$excluiu_he)
 						{
-							$this->mensagem = "Exclus&atilde;o do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+							$this->mensagem = "Exclusão do Histórico Escolar não realizado.<br>";
 							return false;
 						}
 					}
@@ -2576,13 +2576,13 @@ class indice extends clsCadastro
 								}
 								if( !$hst_disciplina )
 								{
-									$this->mensagem = "Cadastro/Edi&ccedil;&atilde;o do Hist&oacute;rico Disciplinas n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro/Edição do Histórico Disciplinas não realizado.<br>";
 									return false;
 								}
 							}
 							else
 							{
-								$this->mensagem = "N&atilde;o foi poss&iacute;vel encontrar os Valores do Tipo de Avalia&ccedil;&atilde;o.<br>";
+								$this->mensagem = "Não foi possível encontrar os Valores do Tipo de Avaliação.<br>";
 								return false;
 							}
 						}
@@ -2590,7 +2590,7 @@ class indice extends clsCadastro
 					/*
 					else if( !$editou_he || !$cadastrou_he )
 					{
-						$this->mensagem = "Cadastro/Edi&ccedil;&atilde;o do Hist&oacute;rico Escolar n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro/Edição do Histórico Escolar não realizado.<br>";
 						return false;
 					}
 					*/
@@ -2601,7 +2601,7 @@ class indice extends clsCadastro
 				die();
 				return true;
 			}
-			$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada (Matr&iacute;cula).<br>";
+			$this->mensagem = "Edição não realizada (Matrícula).<br>";
 			echo "<!--\nErro ao editar clsPmieducarMatricula\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->modulo )\n-->";
 			return false;
 		}
@@ -2642,7 +2642,7 @@ class indice extends clsCadastro
 								$cadastrou1 = $obj->cadastra();
 								if( !$cadastrou1 )
 								{
-									$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro não realizado.<br>";
 									echo "<!--\nErro ao cadastrar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["faltas"]} ) )\n-->";
 									return false;
 								}
@@ -2650,7 +2650,7 @@ class indice extends clsCadastro
 						}
 						elseif ( !$cadastrou )
 						{
-							$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+							$this->mensagem = "Cadastro não realizado.<br>";
 							echo "<!--\nErro ao cadastrar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao["nota"]} ) && is_numeric( $this->ref_cod_tipo_avaliacao ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada )\n-->";
 							return false;
 						}
@@ -2670,7 +2670,7 @@ class indice extends clsCadastro
 						$cadastrou1 = $obj->cadastra();
 					if( !$cadastrou1 )
 					{
-						$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro não realizado.<br>";
 						echo "<!--\nErro ao cadastrar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2679,7 +2679,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "Cadastro n&atilde;o realizado (N&atilde;o foi gerado o Array de notas e faltas das disciplinas).<br>";
+			$this->mensagem = "Cadastro não realizado (Não foi gerado o Array de notas e faltas das disciplinas).<br>";
 			return false;
 		}
 	}
@@ -2716,7 +2716,7 @@ class indice extends clsCadastro
 								$cadastrou1 = $obj->cadastra();
 								if( !$cadastrou1 )
 								{
-									$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro não realizado.<br>";
 									echo "<!--\nErro ao cadastrar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["faltas"]} ) )\n-->";
 									return false;
 								}
@@ -2724,7 +2724,7 @@ class indice extends clsCadastro
 						}
 						elseif ( !$cadastrou )
 						{
-							$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+							$this->mensagem = "Cadastro não realizado.<br>";
 							echo "<!--\nErro ao cadastrar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao["nota"]} ) && is_numeric( $this->ref_cod_tipo_avaliacao ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( $this->pessoa_logada )\n-->";
 							return false;
 						}
@@ -2736,7 +2736,7 @@ class indice extends clsCadastro
 					$cadastrou1 = $obj->cadastra();
 					if( !$cadastrou1 )
 					{
-						$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro não realizado.<br>";
 						echo "<!--\nErro ao cadastrar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2745,7 +2745,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "Cadastro n&atilde;o realizado (N&atilde;o foi gerado o Array de notas e faltas das disciplinas).<br>";
+			$this->mensagem = "Cadastro não realizado (Não foi gerado o Array de notas e faltas das disciplinas).<br>";
 			return false;
 		}
 	}
@@ -2785,7 +2785,7 @@ class indice extends clsCadastro
 
 					if (!$editou_nota)
 					{
-						$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+						$this->mensagem = "Edição não realizada.<br>";
 						echo "<!--\nErro ao editar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao['cod_nota_aluno']} ) && is_numeric( $this->pessoa_logada ) \n-->";
 						return false;
 					}
@@ -2811,7 +2811,7 @@ class indice extends clsCadastro
 						$cadastrou_nota = $obj_nota_aluno->cadastra();
 						if (!$cadastrou_nota)
 						{
-							$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+							$this->mensagem = "Cadastro não realizado.<br>";
 							echo "<!--\nErro ao cadastrar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["nota"]} ) && is_numeric( {$this->modulo} )\n-->";
 							return false;
 						}
@@ -2827,7 +2827,7 @@ class indice extends clsCadastro
 						$editou_falta = $obj_falta_aluno->edita();
 						if (!$editou_falta)
 						{
-							$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+							$this->mensagem = "Edição não realizada.<br>";
 							echo "<!--\nErro ao editar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao['cod_falta_aluno']} ) && is_numeric( $this->pessoa_logada ) \n-->";
 							return false;
 						}
@@ -2840,7 +2840,7 @@ class indice extends clsCadastro
 							$cadastrou_falta = $obj_falta_aluno->cadastra();
 							if( !$cadastrou_falta )
 							{
-								$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+								$this->mensagem = "Cadastro não realizado.<br>";
 								echo "<!--\nErro ao cadastrar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["faltas"]} ) && is_numeric( {$this->modulo} )\n-->";
 								return false;
 							}
@@ -2858,7 +2858,7 @@ class indice extends clsCadastro
 					$editou_faltas = $obj_faltas->edita();
 					if (!$editou_faltas)
 					{
-						$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+						$this->mensagem = "Edição não realizada.<br>";
 						echo "<!--\nErro ao editar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2870,7 +2870,7 @@ class indice extends clsCadastro
 					$cadastrou_faltas = $obj_faltas->cadastra();
 					if( !$cadastrou_faltas )
 					{
-						$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro não realizado.<br>";
 						echo "<!--\nErro ao cadastrar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2880,7 +2880,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "Edi&ccedil;atilde;o n&atilde;o realizada. (N&atilde;o foi gerado o Array de notas e faltas das Disciplinas).<br>";
+			$this->mensagem = "Edição não realizada. (Não foi gerado o Array de notas e faltas das Disciplinas).<br>";
 			return false;
 		}
 	}
@@ -2912,7 +2912,7 @@ class indice extends clsCadastro
 						$editou_nota = $obj_nota_aluno->edita();
 					if (!$editou_nota)
 					{
-						$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+						$this->mensagem = "Edição não realizada.<br>";
 						echo "<!--\nErro ao editar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao['cod_nota_aluno']} ) && is_numeric( $this->pessoa_logada ) \n-->";
 						return false;
 					}
@@ -2934,7 +2934,7 @@ class indice extends clsCadastro
 						$cadastrou_nota = $obj_nota_aluno->cadastra();
 						if (!$cadastrou_nota)
 						{
-							$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+							$this->mensagem = "Cadastro não realizado.<br>";
 							echo "<!--\nErro ao cadastrar clsPmieducarNotaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["nota"]} ) && is_numeric( {$this->modulo} )\n-->";
 							return false;
 						}
@@ -2951,7 +2951,7 @@ class indice extends clsCadastro
 						$editou_falta = $obj_falta_aluno->edita();
 						if (!$editou_falta)
 						{
-							$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+							$this->mensagem = "Edição não realizada.<br>";
 							echo "<!--\nErro ao editar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( {$avaliacao['cod_falta_aluno']} ) && is_numeric( $this->pessoa_logada ) \n-->";
 							return false;
 						}
@@ -2962,7 +2962,7 @@ class indice extends clsCadastro
 						$cadastrou_falta = $obj_falta_aluno->cadastra();
 						if( !$cadastrou_falta )
 						{
-							$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+							$this->mensagem = "Cadastro não realizado.<br>";
 							echo "<!--\nErro ao cadastrar clsPmieducarFaltaAluno\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_ref_cod_serie ) && is_numeric( $this->ref_ref_cod_escola ) && is_numeric( {$avaliacao["ref_cod_disciplina"]} ) && is_numeric( $this->ref_cod_matricula ) && is_numeric( {$avaliacao["faltas"]} ) && is_numeric( {$this->modulo} )\n-->";
 							return false;
 						}
@@ -2979,7 +2979,7 @@ class indice extends clsCadastro
 					$editou_faltas = $obj_faltas->edita();
 					if (!$editou_faltas)
 					{
-						$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+						$this->mensagem = "Edição não realizada.<br>";
 						echo "<!--\nErro ao editar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2990,7 +2990,7 @@ class indice extends clsCadastro
 					$cadastrou_faltas = $obj_faltas->cadastra();
 					if( !$cadastrou_faltas )
 					{
-						$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+						$this->mensagem = "Cadastro não realizado.<br>";
 						echo "<!--\nErro ao cadastrar clsPmieducarFaltas\nvalores obrigatorios\nis_numeric( $this->ref_cod_matricula ) && is_numeric( $this->modulo ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->total_faltas )\n-->";
 						return false;
 					}
@@ -2999,7 +2999,7 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			$this->mensagem = "Edi&ccedil;atilde;o n&atilde;o realizada. (N&atilde;o foi gerado o Array de notas e faltas das Disciplinas).<br>";
+			$this->mensagem = "Edição não realizada. (Não foi gerado o Array de notas e faltas das Disciplinas).<br>";
 			return false;
 		}
 	}

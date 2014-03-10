@@ -5,25 +5,25 @@
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de Itaja�								 *
+	*	@author Prefeitura Municipal de Itajaí								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P�blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software Público Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja�			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itajaí			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  �  software livre, voc� pode redistribu�-lo e/ou	 *
-	*	modific�-lo sob os termos da Licen�a P�blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers�o 2 da	 *
-	*	Licen�a   como  (a  seu  crit�rio)  qualquer  vers�o  mais  nova.	 *
+	*	Este  programa  é  software livre, você pode redistribuí-lo e/ou	 *
+	*	modificá-lo sob os termos da Licença Pública Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a versão 2 da	 *
+	*	Licença   como  (a  seu  critério)  qualquer  versão  mais  nova.	 *
 	*																		 *
-	*	Este programa  � distribu�do na expectativa de ser �til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia impl�cita de COMERCIALI-	 *
-	*	ZA��O  ou  de ADEQUA��O A QUALQUER PROP�SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  Licen�a  P�blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  é distribuído na expectativa de ser útil, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia implícita de COMERCIALI-	 *
+	*	ZAÇÃO  ou  de ADEQUAÇÃO A QUALQUER PROPÓSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licença  Pública  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	Voc�  deve  ter  recebido uma c�pia da Licen�a P�blica Geral GNU	 *
-	*	junto  com  este  programa. Se n�o, escreva para a Free Software	 *
+	*	Você  deve  ter  recebido uma cópia da Licença Pública Geral GNU	 *
+	*	junto  com  este  programa. Se não, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -38,7 +38,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Escola" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Instituição" );
 		$this->processoAp = "561";
 	}
 }
@@ -278,8 +278,6 @@ class indice extends clsCadastro
 						  											"complemento",
 						  											"numero",
 						  											"andar" );
-
-
 				}
 				else
 				{
@@ -402,8 +400,6 @@ class indice extends clsCadastro
 		}
 		else
 		{
-  		$this->inputsHelper()->integer('escola_inep_id', array('label' => 'C�digo inep', 'required' => false, 'max_length' => 14));
-
 			if( $_POST )
 			foreach( $_POST AS $campo => $val )
 			{
@@ -436,7 +432,7 @@ class indice extends clsCadastro
 				$nivel = $obj_permissoes->nivel_acesso($this->pessoa_logada);
 				if( $nivel == 1 )
 				{
-					$cabecalhos[] = "Instituicao";
+					$cabecalhos[] = "Instituição";
 					$objInstituicao = new clsPmieducarInstituicao();
 					$opcoes = array( "" => "Selecione" );
 					$objInstituicao->setOrderby( "nm_instituicao ASC" );
@@ -448,7 +444,7 @@ class indice extends clsCadastro
 							$opcoes[$linha["cod_instituicao"]] = $linha["nm_instituicao"];
 						}
 					}
-					$this->campoLista( "ref_cod_instituicao", "Institui&ccedil;&atilde;o", $opcoes, $this->ref_cod_instituicao );
+					$this->campoLista( "ref_cod_instituicao", "Instituição", $opcoes, $this->ref_cod_instituicao );
 				}
 				else
 				{
@@ -459,7 +455,7 @@ class indice extends clsCadastro
 					}
 					else
 					{
-						die( "Usu�rio n�o � do nivel poli-institucional e n�o possui uma institui��o" );
+						die( "Usuário de nível poli-institucional mas não há nenhuma instituição cadastrada" );
 					}
 				}
 
@@ -545,7 +541,7 @@ class indice extends clsCadastro
 					echo "<!--\nErro\nClasse clsPmieducarEscolaLocalizacao nao encontrada\n-->";
 					$opcoes = array( "" => "Erro na geracao" );
 				}
-				$this->campoLista( "ref_cod_escola_localizacao", "Escola Localiza&ccedil;&atilde;o", $opcoes, $this->ref_cod_escola_localizacao, "", false, "", $script );
+				$this->campoLista( "ref_cod_escola_localizacao", "Localização da Instituição", $opcoes, $this->ref_cod_escola_localizacao, "", false, "", $script );
 
 				if(is_numeric($this->cep))
 				{
@@ -558,7 +554,7 @@ class indice extends clsCadastro
 				$this->campoTexto( "bairro", "Bairro",  $this->bairro, "50", "20", true );
 				$this->campoTexto( "logradouro", "Logradouro",  $this->logradouro, "50", "255",true );
 				$this->campoTexto( "complemento", "Complemento",  $this->complemento, "22", "20", false );
-				$this->campoNumero( "numero", "N�mero",  $this->numero, "6", "6", true );
+				$this->campoNumero( "numero", "Número",  $this->numero, "6", "6", true );
 
 				$this->campoTexto( "p_ddd_telefone_1", "DDD Telefone 1",  $this->p_ddd_telefone_1, "2", "2", false );
 				$this->campoTexto( "p_telefone_1", "Telefone 1",  $this->p_telefone_1, "10", "15", false );
@@ -616,14 +612,14 @@ class indice extends clsCadastro
 					$this->campoOculto( "cod_escola", $this->cod_escola );
 
 					// text
-					$this->campoTexto( "fantasia", "Escola", $this->fantasia, 30, 255, true );
+					$this->campoTexto( "fantasia", "Instituição", $this->fantasia, 30, 255, true );
 					$this->campoTexto( "sigla", "Sigla", $this->sigla, 30, 20, true );
 
 					// foreign keys
 					$nivel = $obj_permissoes->nivel_acesso($this->pessoa_logada);
 					if( $nivel == 1 )
 					{
-						$cabecalhos[] = "Instituicao";
+						$cabecalhos[] = "Instituição";
 						$objInstituicao = new clsPmieducarInstituicao();
 						$opcoes = array( "" => "Selecione" );
 						$objInstituicao->setOrderby( "nm_instituicao ASC" );
@@ -635,7 +631,7 @@ class indice extends clsCadastro
 								$opcoes[$linha["cod_instituicao"]] = $linha["nm_instituicao"];
 							}
 						}
-						$this->campoLista( "ref_cod_instituicao", "Instituicao", $opcoes, $this->ref_cod_instituicao );
+						$this->campoLista( "ref_cod_instituicao", "Instituição", $opcoes, $this->ref_cod_instituicao );
 					}
 					else
 					{
@@ -646,7 +642,7 @@ class indice extends clsCadastro
 						}
 						else
 						{
-							die( "Usu�rio n�o � do nivel poli-institucional e n�o possui uma institui��o" );
+							die( "Usuário de nível poli-institucional mas não há nenhuma instituição cadastrada" );
 						}
 					}
 
@@ -732,7 +728,7 @@ class indice extends clsCadastro
 						echo "<!--\nErro\nClasse clsPmieducarEscolaLocalizacao nao encontrada\n-->";
 						$opcoes = array( "" => "Erro na geracao" );
 					}
-					$this->campoLista( "ref_cod_escola_localizacao", "Escola Localiza&ccedil;&atilde;o", $opcoes, $this->ref_cod_escola_localizacao, "", false, "", $script );
+					$this->campoLista( "ref_cod_escola_localizacao", "Localização da Instituição", $opcoes, $this->ref_cod_escola_localizacao, "", false, "", $script );
 
 					// Detalhes do Endereco
 					$objUf = new clsUf();
@@ -784,7 +780,7 @@ $disabled = $this->isEnderecoExterno ? false : true ;
 						$this->campoLista( "idtlog", "Tipo Logradouro", $listaTLog, $this->idtlog, false, false, false, false, true ,true);
 						$this->campoTexto( "logradouro", "Logradouro",  $this->logradouro, "50", "255", true, false, false, "", "", "", "onKeyUp", true );
 						$this->campoTexto( "complemento", "Complemento",  $this->complemento, "22", "20", false, false );
-						$this->campoNumero("numero", "N�mero", $this->numero, "6", "6", false );
+						$this->campoNumero("numero", "Número", $this->numero, "6", "6", false );
 						$this->campoNumero("andar", "Andar", $this->andar, "2","2", false);
 					}
 					elseif($this->ref_idpes && $this->cep)
@@ -801,7 +797,7 @@ $disabled = $this->isEnderecoExterno ? false : true ;
 						$this->campoLista( "idtlog", "Tipo Logradouro", $listaTLog, $this->idtlog, "", false, "", "", false,true );
 						$this->campoTexto( "logradouro", "Logradouro",  $this->logradouro, "50", "255", true, false, false, "", "", "", "onKeyUp", false );
 						$this->campoTexto( "complemento", "Complemento",  $this->complemento, "22", "20", false, false, false, "", "", "", "onKeyUp", false );
-						$this->campoNumero( "numero", "N�mero",  $this->numero, 6, 6, false, "", ""  );
+						$this->campoNumero( "numero", "Número",  $this->numero, 6, 6, false, "", ""  );
 						$this->campoNumero( "andar", "Andar", $this->andar, "2","2", false );
 					}
 					else
@@ -885,7 +881,7 @@ if(!$this->isEnderecoExterno){
 //
 //			}
 
-  		$this->campoCheck("bloquear_lancamento_diario_anos_letivos_encerrados", "Bloquear lan�amento no di�rio para anos letivos encerrados", $this->bloquear_lancamento_diario_anos_letivos_encerrados);
+  		$this->campoCheck("bloquear_lancamento_diario_anos_letivos_encerrados", "Bloquear lançamento no diário para anos letivos encerrados", $this->bloquear_lancamento_diario_anos_letivos_encerrados);
 
 			if ( $_POST["escola_curso"] )
 				$this->escola_curso = unserialize( urldecode( $_POST["escola_curso"] ) );
@@ -1070,7 +1066,7 @@ if(!$this->isEnderecoExterno){
 								$cadastrou_ = $curso_escola->cadastra();
 								if ( !$cadastrou_ )
 								{
-									$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+									$this->mensagem = "Cadastro não realizado.<br>";
 									echo "<!--\nErro ao cadastrar clsPmieducarEscolaCurso\nvalores obrigat&oacute;rios\nis_numeric( $cadastrou ) && is_numeric( {$campo} ) \n-->";
 									return false;
 								}
@@ -1125,7 +1121,7 @@ if(!$this->isEnderecoExterno){
 							$cadastrou_ = $curso_escola->cadastra();
 							if ( !$cadastrou_ )
 							{
-								$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+								$this->mensagem = "Cadastro não realizado.<br>";
 								echo "<!--\nErro ao cadastrar clsPmieducarEscolaCurso\nvalores obrigat&oacute;rios\nis_numeric( $cadastrou ) && is_numeric( {$campo} ) \n-->";
 								return false;
 							}
@@ -1139,14 +1135,14 @@ if(!$this->isEnderecoExterno){
 				}
 				else
 				{
-					$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+					$this->mensagem = "Cadastro não realizado.<br>";
 					echo "<!--\nErro ao cadastrar clsPmieducarEscolaComplemento\nvalores obrigat&oacute;rios\nis_numeric( $cadastrou ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->numero ) && is_string( $this->complemento ) && is_string( $this->p_email ) && is_string( $this->fantasia ) && is_string( $this->cidade ) && is_string( $this->bairro )\n-->";
 					return false;
 				}
 			}
 			else
 			{
-				$this->mensagem = "Cadastro n&atilde;o realizado (clsPmieducarEscola).<br>";
+				$this->mensagem = "Cadastro não realizado (clsPmieducarEscola).<br>";
 //				echo "<!--\nErro ao cadastrar clsPmieducarEscolaComplemento\nvalores obrigat&oacute;rios\nis_numeric( $cadastrou ) && is_numeric( $this->pessoa_logada ) && is_numeric( $this->numero ) && is_string( $this->complemento ) && is_string( $this->p_email ) && is_string( $this->fantasia ) && is_string( $this->cidade ) && is_string( $this->bairro )\n-->";
 				return false;
 			}
@@ -1304,7 +1300,7 @@ if(!$this->isEnderecoExterno){
 									$cadastrou_  = $obj->cadastra();
 									if ( !$cadastrou_ )
 									{
-										$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+										$this->mensagem = "Edição não realizada.<br>";
 										echo "<!--\nErro ao editar clsPmieducarEscolaCurso\nvalores obrigat&oacute;rios\nis_numeric( $this->cod_serie ) && is_numeric( {$campo} ) && is_numeric( $this->pessoa_logada )\n-->";
 										return false;
 									}
@@ -1372,7 +1368,7 @@ if(!$this->isEnderecoExterno){
 									$cadastrou_  = $obj->cadastra();
 									if ( !$cadastrou_ )
 									{
-										$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+										$this->mensagem = "Edição não realizada.<br>";
 										echo "<!--\nErro ao editar clsPmieducarEscolaCurso\nvalores obrigat&oacute;rios\nis_numeric( $this->cod_serie ) && is_numeric( {$campo[$i]} ) && is_numeric( $this->pessoa_logada )\n-->";
 										return false;
 									}
@@ -1387,14 +1383,14 @@ if(!$this->isEnderecoExterno){
 				}
 				else
 				{
-					$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada (clsPmieducarEscolaComplemento).<br>";
+					$this->mensagem = "Edição não realizada (clsPmieducarEscolaComplemento).<br>";
 	//					echo "<!--\nErro ao editar clsPmieducarEscola\nvalores obrigatorios\nif( is_numeric( $this->cod_escola ) && is_numeric( $this->pessoa_logada ) )\n-->";
 					return false;
 				}
 			}
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edição não realizada.<br>";
 		echo "<!--\nErro ao editar clsPmieducarEscola\nvalores obrigatorios\nif( is_numeric( $this->cod_escola ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -1412,13 +1408,13 @@ if(!$this->isEnderecoExterno){
 		$excluiu = $obj->excluir();
 		if( $excluiu )
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclusão efetuada com sucesso.<br>";
 			header( "Location: educar_escola_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclusão não realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmieducarEscola\nvalores obrigatorios\nif( is_numeric( $this->cod_escola ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -1465,7 +1461,7 @@ function getRedeEnsino(xml_escola_rede_ensino)
 		}
 	}
 	else
-		campoRedeEnsino.options[0].text = 'A institui��o n�o possui nenhuma rede de ensino';
+		campoRedeEnsino.options[0].text = 'A instituição não possui nenhuma rede de ensino';
 }
 
 function getLocalizacao(xml_escola_localizacao)
@@ -1489,7 +1485,7 @@ function getLocalizacao(xml_escola_localizacao)
 	if(DOM_array.length)
 	{
 		campoLocalizacao.length = 1;
-		campoLocalizacao.options[0].text = 'Selecione uma localiza��o';
+		campoLocalizacao.options[0].text = 'Selecione uma localização';
 		campoLocalizacao.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -1498,7 +1494,7 @@ function getLocalizacao(xml_escola_localizacao)
 		}
 	}
 	else
-		campoLocalizacao.options[0].text = 'A institui��o n�o possui nenhuma localiza��o';
+		campoLocalizacao.options[0].text = 'A instituição não possui nenhuma localização';
 }
 
 function getCurso(xml_curso)
@@ -1531,7 +1527,7 @@ function getCurso(xml_curso)
 		}
 	}
 	else
-		campoCurso.options[0].text = 'A institui��o n�o possui nenhum curso';
+		campoCurso.options[0].text = 'A instituição não possui nenhum curso';
 }
 
 
@@ -1552,7 +1548,7 @@ if ( document.getElementById('ref_cod_instituicao') )
 		var campoLocalizacao = document.getElementById('ref_cod_escola_localizacao');
 		campoLocalizacao.length = 1;
 		campoLocalizacao.disabled = true;
-		campoLocalizacao.options[0].text = 'Carregando localiza��o';
+		campoLocalizacao.options[0].text = 'Carregando localização';
 
 		var campoCurso = document.getElementById('ref_cod_curso');
 		campoCurso.length = 1;

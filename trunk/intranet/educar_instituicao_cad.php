@@ -158,7 +158,7 @@ class indice extends clsCadastro
 
 		$this->campoNumero( "numero", "Número", $this->numero, 6, 6 );
 		$this->campoTexto( "complemento", "Complemento", $this->complemento, 30, 50, false );
-		$this->campoTexto( "nm_responsavel", "Nome do Responsável", $this->nm_responsavel, 30, 255, true );
+		$this->campoTexto( "nm_responsavel", "Núcleo Responsável", $this->nm_responsavel, 30, 255, true );
 		$this->campoNumero( "ddd_telefone", "DDD Telefone", $this->ddd_telefone, 2, 2 );
 		$this->campoNumero( "telefone", "Telefone", $this->telefone, 11, 11 );
 	}

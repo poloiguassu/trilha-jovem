@@ -49,7 +49,7 @@ class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Escola Série');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Eixos');
     $this->processoAp = 585;
   }
 }
@@ -194,7 +194,7 @@ class indice extends clsCadastro
       }
     }
 
-    $this->campoLista('ref_cod_serie', 'Série', $opcoes_serie, $this->ref_cod_serie,
+    $this->campoLista('ref_cod_serie', 'Eixo', $opcoes_serie, $this->ref_cod_serie,
       '', FALSE, '', '', $this->ref_cod_serie ? TRUE : FALSE);
 
     $this->hora_inicial          = substr($this->hora_inicial, 0, 5);
@@ -206,15 +206,16 @@ class indice extends clsCadastro
     $this->campoHora('hora_inicial', 'Hora Inicial', $this->hora_inicial, TRUE);
     $this->campoHora('hora_final', 'Hora Final', $this->hora_final, TRUE);
 
-    $this->campoHora('hora_inicio_intervalo', 'Hora In&iacute;cio Intervalo',
+    $this->campoHora('hora_inicio_intervalo', 'Hora de Início do Intervalo',
       $this->hora_inicio_intervalo, TRUE);
 
-    $this->campoHora('hora_fim_intervalo', 'Hora Fim Intervalo',
+    $this->campoHora('hora_fim_intervalo', 'Hora de Fim do Intervalo',
       $this->hora_fim_intervalo, TRUE);
 
 		$this->campoCheck("bloquear_enturmacao_sem_vagas", "Bloquear enturmação após atingir limite de vagas", $this->bloquear_enturmacao_sem_vagas);
-
-		$this->campoCheck("bloquear_cadastro_turma_para_serie_com_vagas", "Bloquear cadastro de novas turmas antes de atingir limite de vagas (no mesmo turno)", $this->bloquear_cadastro_turma_para_serie_com_vagas);
+		
+		//campo não necessário'
+		//$this->campoCheck("bloquear_cadastro_turma_para_serie_com_vagas", "Bloquear cadastro de novas turmas antes de atingir limite de vagas (no mesmo turno)", $this->bloquear_cadastro_turma_para_serie_com_vagas);
 
     $this->campoQuebra();
 
@@ -234,7 +235,7 @@ class indice extends clsCadastro
     $opcoes = array('' => 'Selecione');
 
     // Editar
-    $disciplinas = 'Nenhuma série selecionada';
+    $disciplinas = 'Nenhum eixo selecionado';
 
     if ($this->ref_cod_serie) {
       $disciplinas = '';
@@ -294,7 +295,7 @@ class indice extends clsCadastro
         $disciplinas .= '</table>';
       }
       else {
-        $disciplinas = 'A série/ano escolar não possui componentes curriculares cadastrados.';
+        $disciplinas = 'O eixo/projeto não possui componentes curriculares cadastrados.';
       }
     }
 
@@ -366,7 +367,7 @@ class indice extends clsCadastro
 
           if (!$cadastrou1) {
             $this->mensagem = 'Cadastro não realizado.<br>';
-            echo "<!--\nErro ao cadastrar clsPmieducarEscolaSerieDisciplina\nvalores obrigat&oacute;rios\nis_numeric( $this->ref_cod_serie ) && is_numeric( $this->ref_cod_escola ) && is_numeric( {$campo[$i]} ) \n-->";
+            echo "<!--\nErro ao cadastrar clsPmieducarEscolaSerieDisciplina\nvalores obrigatórios\nis_numeric( $this->ref_cod_serie ) && is_numeric( $this->ref_cod_escola ) && is_numeric( {$campo[$i]} ) \n-->";
             return FALSE;
           }
         }
@@ -408,7 +409,7 @@ class indice extends clsCadastro
         (is_array($componenteAno) && 0 < count($componenteAno))
     ) {
       echo "<script>alert('É necessário adicionar pelo menos um componente curricular.');</script>";
-      $this->mensagem = 'Edi&ccedil;&atilde;o n&atilde;o realizada.<br>';
+      $this->mensagem = 'Edição não realizada.<br>';
       return FALSE;
     }
 
@@ -459,7 +460,7 @@ class indice extends clsCadastro
         }
       }
 
-      $this->mensagem .= 'Edição não efetuada com sucesso.<br>';
+      $this->mensagem .= 'Edição efetuada com sucesso.<br>';
       header('Location: educar_escola_serie_lst.php');
       die();
     }
@@ -491,7 +492,7 @@ class indice extends clsCadastro
       }
     }
 
-    $this->mensagem = "Exclusão realizada.<br>";
+    $this->mensagem = "Exclusão não realizada.<br>";
     echo "<!--\nErro ao excluir clsPmieducarEscolaSerie\nvalores obrigatorios\nif( is_numeric( $this->ref_cod_escola_ ) && is_numeric( $this->ref_cod_serie_ ) && is_numeric( $this->pessoa_logada ) )\n-->";
     return FALSE;
   }
@@ -524,7 +525,7 @@ document.getElementById('ref_cod_curso').onchange = function()
 {
   getSerie();
   var campoDisciplinas = document.getElementById('disciplinas');
-  campoDisciplinas.innerHTML = "Nenhuma série selecionada";
+  campoDisciplinas.innerHTML = "Nenhum Eixo selecionado";
 }
 
 function getDisciplina(xml_disciplina)
@@ -558,7 +559,7 @@ function getDisciplina(xml_disciplina)
     }
   }
   else {
-    campoDisciplinas.innerHTML = 'A série/ano escolar não possui componentes '
+    campoDisciplinas.innerHTML = 'O eixo/projeto não possui componentes '
                                + 'curriculares cadastrados.';
   }
 
@@ -586,7 +587,7 @@ after_getEscola = function()
   getSerie();
 
   var campoDisciplinas = document.getElementById('disciplinas');
-  campoDisciplinas.innerHTML = "Nenhuma série selecionada";
+  campoDisciplinas.innerHTML = "Nenhum Eixo selecionado";
 };
 
 function getSerie()
@@ -606,7 +607,7 @@ function getSerie()
   limpaCampos(4);
   if (campoEscola && campoCurso) {
     campoSerie.disabled = true;
-    campoSerie.options[0].text = 'Carregando séries';
+    campoSerie.options[0].text = 'Carregando eixos';
 
     var xml = new ajax(atualizaLstSerie);
     xml.envia("educar_serie_not_escola_xml.php?esc="+campoEscola+"&cur="+campoCurso);
@@ -620,7 +621,7 @@ function atualizaLstSerie(xml)
 {
   var campoSerie = document.getElementById('ref_cod_serie');
   campoSerie.length = 1;
-  campoSerie.options[0].text = 'Selecione uma série';
+  campoSerie.options[0].text = 'Selecione um eixo';
   campoSerie.disabled = false;
 
   series = xml.getElementsByTagName('serie');
@@ -631,7 +632,7 @@ function atualizaLstSerie(xml)
     }
   }
   else {
-    campoSerie.options[0].text = 'O curso não possui nenhuma série ou todas as séries já estã associadas a essa escola';
+    campoSerie.options[0].text = 'O curso não possui nenhum eixo ou todos os eixos já estã associadas a esse projeto';
     campoSerie.disabled = true;
   }
 }

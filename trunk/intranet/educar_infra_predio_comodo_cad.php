@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - C&ocirc;modo Pr&eacute;dio" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - C√¥modos" );
 		$this->processoAp = "574";
 	}
 }
@@ -154,7 +154,7 @@ class indice extends clsCadastro
 			$script = "<img id='img_colecao' style='display: none;' src='imagens/banco_imagens/escreve.gif' style='cursor:hand; cursor:pointer;' border='0' onclick=\"{$script}\">";
 			
 		}
-		$this->campoLista( "ref_cod_infra_predio", "Pr&eacute;dio", $opcoes_predio, $this->ref_cod_infra_predio, "", false, "", $script );
+		$this->campoLista( "ref_cod_infra_predio", "Pr√©dio", $opcoes_predio, $this->ref_cod_infra_predio, "", false, "", $script );
 
 
 		$opcoes_funcao = array( "" => "Selecione" );
@@ -201,14 +201,14 @@ class indice extends clsCadastro
 		{
 			$script = "<img id='img_colecao2' style='display: none;' src='imagens/banco_imagens/escreve.gif' style='cursor:hand; cursor:pointer;' border='0' onclick=\"{$script}\">";		
 		}
-		$this->campoLista( "ref_cod_infra_comodo_funcao", "Func&atilde;o C&ocirc;modo", $opcoes_funcao, $this->ref_cod_infra_comodo_funcao,"", false, "", $script );
+		$this->campoLista( "ref_cod_infra_comodo_funcao", "Func√£o C√¥modo", $opcoes_funcao, $this->ref_cod_infra_comodo_funcao,"", false, "", $script );
 
 
 
 		// text
-		$this->campoTexto( "nm_comodo", "C&ocirc;modo", $this->nm_comodo, 43, 255, true );
-		$this->campoMonetario("area", "&Aacute;rea", $this->area, 10, 255, true );
-		$this->campoMemo( "desc_comodo", "DescriÁ„o C&ocirc;modo", $this->desc_comodo, 60, 5, false );
+		$this->campoTexto( "nm_comodo", "C√¥modo", $this->nm_comodo, 43, 255, true );
+		$this->campoMonetario("area", "√Årea", $this->area, 10, 255, true );
+		$this->campoMemo( "desc_comodo", "Descri√ß√£o Comodo", $this->desc_comodo, 60, 5, false );
 	}
 
 	function Novo()
@@ -228,7 +228,7 @@ class indice extends clsCadastro
 			return true;
 		}
 
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+		$this->mensagem = "Cadastro n√£o realizado.<br>";
 		echo "<!--\nErro ao cadastrar clsPmieducarInfraPredioComodo\nvalores obrigatorios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_cod_infra_comodo_funcao ) && is_numeric( $this->ref_cod_infra_predio ) && is_string( $this->nm_comodo ) && is_numeric( $this->area )\n-->";
 		return false;
 	}
@@ -246,13 +246,13 @@ class indice extends clsCadastro
 		$editou = $obj->edita();
 		if( $editou )
 		{
-			$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 			header( "Location: educar_infra_predio_comodo_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Edi√ß√£o realizada.<br>";
 		echo "<!--\nErro ao editar clsPmieducarInfraPredioComodo\nvalores obrigatorios\nif( is_numeric( $this->cod_infra_predio_comodo ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -267,13 +267,13 @@ class indice extends clsCadastro
 		$excluiu = $obj->excluir();
 		if( $excluiu )
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclus√£o efetuada com sucesso.<br>";
 			header( "Location: educar_infra_predio_comodo_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclus√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmieducarInfraPredioComodo\nvalores obrigatorios\nif( is_numeric( $this->cod_infra_predio_comodo ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -313,7 +313,7 @@ function getInfraPredio(xml_infra_predio)
 	if(DOM_array.length)
 	{
 		campoPredio.length = 1;
-		campoPredio.options[0].text = 'Selecione um prÈdio';
+		campoPredio.options[0].text = 'Selecione um pr√©dio';
 		campoPredio.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -322,7 +322,7 @@ function getInfraPredio(xml_infra_predio)
 		}
 	}
 	else
-		campoPredio.options[0].text = 'A escola n„o possui nenhum prÈdio';
+		campoPredio.options[0].text = 'A institui√ß√£o n√£o possui pr√©dio cadastrado';
 
 }
 
@@ -348,7 +348,7 @@ function getInfraPredioFuncao(xml_infra_comodo_funcao)
 	if(DOM_array.length)
 	{
 		campoFuncao.length = 1;
-		campoFuncao.options[0].text = 'Selecione uma funÁ„o cÙmodo';
+		campoFuncao.options[0].text = 'Selecione uma fun√ß√£o ao c√¥modo';
 		campoFuncao.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -357,7 +357,7 @@ function getInfraPredioFuncao(xml_infra_comodo_funcao)
 		}
 	}
 	else
-		campoFuncao.options[0].text = 'A escola n„o possui nenhuma funÁ„o cÙmodo';
+		campoFuncao.options[0].text = 'A institui√ß√£o n√£o possui fun√ß√£o ao c√¥modo';
 }
 
 document.getElementById('ref_cod_escola').onchange = function()
@@ -371,12 +371,12 @@ document.getElementById('ref_cod_escola').onchange = function()
 	var campoPredio	= document.getElementById('ref_cod_infra_predio');
 	campoPredio.length = 1;
 	campoPredio.disabled = true;
-	campoPredio.options[0].text = 'Carregando prÈdio';
+	campoPredio.options[0].text = 'Carregando pr√©dio';
 
 	var campoFuncao	= document.getElementById('ref_cod_infra_comodo_funcao');
 	campoFuncao.length = 1;
 	campoFuncao.disabled = true;
-	campoFuncao.options[0].text = 'Carregando funÁ„o cÙmodo';
+	campoFuncao.options[0].text = 'Carregando fun√ß√£o c√¥modo';
 
 	var xml_infra_predio = new ajax( getInfraPredio );
 	xml_infra_predio.envia( "educar_infra_predio_xml.php?esc="+campoEscola );

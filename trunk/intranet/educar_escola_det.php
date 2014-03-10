@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Escola" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Institui√ß√£o" );
 		$this->processoAp = "561";
 	}
 }
@@ -66,7 +66,7 @@ class indice extends clsDetalhe
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Escola - Detalhe";
+		$this->titulo = "Institui√ß√£o - Detalhe";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$this->cod_escola = $_GET["cod_escola"];
@@ -235,11 +235,11 @@ class indice extends clsDetalhe
 
 		if( $registro["ref_cod_instituicao"] )
 		{
-			$this->addDetalhe( array( "Institui&ccedil;&atilde;o", "{$registro["ref_cod_instituicao"]}") );
+			$this->addDetalhe( array( "Institui√ß√£o Executora", "{$registro["ref_cod_instituicao"]}") );
 		}
 		if( $nm_escola )
 		{
-			$this->addDetalhe( array( "Escola", "{$nm_escola}") );
+			$this->addDetalhe( array( "Institui√ß√£o", "{$nm_escola}") );
 		}
 		if( $registro["sigla"] )
 		{
@@ -247,7 +247,7 @@ class indice extends clsDetalhe
 		}
 		if( $registro["ref_cod_escola_localizacao"] )
 		{
-			$this->addDetalhe( array( "Localiza&ccedil;&atilde;o", "{$registro["ref_cod_escola_localizacao"]}") );
+			$this->addDetalhe( array( "Localiza√ß√£o", "{$registro["ref_cod_escola_localizacao"]}") );
 		}
 		if( $registro["ref_cod_escola_rede_ensino"] )
 		{
@@ -255,7 +255,7 @@ class indice extends clsDetalhe
 		}
 		if( $registro["ref_idpes"] )
 		{
-			$this->addDetalhe( array( "Raz&atilde;o Social", "{$registro["ref_idpes"]}") );
+			$this->addDetalhe( array( "Raz√£o Social", "{$registro["ref_idpes"]}") );
 		}
 		if ($tipo == 1)
 		{
@@ -282,7 +282,7 @@ class indice extends clsDetalhe
 			}
 			if( $numero )
 			{
-				$this->addDetalhe( array( "N&uacute;mero", "{$numero}") );
+				$this->addDetalhe( array( "N√∫mero", "{$numero}") );
 			}
 			if( $andar )
 			{
@@ -354,7 +354,7 @@ class indice extends clsDetalhe
 			}
 			if( $numero )
 			{
-				$this->addDetalhe( array( "N&uacute;mero", "{$numero}") );
+				$this->addDetalhe( array( "N√∫mero", "{$numero}") );
 			}
 			if( $andar )
 			{
@@ -419,7 +419,7 @@ class indice extends clsDetalhe
 			}
 			if( $numero )
 			{
-				$this->addDetalhe( array( "N&uacute;mero", "{$numero}") );
+				$this->addDetalhe( array( "N√∫mero", "{$numero}") );
 			}
 			if( $email )
 			{
@@ -474,7 +474,7 @@ class indice extends clsDetalhe
 		}
 		if( $nm_curso )
 		{
-			$this->addDetalhe( array( "Curso", "{$tabela}") );
+			$this->addDetalhe( array( "Projeto", "{$tabela}") );
 		}
 
 		if( $tabela = $this->listaAnos() ) {
@@ -491,7 +491,7 @@ class indice extends clsDetalhe
 
 		if($canEdit) {
 			$this->url_editar      = "educar_escola_cad.php?cod_escola={$registro["cod_escola"]}";
-			$this->array_botao     = array ("Definir Ano Letivo");
+			$this->array_botao     = array ("Definir Etapa");
 			$this->array_botao_url = array ("educar_escola_ano_letivo_cad.php?cod_escola={$registro["cod_escola"]}");
 		}
 
@@ -522,9 +522,9 @@ class indice extends clsDetalhe
 			//print_r($lista_ano_letivo);
 
 			$existe  = true;
-			$tabela .= "<tr bgcolor=$cor><td colspan='2'><b>Anos letivos</b></td></tr><tr><td>";
+			$tabela .= "<tr bgcolor=$cor><td colspan='2'><b>Etapas em Execu√ß√£o</b></td></tr><tr><td>";
 			$tabela .= "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" align=\"left\" width='60%'>";
-			$tabela .= "<tr bgcolor='#A1B3BD'><th width='90'>Ano<a name='ano_letivo'/></th><th width='70'>Iniciar</th><th width='70'>Finalizar</th><th width='150'>Editar</th></tr>";
+			$tabela .= "<tr bgcolor='#A1B3BD'><th width='90'>Etapa<a name='ano_letivo'/></th><th width='70'>Iniciar</th><th width='70'>Finalizar</th><th width='150'>Editar</th></tr>";
 			$cor = $cor == "#FFFFFF" ? "#E4E9ED" : "#FFFFFF";
 
 			$obj_ano_letivo = new clsPmieducarEscolaAnoLetivo();
@@ -536,7 +536,7 @@ class indice extends clsDetalhe
 				$incluir = $excluir = "";
 				//se nao existe ano em andamento permite inicializar um ano letivo
 				if(!$existe_ano_andamento && $ano['andamento'] != 2)
-					$incluir = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','iniciar');\"><img src=\"imagens/i-educar/nvp_bot_iniciar_ano.gif\" border=0 style='padding-left:10px;'></a></td>";
+					$incluir = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','iniciar');\"><img src=\"imagens/i-educar/nvp_bot_iniciar_ano.png\" border=0 style='padding-left:10px;'></a></td>";
 				else
 					$incluir = "<td width='130'>&nbsp;</td>";
 
@@ -544,7 +544,7 @@ class indice extends clsDetalhe
 				$obj_matricula_ano = new clsPmieducarMatricula();
 				$matricula_em_andamento = $obj_matricula_ano->lista(null,null,$this->cod_escola,null,null,null,null,3,null,null,null,null,1,$ano['ano'],null,null,1,null,1,null,null,null,null,null,null,false);
 				if(!$matricula_em_andamento && $existe_ano_andamento && $ano['andamento'] == 1)
-					$excluir = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','finalizar');\" ><img src=\"imagens/i-educar/nvp_bot_finalizar_ano.gif\" border=0 style='padding-left:10px;'></a></td>";
+					$excluir = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','finalizar');\" ><img src=\"imagens/i-educar/nvp_bot_finalizar_ano.png\" border=0 style='padding-left:10px;'></a></td>";
 				else
 				{
 
@@ -554,9 +554,9 @@ class indice extends clsDetalhe
 				$editar = "";//"<td align='center'> - </td>";
 
 				if($ano['andamento'] == 2)
-					$incluir = "<td colspan='3' align='center'><span class='formlttd'><b>--- Ano Finalizado ---</b></span></td>";
+					$incluir = "<td colspan='3' align='center'><span class='formlttd'><b>--- Etapa Finalizada ---</b></span></td>";
 				else
-					$editar = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','editar');\" ><img src=\"imagens/i-educar/nvp_bot_editar_ano.gif\" alt=\"Editar Ano Letivo\" border=0 style='padding-left:10px;'></a></td>";
+					$editar = "<td><a href='#' onclick=\"preencheForm('{$ano['ano']}','{$ano['ref_cod_escola']}','editar');\" ><img src=\"imagens/i-educar/nvp_bot_editar_ano.png\" alt=\"Editar Etapa\" border=0 style='padding-left:10px;'></a></td>";
 
 				$tabela .= "<tr bgcolor='$cor'><td style='padding-left:20px'><img src=\"imagens/noticia.jpg\" border='0'> {$ano['ano']}</td>{$incluir}{$excluir}{$editar}</tr>";
 			}
@@ -564,7 +564,7 @@ class indice extends clsDetalhe
 			$tabela .= "</table></td></tr>";
 			$tabela .= "<tr>
 							<td>
-								<span class='formlttd'><b>*Somente &eacute; poss&iacute;vel finalizar um ano letivo ap&oacute;s n&atilde;o existir mais nenhuma matr&iacute;cula em andamento.</b></span>
+								<span class='formlttd'><b>*Somente √© poss√≠vel finalizar uma etapa em execu√ß√£o ap√≥s n√£o existir mais nenhuma matr√≠cula em andamento.</b></span>
 							</td>
 						</tr>";
 			$tabela .= "<tr>
@@ -600,7 +600,7 @@ $pagina->MakeAll();
 function preencheForm(ano, escola,acao){
 
 
-		if(!confirm('Deseja realmente \'' + acao.substr(0, 1).toUpperCase() + acao.substr(1) + '\' o ano letivo?'))
+		if(!confirm('Deseja realmente \'' + acao.substr(0, 1).toUpperCase() + acao.substr(1) + '\' a etapa?'))
 			return false;
 	document.acao_ano_letivo.ano.value 			  = ano;
 	document.acao_ano_letivo.ref_cod_escola.value = escola;

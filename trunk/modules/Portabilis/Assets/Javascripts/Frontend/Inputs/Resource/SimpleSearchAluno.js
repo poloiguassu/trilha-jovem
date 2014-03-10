@@ -10,7 +10,7 @@ var simpleSearchAlunoOptions = {
   canSearch : function() { 
 
     if (! $j('#ref_cod_escola').val()) {
-      alert('Selecione uma escola.');
+      alert('Selecione uma instituição.');
       return false;
     }
     

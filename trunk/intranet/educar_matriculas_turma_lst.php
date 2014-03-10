@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Matr&iacute;culas Turmas" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Matr√≠cula de Turma" );
 		$this->processoAp = "659";
 	}
 }
@@ -81,7 +81,7 @@ class indice extends clsListagem
 		$this->pessoa_logada = $_SESSION['id_pessoa'];
 		session_write_close();
 
-		$this->titulo = "Matr&iacute;culas Turma - Listagem";
+		$this->titulo = "Matr√≠culas Turma - Listagem";
 
 		foreach( $_GET AS $var => $val ) // passa todos os valores obtidos no GET para atributos do objeto
 			$this->$var = ( $val === "" ) ? null: $val;
@@ -90,20 +90,20 @@ class indice extends clsListagem
 
 		$lista_busca = array(
 			"Turma",
-			"S&eacute;rie",
-			"Curso"
+			"Eixo",
+			"Projeto"
 		);
 
 		$obj_permissao = new clsPermissoes();
 		$nivel_usuario = $obj_permissao->nivel_acesso($this->pessoa_logada);
 		if ($nivel_usuario == 1)
 		{
-			$lista_busca[] = "Escola";
-			$lista_busca[] = "Institui&ccedil;&atilde;o";
+			$lista_busca[] = "Institui√ß√£o";
+			$lista_busca[] = "Institui√ß√£o Executora";
 		}
 		else if ($nivel_usuario == 2)
 		{
-			$lista_busca[] = "Escola";
+			$lista_busca[] = "Institui√ß√£o";
 		}
 		$this->addCabecalhos($lista_busca);
 
@@ -205,7 +205,7 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$registro["ref_cod_instituicao"] = "Erro na gera&ccedil;&atilde;o";
+					$registro["ref_cod_instituicao"] = "Erro na gera√ß√£o";
 					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarInstituicao\n-->";
 				}*/
 				if( class_exists( "clsPmieducarEscola" ) )
@@ -216,7 +216,7 @@ class indice extends clsListagem
 				}
 				else
 				{
-					$registro["ref_ref_cod_escola"] = "Erro na gera&ccedil;&atilde;o";
+					$registro["ref_ref_cod_escola"] = "Erro na gera√ß√£o";
 					echo "<!--\nErro\nClasse n&atilde;o existente: clsPmieducarEscola\n-->";
 				}
 

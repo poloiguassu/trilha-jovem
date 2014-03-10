@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gestão escolar
+ * i-Educar - Sistema de gestÃ£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de Itajaí
+ * Copyright (C) 2006  Prefeitura Municipal de ItajaÃ­
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa é software livre; você pode redistribuí-lo e/ou modificá-lo
- * sob os termos da Licença Pública Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a versão 2 da Licença, como (a seu critério)
- * qualquer versão posterior.
+ * Este programa Ã© software livre; vocÃª pode redistribuÃ­-lo e/ou modificÃ¡-lo
+ * sob os termos da LicenÃ§a PÃºblica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a versÃ£o 2 da LicenÃ§a, como (a seu critÃ©rio)
+ * qualquer versÃ£o posterior.
  *
- * Este programa é distribuí­do na expectativa de que seja útil, porém, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implí­cita de COMERCIABILIDADE OU
- * ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA. Consulte a Licença Pública Geral
+ * Este programa Ã© distribuÃ­Â­do na expectativa de que seja Ãºtil, porÃ©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia implÃ­Â­cita de COMERCIABILIDADE OU
+ * ADEQUAÃ‡ÃƒO A UMA FINALIDADE ESPECÃFICA. Consulte a LicenÃ§a PÃºblica Geral
  * do GNU para mais detalhes.
  *
- * Você deve ter recebido uma cópia da Licença Pública Geral do GNU junto
- * com este programa; se não, escreva para a Free Software Foundation, Inc., no
- * endereço 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral do GNU junto
+ * com este programa; se nÃ£o, escreva para a Free Software Foundation, Inc., no
+ * endereÃ§o 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
  * @author      Adriano Erik Weiguert Nagasava <ctima@itajai.sc.gov.br>
  * @license     http://creativecommons.org/licenses/GPL/2.0/legalcode.pt  CC GNU GPL
  * @package     Core
  * @subpackage  Escolaridade
- * @since       Arquivo disponível desde a versão 1.0.0
+ * @since       Arquivo disponÃ­vel desde a versÃ£o 1.0.0
  * @version     $Id$
  */
 
@@ -38,7 +38,7 @@ class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Escolaridade');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Escolaridade');
     $this->processoAp = '632';
   }
 }
@@ -46,7 +46,7 @@ class clsIndexBase extends clsBase
 class indice extends clsCadastro
 {
   /**
-   * Referência a usuário da sessão
+   * ReferÃªncia a usuÃ¡rio da sessÃ£o
    * @var int
    */
   var $pessoa_logada = NULL;
@@ -100,7 +100,7 @@ class indice extends clsCadastro
     $this->campoOculto('idesco', $this->idesco);
 
     // Outros campos
-    $this->campoTexto('descricao', 'Descri&ccedil;&atilde;o', $this->descricao, 30, 255, TRUE);
+    $this->campoTexto('descricao', 'DescriÃ§Ã£o', $this->descricao, 30, 255, TRUE);
   }
 
   function Novo()
@@ -118,7 +118,7 @@ class indice extends clsCadastro
       die();
     }
 
-    $this->mensagem = 'Cadastro n&atilde;o realizado.<br>';
+    $this->mensagem = 'Cadastro nÃ£o realizado.<br>';
     return FALSE;
   }
 
@@ -131,12 +131,12 @@ class indice extends clsCadastro
     $obj = new clsCadastroEscolaridade($this->idesco, $this->descricao);
     $editou = $obj->edita();
     if ($editou) {
-      $this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+      $this->mensagem .= "EdiÃ§Ã£o efetuada com sucesso.<br>";
       header("Location: educar_escolaridade_lst.php");
       die();
     }
 
-    $this->mensagem = 'Edi&ccedil;&atilde;o n&atilde;o realizada.<br>';
+    $this->mensagem = 'EdiÃ§Ã£o nÃ£o realizada.<br>';
     return FALSE;
   }
 
@@ -149,24 +149,24 @@ class indice extends clsCadastro
     $obj = new clsCadastroEscolaridade($this->idesco, $this->descricao);
     $excluiu = $obj->excluir();
     if ($excluiu) {
-      $this->mensagem .= 'Exclus&atilde;o efetuada com sucesso.<br>';
+      $this->mensagem .= 'ExclusÃ£o efetuada com sucesso.<br>';
       header('Location: educar_escolaridade_lst.php');
       die();
     }
 
-    $this->mensagem = 'Exclus&atilde;o n&atilde;o realizada.<br>';
+    $this->mensagem = 'ExclusÃ£o nÃ£o realizada.<br>';
     return FALSE;
   }
 }
 
-// Instancia objeto de página
+// Instancia objeto de pÃ¡gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conteúdo
+// Instancia objeto de conteÃºdo
 $miolo = new indice();
 
-// Atribui o conteúdo à página
+// Atribui o conteÃºdo Ã  pÃ¡gina
 $pagina->addForm($miolo);
 
-// Gera o código HTML
+// Gera o cÃ³digo HTML
 $pagina->MakeAll();

@@ -113,9 +113,9 @@ class indice extends clsListagem
 		$lista_busca = array(
 			"Ano",
 			"Turma",
-      "Turno",
-			"Série",
-			"Curso"
+			"Turno",
+			"Eixo",
+			"Projeto"
 		);
 
 
@@ -128,7 +128,7 @@ class indice extends clsListagem
 		}
 		else if ($nivel_usuario == 2)
 		{
-			$lista_busca[] = "Escola";
+			$lista_busca[] = "Instituição";
 		}
 		$lista_busca[] = "Situação";
 		$this->addCabecalhos($lista_busca);
@@ -315,8 +315,8 @@ class indice extends clsListagem
                 
                 $localizacao = new LocalizacaoSistema();
                 $localizacao->entradaCaminhos( array(
-                    $_SERVER['SERVER_NAME']."/intranet" => "i-Educar",
-                    "educar_index.php"                  => "Escola",
+                    $_SERVER['SERVER_NAME']."/intranet" => "Trilha Jovem",
+                    "educar_index.php"                  => "Instituição",
                     ""                                  => "Lista de Turmas"
                 ));
                 $this->enviaLocalizacao($localizacao->montar());

@@ -68,7 +68,7 @@ class Portabilis_View_Helper_Input_Text extends Portabilis_View_Helper_Input_Cor
                                  'disabled'       => false);
 
     $inputOptions          = $this->mergeOptions($options['options'], $defaultInputOptions);
-    $inputOptions['label'] = Portabilis_String_Utils::toLatin1($inputOptions['label'], array('escape' => false));
+    $inputOptions['label'] = Portabilis_String_Utils::toUtf8($inputOptions['label'], array('escape' => false));
 
     call_user_func_array(array($this->viewInstance, 'campoTexto'), $inputOptions);
     $this->fixupPlaceholder($inputOptions);

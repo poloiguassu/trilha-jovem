@@ -408,9 +408,9 @@ abstract class clsBancoSQL_
       // Altera os LIKE para ILIKE (ignore case)
       $this->strStringSQL = eregi_replace(" LIKE ", " ILIKE ", $this->strStringSQL);
 
-      $this->strStringSQL = eregi_replace("([a-z_0-9.]+) +ILIKE +'([^']+)'", "to_ascii(\\1) ILIKE to_ascii('\\2')", $this->strStringSQL);
+      $this->strStringSQL = eregi_replace("([a-z_0-9.]+) +ILIKE +'([^']+)'", "sem_acento(\\1) ILIKE sem_acento('\\2')", $this->strStringSQL);
 
-      $this->strStringSQL = eregi_replace("fcn_upper_nrm", "to_ascii", $this->strStringSQL);
+      $this->strStringSQL = eregi_replace("fcn_upper_nrm", "sem_acento", $this->strStringSQL);
     }
 
     $temp = explode("'", $this->strStringSQL);
@@ -497,7 +497,7 @@ abstract class clsBancoSQL_
       $objEmail->envia();
     }
 
-    return utf8_decode($this->bConsulta_ID);
+    return $this->bConsulta_ID;
   }
 
   /**
@@ -808,7 +808,7 @@ abstract class clsBancoSQL_
     $pgErrorMsg = $getError ? pg_result_error($this->bConsulta_ID) : '';
     NotificationMailer::unexpectedDataBaseError($appErrorMsg, $pgErrorMsg, $this->strStringSQL);
 
-    die("<script>document.location.href = '/modules/Error/unexpected';</script>");
+    die("<script>document.location.href = '/module/Error/unexpected';</script>");
   }
 
 
