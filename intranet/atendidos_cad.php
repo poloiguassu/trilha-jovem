@@ -877,7 +877,7 @@ class indice extends clsCadastro
     //pela antiga interface do cadastro de alunos.
 
     if (! $parentId && $this->_aluno['nm_' . $parentType]) {
-      $nome      = Portabilis_String_Utils::toLatin1($this->_aluno['nm_' . $parentType],
+      $nome      = Portabilis_String_Utils::toUtf8($this->_aluno['nm_' . $parentType],
                                                      array('transform' => true, 'escape' => false));
 
       $inputHint = '<br /><b>Dica:</b> Foi informado o nome "' . $nome .

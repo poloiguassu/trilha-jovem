@@ -50,7 +50,7 @@ require_once 'Portabilis/Business/Professor.php';
 
 class DiarioController extends Portabilis_Controller_Page_ListController
 {
-  protected $_titulo     = 'Lan&ccedil;amento por turma';
+  protected $_titulo     = 'Lançamento por turma';
   protected $_processoAp = 644;
 
   public function Gerar() {

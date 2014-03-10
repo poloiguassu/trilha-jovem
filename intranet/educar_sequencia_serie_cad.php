@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -33,7 +33,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Sequ&ecirc;ncia Enturma&ccedil;&atilde;o" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Enturma√ß√£o" );
 		$this->processoAp = "587";
 	}
 }
@@ -136,7 +136,7 @@ class indice extends clsCadastro
 					$opcoes[$linha["cod_instituicao"]] = $linha["nm_instituicao"];
 				}
 			}
-			$this->campoLista( "ref_cod_instituicao", "Institui&ccedil;&atilde;o", $opcoes, $this->ref_cod_instituicao );
+			$this->campoLista( "ref_cod_instituicao", "Institui√ß√£o Executora", $opcoes, $this->ref_cod_instituicao );
 		}
 		else
 		{
@@ -181,11 +181,11 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsPmieducarCurso n&atilde;o encontrada\n-->";
-			$opcoes = array( "" => "Erro na gera&ccedil;&atilde;o" );
+			echo "<!--\nErro\nClasse clsPmieducarCurso n√£o encontrada\n-->";
+			$opcoes = array( "" => "Erro na gera√ß√£o" );
 		}
-		$this->campoLista( "ref_curso_origem", "Curso Origem", $opcoes, $this->ref_curso_origem,"",true );
-		$this->campoLista( "ref_curso_destino", " Curso Destino", $opcoes_, $this->ref_curso_destino );
+		$this->campoLista( "ref_curso_origem", "Projeto de Origem", $opcoes, $this->ref_curso_origem,"",true );
+		$this->campoLista( "ref_curso_destino", " Projeto de Destino", $opcoes_, $this->ref_curso_destino );
 
 		// primary keys
 
@@ -235,12 +235,12 @@ class indice extends clsCadastro
 		}
 		else
 		{
-			echo "<!--\nErro\nClasse clsPmieducarSerie n&atilde;o encontrada\n-->";
+			echo "<!--\nErro\nClasse clsPmieducarSerie n√£o encontrada\n-->";
 			$opcoes = array( "" => "Erro na geracao" );
 			$opcoes_ = array( "" => "Erro na geracao" );
 		}
-		$this->campoLista( "ref_serie_origem", "S&eacute;rie Origem", $opcoes, $this->ref_serie_origem,null,true);
-		$this->campoLista( "ref_serie_destino", " S&eacute;rie Destino", $opcoes_, $this->ref_serie_destino);
+		$this->campoLista( "ref_serie_origem", "Eixo de Origem", $opcoes, $this->ref_serie_origem,null,true);
+		$this->campoLista( "ref_serie_destino", " Eixo de Destino", $opcoes_, $this->ref_serie_destino);
 		
 		
 		$this->campoOculto("nivel_usuario", $nivel_usuario);
@@ -276,14 +276,14 @@ class indice extends clsCadastro
 			$editou = $obj->edita();
 			if( $editou )
 			{
-				$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+				$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 				header( "Location: educar_sequencia_serie_lst.php" );
 				die();
 				return true;
 			}
 		}
 
-		$this->mensagem = "Cadastro n&atilde;o realizado.<br>";
+		$this->mensagem = "Cadastro n√£o realizado.<br>";
 		echo "<!--\nErro ao cadastrar clsPmieducarSequenciaSerie\nvalores obrigat&oacute;rios\nis_numeric( $this->ref_serie_origem ) && is_numeric( $this->ref_serie_destino ) && is_numeric( $this->pessoa_logada )\n-->";
 		return false;
 	}
@@ -305,17 +305,17 @@ class indice extends clsCadastro
 			$editou = $obj->editar( $this->serie_origem_old, $this->serie_destino_old );
 			if( $editou )
 			{
-				$this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+				$this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
 				header( "Location: educar_sequencia_serie_lst.php" );
 				die();
 				return true;
 			}
-			$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+			$this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
 			echo "<!--\nErro ao editar clsPmieducarSequenciaSerie\nvalores obrigat&oacute;rios\nif( is_numeric( $this->ref_serie_origem ) && is_numeric( $this->ref_serie_destino ) && is_numeric( $this->pessoa_logada ) )\n-->";
 			return false;
 		}
-		echo "<script> alert('EdiÁ„o n„o realizada! \\n J· existe essa sequÍncia.') </script>";
-		$this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+		echo "<script> alert('Edi√ß√£o n√£o realizada! \\n J√° existe essa sequ√™ncia.') </script>";
+		$this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
 		return false;
 	}
 
@@ -333,13 +333,13 @@ class indice extends clsCadastro
 		$excluiu = $obj->excluir();
 		if( $excluiu )
 		{
-			$this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+			$this->mensagem .= "Exclus√£o efetuada com sucesso.<br>";
 			header( "Location: educar_sequencia_serie_lst.php" );
 			die();
 			return true;
 		}
 
-		$this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+		$this->mensagem = "Exclus√£o n√£o realizada.<br>";
 		echo "<!--\nErro ao excluir clsPmieducarSequenciaSerie\nvalores obrigatorios\nif( is_numeric( $this->ref_serie_origem ) && is_numeric( $this->ref_serie_destino ) && is_numeric( $this->pessoa_logada ) )\n-->";
 		return false;
 	}
@@ -382,11 +382,11 @@ function getCurso(xml_curso)
 	if(DOM_array.length)
 	{
 		campoCurso.length = 1;
-		campoCurso.options[0].text = 'Selecione um curso origem';
+		campoCurso.options[0].text = 'Selecione um Projeto origem';
 		campoCurso.disabled = false;
 
 		campoCurso_.length = 1;
-		campoCurso_.options[0].text = 'Selecione um curso destino';
+		campoCurso_.options[0].text = 'Selecione um Projeto destino';
 		campoCurso_.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -397,8 +397,8 @@ function getCurso(xml_curso)
 	}
 	else
 	{
-		campoCurso.options[0].text = 'A instituiÁ„o n„o possui nenhum curso';
-		campoCurso_.options[0].text = 'A instituiÁ„o n„o possui nenhum curso';
+		campoCurso.options[0].text = 'A institui√ß√£o n√£o possui nenhum projeto';
+		campoCurso_.options[0].text = 'A institui√ß√£o n√£o possui nenhum projeto';
 	}
 }
 
@@ -410,7 +410,7 @@ function getSerie(xml_serie)
 	if(DOM_array.length)
 	{
 		campoSerie.length = 1;
-		campoSerie.options[0].text = 'Selecione uma sÈrie origem';
+		campoSerie.options[0].text = 'Selecione um eixo de origem';
 		campoSerie.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -419,7 +419,7 @@ function getSerie(xml_serie)
 		}
 	}
 	else
-		campoSerie.options[0].text = 'O curso origem n„o possui nenhuma sÈrie';
+		campoSerie.options[0].text = 'O projeto origem n√£o possui nenhum eixo';
 }
 
 function getSerie_(xml_serie_)
@@ -430,7 +430,7 @@ function getSerie_(xml_serie_)
 	if(DOM_array.length)
 	{
 		campoSerie_.length = 1;
-		campoSerie_.options[0].text = 'Selecione uma sÈrie destino';
+		campoSerie_.options[0].text = 'Selecione um eixo destino';
 		campoSerie_.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -439,7 +439,7 @@ function getSerie_(xml_serie_)
 		}
 	}
 	else
-		campoSerie_.options[0].text = 'O curso origem n„o possui nenhuma sÈrie';
+		campoSerie_.options[0].text = 'O projeto origem n√£o possui nenhum eixo';
 }
 /*
 function getSerie( tipo )
@@ -517,12 +517,12 @@ document.getElementById('ref_cod_instituicao').onchange = function()
 	var campoCurso = document.getElementById('ref_curso_origem');
 	campoCurso.length = 1;
 	campoCurso.disabled = true;
-	campoCurso.options[0].text = 'Carregando curso origem';
+	campoCurso.options[0].text = 'Carregando projeto origem';
 
 	var campoCurso_ = document.getElementById('ref_curso_destino');
 	campoCurso_.length = 1;
 	campoCurso_.disabled = true;
-	campoCurso_.options[0].text = 'Carregando curso destino';
+	campoCurso_.options[0].text = 'Carregando projeto destino';
 
 	var xml_curso = new ajax( getCurso );
 	xml_curso.envia( "educar_curso_xml2.php?ins="+campoInstituicao );
@@ -540,7 +540,7 @@ document.getElementById('ref_curso_origem').onchange = function()
 	var campoSerie = document.getElementById('ref_serie_origem');
 	campoSerie.length = 1;
 	campoSerie.disabled = true;
-	campoSerie.options[0].text = 'Carregando sÈrie origem';
+	campoSerie.options[0].text = 'Carregando eixo origem';
 
 	var xml_serie = new ajax( getSerie );
 	xml_serie.envia( "educar_serie_xml.php?cur="+campoCurso )
@@ -554,7 +554,7 @@ document.getElementById('ref_curso_destino').onchange = function()
 	var campoSerie_ = document.getElementById('ref_serie_destino');
 	campoSerie_.length = 1;
 	campoSerie_.disabled = true;
-	campoSerie_.options[0].text = 'Carregando sÈrie destino';
+	campoSerie_.options[0].text = 'Carregando eixo destino';
 
 	var xml_serie_ = new ajax( getSerie_ );
 	xml_serie_.envia( "educar_serie_xml.php?cur="+campoCurso_ )

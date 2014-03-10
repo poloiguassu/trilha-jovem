@@ -43,7 +43,7 @@ class AlterarEmailController extends Portabilis_Controller_Page_EditController
 
   protected $_formMap    = array(
     'matricula' => array(
-      'label'  => 'Matr&iacute;cula',
+      'label'  => 'Nome de Usuário',
       'help'   => '',
     ),
     'email' => array(
@@ -76,7 +76,7 @@ class AlterarEmailController extends Portabilis_Controller_Page_EditController
     $validEmail = filter_var($this->getEntity()->email, FILTER_VALIDATE_EMAIL) == true;
 
     if (empty($this->getRequest()->email) &&  ! $validEmail)
-      $this->messenger()->append("Por favor informe um e-mail v&aacute;lido, para ser usado caso voc&ecirc; esque&ccedil;a sua senha.");
+      $this->messenger()->append("Por favor informe um e-mail válido, para ser usado caso você esqueça sua senha.");
 
     $this->campoRotulo('matricula', $this->_getLabel('matricula'), $this->getEntity()->matricula);
     $this->campoTexto('email', $this->_getLabel('email'), $this->getEntity()->email,

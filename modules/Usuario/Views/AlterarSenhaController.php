@@ -46,9 +46,9 @@ class AlterarSenhaController extends Portabilis_Controller_Page_EditController
   protected $backwardCompatibility = true;
 
   protected $_formMap    = array(
-    'matricula'         => array('label' => 'Matr&iacute;cula',                   'help' => ''),
+    'matricula'         => array('label' => 'Nome de Usuário',                   'help' => ''),
     'nova_senha'        => array('label' => 'Nova senha',                         'help' => ''),
-    'confirmacao_senha' => array('label' => 'Confirma&ccedil;&atilde;o de senha', 'help' => ''),
+    'confirmacao_senha' => array('label' => 'Confirmação de senha', 'help' => ''),
   );
 
 
@@ -73,7 +73,7 @@ class AlterarSenhaController extends Portabilis_Controller_Page_EditController
   public function Gerar()
   {
     if (! isset($_POST['password']))
-      $this->messenger()->append('Para sua seguran&ccedil;a mude sua senha periodicamente, por favor, informe uma nova senha.', 'info');
+      $this->messenger()->append('Para sua segurança mude sua senha periodicamente, por favor, informe uma nova senha.', 'info');
 
     $this->campoRotulo('matricula', $this->_getLabel('matricula'), $this->getEntity()->matricula);
     $this->campoSenha('password', $this->_getLabel('nova_senha'), @$_POST['password'], TRUE);

@@ -195,22 +195,22 @@ class indice extends clsDetalhe
 
     if ($nivel_usuario == 1) {
       if ($registro['ref_cod_instituicao']) {
-        $this->addDetalhe(array('Instituição', $registro['ref_cod_instituicao']));
+        $this->addDetalhe(array('Instituição Executora', $registro['ref_cod_instituicao']));
       }
     }
 
     if ($nivel_usuario == 1 || $nivel_usuario == 2) {
       if ($registro['ref_ref_cod_escola']) {
-        $this->addDetalhe(array('Escola', $registro['ref_ref_cod_escola']));
+        $this->addDetalhe(array('Instituição', $registro['ref_ref_cod_escola']));
       }
     }
 
     if ($registro['ref_cod_curso']) {
-      $this->addDetalhe(array('Curso', $registro['ref_cod_curso']));
+      $this->addDetalhe(array('Projeto', $registro['ref_cod_curso']));
     }
 
     if ($registro['ref_ref_cod_serie']) {
-      $this->addDetalhe(array('Série', $registro['ref_ref_cod_serie']));
+      $this->addDetalhe(array('Eixo', $registro['ref_ref_cod_serie']));
     }
 
     if ($registro['ref_cod_regente']) {
@@ -255,7 +255,7 @@ class indice extends clsDetalhe
       $obj_serie_mult = new clsPmieducarSerie($registro['ref_ref_cod_serie_mult']);
       $det_serie_mult = $obj_serie_mult->detalhe();
 
-      $this->addDetalhe(array('Série Multi-Seriada', $det_serie_mult['nm_serie']));
+      $this->addDetalhe(array('Eixo Multi-Seriada', $det_serie_mult['nm_serie']));
     }
 
     if ($padrao_ano_escolar == 1) {

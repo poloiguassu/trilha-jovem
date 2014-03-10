@@ -2,25 +2,25 @@
 /**
  *
  * @version SVN: $Id$
- * @author  Prefeitura Municipal de ItajaÌ
+ * @author  Prefeitura Municipal de Itaja√≠
  * @updated 29/03/2007
- * Pacote: i-PLB Software P˙blico Livre e Brasileiro
+ * Pacote: i-PLB Software P√∫blico Livre e Brasileiro
  *
- * Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠
  *					ctima@itajai.sc.gov.br
  *
- * Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou
- * modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme
- * publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da
- * LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.
+ * Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou
+ * modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme
+ * publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da
+ * Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.
  *
- * Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM
- * QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-
- * ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-
- * sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.
+ * Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM
+ * QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-
+ * ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-
+ * sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.
  *
- * VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU
- * junto  com  este  programa. Se n„o, escreva para a Free Software
+ * Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU
+ * junto  com  este  programa. Se n√£o, escreva para a Free Software
  * Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA
  * 02111-1307, USA.
  *
@@ -35,7 +35,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} i-Educar - Ocorr&ecirc;ncia Disciplinar" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Ocorr√™ncia Disciplinar" );
 		$this->processoAp = "578";
 	}
 }
@@ -138,7 +138,7 @@ class indice extends clsDetalhe
 
 		if( $registro["ref_cod_matricula"] )
 		{
-			$this->addDetalhe( array( "Matr&iacute;cula", "{$registro["ref_cod_matricula"]}") );
+			$this->addDetalhe( array( "Matr√≠cula", "{$registro["ref_cod_matricula"]}") );
 		}
 		/**
 		 * Busca nome do aluno
@@ -164,7 +164,7 @@ class indice extends clsDetalhe
 
 		if( $registro["ref_ref_cod_serie"] )
 		{
-			$this->addDetalhe( array( "S&eacute;rie", "{$registro["ref_ref_cod_serie"]}") );
+			$this->addDetalhe( array( "S√©rie", "{$registro["ref_ref_cod_serie"]}") );
 		}
 
 		if( $det_mat_turma["det_turma"] )
@@ -174,21 +174,21 @@ class indice extends clsDetalhe
 
 		if( $registro["sequencial"] )
 		{
-			$this->addDetalhe( array( "N&uacute;mero da Ocorr&ecirc;ncia", "{$registro["sequencial"]}") );
+			$this->addDetalhe( array( "N√∫mero de Ocorr√™ncias", "{$registro["sequencial"]}") );
 		}
 		if( $registro["data_cadastro"] )
 		{
 			if($hora = dataFromPgToBr("{$registro["data_cadastro"]}",'H:i') )
-				$this->addDetalhe( array( "Hora Ocorr&ecirc;ncia", $hora ));
-			$this->addDetalhe( array( "Data Ocorr&ecirc;ncia", dataFromPgToBr("{$registro["data_cadastro"]}",'d/m/Y') ));
+				$this->addDetalhe( array( "Hora da Ocorr√™ncia", $hora ));
+			$this->addDetalhe( array( "Data Ocorr√™ncia", dataFromPgToBr("{$registro["data_cadastro"]}",'d/m/Y') ));
 		}
 		if( $registro["ref_cod_tipo_ocorrencia_disciplinar"] )
 		{
-			$this->addDetalhe( array( "Tipo Ocorr&ecirc;ncia", "{$registro["nm_tipo"]}") );
+			$this->addDetalhe( array( "Tipo Ocorr√™ncia", "{$registro["nm_tipo"]}") );
 		}
 		if( $registro["observacao"] )
 		{
-			$this->addDetalhe( array( "Observa&ccedil;&atilde;o", nl2br("{$registro["observacao"]}")) );
+			$this->addDetalhe( array( "Observa√ß√µes", nl2br("{$registro["observacao"]}")) );
 		}
 
 		$obj_permissoes = new clsPermissoes();

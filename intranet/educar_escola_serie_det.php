@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -38,18 +38,18 @@ require_once 'App/Model/IedFinder.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Escola S&eacute;rie');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Eixo');
     $this->processoAp = '585';
   }
 }
@@ -57,11 +57,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsDetalhe
@@ -86,7 +86,7 @@ class indice extends clsDetalhe
     $this->pessoa_logada = $_SESSION['id_pessoa'];
     session_write_close();
 
-    $this->titulo = 'Escola S&eacute;rie - Detalhe';
+    $this->titulo = 'Eixo - Detalhe';
     $this->addBanner('imagens/nvp_top_intranet.jpg',
       'imagens/nvp_vert_intranet.jpg', 'Intranet');
 
@@ -123,22 +123,22 @@ class indice extends clsDetalhe
 
     if ($nivel_usuario == 1) {
       if ($registro["ref_cod_instituicao"]) {
-        $this->addDetalhe(array('Institui&ccedil;&atilde;o', $registro['ref_cod_instituicao']));
+        $this->addDetalhe(array('Institui√ß√£o Executora', $registro['ref_cod_instituicao']));
       }
     }
 
     if ($nivel_usuario == 1 || $nivel_usuario == 2) {
       if ($nm_escola) {
-        $this->addDetalhe(array('Escola', $nm_escola));
+        $this->addDetalhe(array('Institui√ß√£o', $nm_escola));
       }
     }
 
     if ($registro['ref_cod_curso']) {
-      $this->addDetalhe(array('Curso', $registro['ref_cod_curso']));
+      $this->addDetalhe(array('Projeto', $registro['ref_cod_curso']));
     }
 
     if ($nm_serie) {
-      $this->addDetalhe(array('S&eacute;rie', $nm_serie));
+      $this->addDetalhe(array('Eixo', $nm_serie));
     }
 
     if ($registro['hora_inicial']) {
@@ -153,15 +153,15 @@ class indice extends clsDetalhe
 
     if ($registro['hora_inicio_intervalo']) {
       $registro['hora_inicio_intervalo'] = date('H:i', strtotime($registro['hora_inicio_intervalo']));
-      $this->addDetalhe(array('Hora In&iacute;cio Intervalo', $registro['hora_inicio_intervalo']));
+      $this->addDetalhe(array('Hora de In√≠cio do Intervalo', $registro['hora_inicio_intervalo']));
     }
 
     if ($registro['hora_fim_intervalo']) {
       $registro['hora_fim_intervalo'] = date('H:i', strtotime($registro['hora_fim_intervalo']));
-      $this->addDetalhe(array( 'Hora Fim Intervalo', $registro['hora_fim_intervalo']));
+      $this->addDetalhe(array( 'Hora de Fim do Intervalo', $registro['hora_fim_intervalo']));
     }
 
-    // Componentes da escola-sÈrie
+    // Componentes da escola-s√©rie
     $componentes = array();
     try {
       $componentes = App_Model_IedFinder::getEscolaSerieDisciplina($this->ref_cod_serie, $this->ref_cod_escola);
@@ -174,7 +174,7 @@ class indice extends clsDetalhe
 <table>
   <tr align="center">
     <td bgcolor="#A1B3BD"><b>Nome</b></td>
-    <td bgcolor="#A1B3BD"><b>Carga hor·ria</b></td>
+    <td bgcolor="#A1B3BD"><b>Carga hor√°ria</b></td>
   </tr>';
 
       $cont = 0;
@@ -215,14 +215,14 @@ class indice extends clsDetalhe
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡† p·gina
+// Atribui o conte√∫do √†¬† p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();

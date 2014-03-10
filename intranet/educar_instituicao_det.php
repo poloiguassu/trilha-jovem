@@ -105,7 +105,7 @@ class indice extends clsDetalhe
 		$this->addDetalhe( array( "Complemento", "{$registro["complemento"]}") );
 		$this->addDetalhe( array( "DDD Telefone", "{$registro["ddd_telefone"]}") );
 		$this->addDetalhe( array( "Telefone", "{$registro["telefone"]}") );
-		$this->addDetalhe( array( "Nome do Responsável", "{$registro["nm_responsavel"]}") );
+		$this->addDetalhe( array( "Núcleo Responsável", "{$registro["nm_responsavel"]}") );
 
 		$obj_permissoes = new clsPermissoes();
 		if ( $obj_permissoes->permissao_cadastra( 559, $this->pessoa_logada, 1 ) ) {

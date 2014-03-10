@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -42,11 +42,11 @@ require_once 'Portabilis/View/Helper/Application.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
@@ -61,11 +61,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsDetalhe
@@ -95,7 +95,7 @@ class indice extends clsDetalhe
     $this->pessoa_logada = $_SESSION['id_pessoa'];
     session_write_close();
 
-    // VerificaÁ„o de permiss„o para cadastro.
+    // Verifica√ß√£o de permiss√£o para cadastro.
     $this->obj_permissao = new clsPermissoes();
 
     $this->nivel_usuario = $this->obj_permissao->nivel_acesso($this->pessoa_logada);
@@ -338,8 +338,8 @@ class indice extends clsDetalhe
       }
     }
 
-    // Adiciona a informaÁ„o de zona de localizaÁ„o junto ao bairro do
-    // endereÁo.
+    // Adiciona a informa√ß√£o de zona de localiza√ß√£o junto ao bairro do
+    // endere√ßo.
     $zona = App_Model_ZonaLocalizacao::getInstance();
     $registro['nm_bairro'] = sprintf(
       '%s (Zona %s)',
@@ -347,23 +347,23 @@ class indice extends clsDetalhe
     );
 
     if ($registro['cod_aluno']) {
-      $this->addDetalhe(array('CÛdigo Aluno', $registro['cod_aluno']));
+      $this->addDetalhe(array('C√≥digo Aluno', $registro['cod_aluno']));
     }
 
-    // cÛdigo inep
+    // c√≥digo inep
 
     $alunoMapper = new Educacenso_Model_AlunoDataMapper();
     $alunoInep   = NULL;
     try {
       $alunoInep = $alunoMapper->find(array('aluno' => $this->cod_aluno));
-      $this->addDetalhe(array('CÛdigo inep', $alunoInep->alunoInep));
+      $this->addDetalhe(array('C√≥digo inep', $alunoInep->alunoInep));
     }
     catch(Exception $e) {
     }
 
-    // cÛdigo estado
+    // c√≥digo estado
 
-    $this->addDetalhe(array('CÛdigo estado', $registro['aluno_estado_id']));
+    $this->addDetalhe(array('C√≥digo estado', $registro['aluno_estado_id']));
 
     if ($registro['caminho_foto']) {
       $this->addDetalhe(array(
@@ -390,7 +390,7 @@ class indice extends clsDetalhe
     /**
      * Analfabeto.
      */
-    $this->addDetalhe(array('Analfabeto', $registro['analfabeto'] == 0 ? 'N„o' : 'Sim'));
+    $this->addDetalhe(array('Analfabeto', $registro['analfabeto'] == 0 ? 'N√£o' : 'Sim'));
 
     if ($registro['sexo']) {
       $this->addDetalhe(array('Sexo', $registro['sexo']));
@@ -428,7 +428,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['numero']) {
-      $this->addDetalhe(array('N˙mero', $registro['numero']));
+      $this->addDetalhe(array('N√∫mero', $registro['numero']));
     }
 
     if ($registro['letra']) {
@@ -468,13 +468,13 @@ class indice extends clsDetalhe
     }
 
     if ($registro['pais_origem']) {
-      $this->addDetalhe(array('PaÌs de Origem', $registro['pais_origem']));
+      $this->addDetalhe(array('Pa√≠s de Origem', $registro['pais_origem']));
     }
 
     $responsavel = $tmp_obj->getResponsavelAluno();
 
     if ($responsavel) {
-      $this->addDetalhe(array('Respons·vel Aluno', $responsavel['nome_responsavel']));
+      $this->addDetalhe(array('Respons√°vel Aluno', $responsavel['nome_responsavel']));
     }
 
     if ($registro['ref_idpes_responsavel']) {
@@ -485,7 +485,7 @@ class indice extends clsDetalhe
         $registro['ref_idpes_responsavel'] = $det_pessoa_resp['nome'];
       }
 
-      $this->addDetalhe(array('Respons·vel', $registro['ref_idpes_responsavel']));
+      $this->addDetalhe(array('Respons√°vel', $registro['ref_idpes_responsavel']));
     }
 
     if ($registro['nm_pai']) {
@@ -493,7 +493,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro["nm_mae"]) {
-      $this->addDetalhe(array('M„e', $registro['nm_mae']));
+      $this->addDetalhe(array('M√£e', $registro['nm_mae']));
     }
 
     if ($registro['fone_1']) {
@@ -533,29 +533,29 @@ class indice extends clsDetalhe
     }
 
     if ($registro['url']) {
-      $this->addDetalhe(array('P·gina Pessoal', $registro['url']));
+      $this->addDetalhe(array('P√°gina Pessoal', $registro['url']));
     }
 
     if ($registro['ref_cod_aluno_beneficio']) {
       $obj_beneficio     = new clsPmieducarAlunoBeneficio($registro['ref_cod_aluno_beneficio']);
       $obj_beneficio_det = $obj_beneficio->detalhe();
 
-      $this->addDetalhe(array('BenefÌcio', $obj_beneficio_det['nm_beneficio']));
+      $this->addDetalhe(array('Benef√≠cio', $obj_beneficio_det['nm_beneficio']));
     }
 
     if ($registro['ref_cod_religiao']) {
       $obj_religiao     = new clsPmieducarReligiao($registro['ref_cod_religiao']);
       $obj_religiao_det = $obj_religiao->detalhe();
 
-      $this->addDetalhe(array('Religi„o', $obj_religiao_det['nm_religiao']));
+      $this->addDetalhe(array('Religi√£o', $obj_religiao_det['nm_religiao']));
     }
 
     if ($det_raca['nm_raca']) {
-      $this->addDetalhe(array('RaÁa', $det_raca['nm_raca']));
+      $this->addDetalhe(array('Ra√ßa', $det_raca['nm_raca']));
     }
 
     if ($deficiencia_pessoa) {
-      $tabela = '<table border="0" width="300" cellpadding="3"><tr bgcolor="#A1B3BD" align="center"><td>DeficiÍncias</td></tr>';
+      $tabela = '<table border="0" width="300" cellpadding="3"><tr bgcolor="#A1B3BD" align="center"><td>Defici√™ncias</td></tr>';
       $cor    = '#D1DADF';
 
       foreach ($deficiencia_pessoa as $indice => $valor) {
@@ -567,7 +567,7 @@ class indice extends clsDetalhe
 
       $tabela .= '</table>';
 
-      $this->addDetalhe(array('DeficiÍncias', $tabela));
+      $this->addDetalhe(array('Defici√™ncias', $tabela));
     }
 
     if ($registro['rg']) {
@@ -575,11 +575,11 @@ class indice extends clsDetalhe
     }
 
     if ($registro['data_exp_rg']) {
-      $this->addDetalhe(array('Data de ExpediÁ„o RG', $registro['data_exp_rg']));
+      $this->addDetalhe(array('Data de Expedi√ß√£o RG', $registro['data_exp_rg']));
     }
 
     if ($registro['idorg_exp_rg']) {
-      $this->addDetalhe(array('”rg„o ExpediÁ„o RG', $registro['idorg_exp_rg']));
+      $this->addDetalhe(array('√ìrg√£o Expedi√ß√£o RG', $registro['idorg_exp_rg']));
     }
 
     if ($registro['sigla_uf_exp_rg']) {
@@ -611,19 +611,19 @@ class indice extends clsDetalhe
     }
 
     if ($registro['data_emissao_cert_civil']) {
-      $this->addDetalhe(array('Emiss„o Certid„o Civil', $registro['data_emissao_cert_civil']));
+      $this->addDetalhe(array('Emiss√£o Certid√£o Civil', $registro['data_emissao_cert_civil']));
     }
 
     if ($registro['sigla_uf_cert_civil']) {
-      $this->addDetalhe(array('Sigla Certid„o Civil', $registro['sigla_uf_cert_civil']));
+      $this->addDetalhe(array('Sigla Certid√£o Civil', $registro['sigla_uf_cert_civil']));
     }
 
     if ($registro['cartorio_cert_civil']) {
-      $this->addDetalhe(array('CartÛrio', $registro['cartorio_cert_civil']));
+      $this->addDetalhe(array('Cart√≥rio', $registro['cartorio_cert_civil']));
     }
 
     if ($registro['num_tit_eleitor']) {
-      $this->addDetalhe(array('TÌtulo de Eleitor', $registro['num_tit_eleitor']));
+      $this->addDetalhe(array('T√≠tulo de Eleitor', $registro['num_tit_eleitor']));
     }
 
     if ($registro['zona_tit_eleitor']) {
@@ -631,7 +631,7 @@ class indice extends clsDetalhe
     }
 
     if ($registro['secao_tit_eleitor']) {
-      $this->addDetalhe(array('SeÁ„o', $registro['secao_tit_eleitor']));
+      $this->addDetalhe(array('Se√ß√£o', $registro['secao_tit_eleitor']));
     }
 
     // Transporte escolar.
@@ -643,16 +643,16 @@ class indice extends clsDetalhe
     catch (Exception $e) {
     }
 
-    $this->addDetalhe(array('Transporte escolar', isset($transporteAluno) && $transporteAluno->responsavel!='N„o utiliza'  ? 'Sim' : 'N„o'));
-    if ($transporteAluno && $transporteAluno->responsavel!='N„o utiliza') {
-      $this->addDetalhe(array('Respons·vel transporte', $transporteAluno->responsavel));
+    $this->addDetalhe(array('Transporte escolar', isset($transporteAluno) && $transporteAluno->responsavel!='N√£o utiliza'  ? 'Sim' : 'N√£o'));
+    if ($transporteAluno && $transporteAluno->responsavel!='N√£o utiliza') {
+      $this->addDetalhe(array('Respons√°vel transporte', $transporteAluno->responsavel));
     }
 
     if ($this->obj_permissao->permissao_cadastra(578, $this->pessoa_logada, 7)) {
       $this->url_novo   = '/module/Cadastro/aluno';
       $this->url_editar = '/module/Cadastro/aluno?id=' . $registro['cod_aluno'];
 
-      $this->array_botao = array('Nova matrÌcula', 'Atualizar HistÛrico');
+      $this->array_botao = array('Nova matr√≠cula', 'Atualizar Hist√≥rico');
       $this->array_botao_url_script = array(
         sprintf('go("educar_matricula_cad.php?ref_cod_aluno=%d");', $registro['cod_aluno']),
         sprintf('go("educar_historico_escolar_lst.php?ref_cod_aluno=%d");', $registro['cod_aluno'])
@@ -679,13 +679,13 @@ class indice extends clsDetalhe
   }
 }
 
-// Instancia o objeto da p·gina
+// Instancia o objeto da p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia o objeto de conte˙do
+// Instancia o objeto de conte√∫do
 $miolo = new indice();
 
-// Passa o conte˙do para a p·gina
+// Passa o conte√∫do para a p√°gina
 $pagina->addForm($miolo);
 
 // Gera o HTML

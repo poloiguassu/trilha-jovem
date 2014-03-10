@@ -5,7 +5,7 @@
 
     var handleGetEscolas = function(resources) {
       var selectOptions = xmlResourcesToSelectOptions(resources, 'query', 'cod_escola');
-      updateSelect($escolaField, selectOptions, "Selecione uma escola");
+      updateSelect($escolaField, selectOptions, "Selecione uma instituição");
     }
 
     var updateEscolas = function(){

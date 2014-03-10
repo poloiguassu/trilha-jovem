@@ -11,9 +11,9 @@ function fixupTabelaMatriculas() {
   $j('<th>').html('Ano').appendTo($tr);
   $j('<th>').html(stringUtils.toUtf8('Situação')).appendTo($tr);
   $j('<th>').html('Turma').appendTo($tr);
-  $j('<th>').html(stringUtils.toUtf8('Série')).appendTo($tr);
-  $j('<th>').html('Curso').appendTo($tr);
-  $j('<th>').html('Escola').appendTo($tr);
+  $j('<th>').html('Eixo').appendTo($tr);
+  $j('<th>').html('Projeto').appendTo($tr);
+  $j('<th>').html(stringUtils.toUtf8.('Instituição')).appendTo($tr);
   $j('<th>').html('Entrada').appendTo($tr);
   $j('<th>').html(stringUtils.toUtf8('Saída')).appendTo($tr);
 

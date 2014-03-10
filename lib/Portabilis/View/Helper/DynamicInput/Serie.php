@@ -56,9 +56,13 @@ class Portabilis_View_Helper_DynamicInput_Serie extends Portabilis_View_Helper_D
     if ($escolaId && $cursoId && empty($resources))
       $resources = App_Model_IedFinder::getSeries($instituicaoId = null, $escolaId, $cursoId);
 
-    return $this->insertOption(null, "Selecione uma s&eacute;rie", $resources);
+    return $this->insertOption(null, "Selecione um eixo", $resources);
   }
 
+  protected function defaultOptions(){
+    return array('options' => array('label' => 'Eixo'));
+  }
+  
   public function serie($options = array()) {
     parent::select($options);
   }

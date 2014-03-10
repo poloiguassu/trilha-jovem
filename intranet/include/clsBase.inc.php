@@ -258,7 +258,7 @@ class clsBase extends clsConfig
           }
 
           $variaveis = "POST\n{$posts}GET\n{$gets}SESSION\n{$sessions}";
-          $variaveis = Portabilis_String_Utils::toLatin1($variaveis, array('escape' => true));
+          $variaveis = Portabilis_String_Utils::toUtf8($variaveis, array('escape' => true));
 
           if ($this->currentUserId()) {
             $this->db()->Consulta("INSERT INTO intranet_segur_permissao_negada (ref_ref_cod_pessoa_fj, ip_externo, ip_interno, data_hora, pagina, variaveis) VALUES('{$this->currentUserId()}', '$ip', '$ip_de_rede', NOW(), '$pagina', '$variaveis')");
@@ -821,7 +821,7 @@ class clsBase extends clsConfig
       error_log("Erro inesperado (pego em clsBase): " . $e->getMessage());
       NotificationMailer::unexpectedError($e->getMessage());
 
-      die("<script>document.location.href = '/modules/Error/unexpected';</script>");
+      die("<script>document.location.href = '/module/Error/unexpected';</script>");
     }
   }
 

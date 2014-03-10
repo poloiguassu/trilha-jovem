@@ -7,7 +7,7 @@
 
     var handleGetMatriculas = function(response) {
       var selectOptions = jsonResourcesToSelectOptions(response['options']);
-      updateSelect($matriculaField, selectOptions, "Selecione uma matricula");
+      updateSelect($matriculaField, selectOptions, "Selecione uma matrícula");
     }
 
     var updateMatriculas = function(){

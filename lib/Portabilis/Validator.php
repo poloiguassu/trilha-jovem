@@ -75,7 +75,7 @@ class Portabilis_Validator {
     if (! is_numeric($value)){
       if ($addMsgOnError)
       {
-        $msg = empty($msg) ? "O valor recebido para variavel '$name' deve ser numerico" : $msg;
+        $msg = empty($msg) ? "O valor recebido para variavel '$name' deve ser numérico" : $msg;
         $this->messenger->append($msg);
       }
 

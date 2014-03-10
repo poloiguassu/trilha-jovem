@@ -34,7 +34,7 @@ class clsIndexBase extends clsBase
 {
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Infra Prédio" );
+		$this->SetTitulo( "{$this->_instituicao} Trilha Jovem - Prédios" );
 		$this->processoAp = "567";
                 $this->addEstilo( "localizacaoSistema" );
 	}
@@ -127,7 +127,7 @@ class indice extends clsListagem
 
 
 				$this->addCabecalhos( array(
-					"Escola",
+					"Instituição",
 					"Nome Prédio",
 				) );
 
@@ -156,8 +156,8 @@ class indice extends clsListagem
 
 
 				$this->addCabecalhos( array(
-					"Institui&ccedil;&atilde;o",
-					"Escola",
+					"Instituição Executora",
+					"Insitutição",
 					"Nome Predio",
 				) );
 
@@ -191,8 +191,8 @@ class indice extends clsListagem
 				//poli-institucional
 
 				$this->addCabecalhos( array(
+					"Instituição Executora",
 					"Instituição",
-					"Escola",
 					"Nome Predio",
 				) );
 
@@ -328,7 +328,7 @@ class indice extends clsListagem
                 $localizacao = new LocalizacaoSistema();
                 $localizacao->entradaCaminhos( array(
                     $_SERVER['SERVER_NAME']."/intranet" => "Trilha Jovem",
-                    "educar_index.php"                  => "Escola",
+                    "educar_index.php"                  => "Instituição",
                     ""                                  => "Lista de Prédios"
                 ));
                 $this->enviaLocalizacao($localizacao->montar());

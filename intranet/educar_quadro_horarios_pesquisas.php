@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -86,14 +86,14 @@
 			}
 			else
 			{
-				echo "<!--\nErro\nClasse clsPmieducarInstituicao n&atilde;o encontrada\n-->";
-				$opcoes = array( "" => "Erro na gera&ccedil;&atilde;o" );
+				echo "<!--\nErro\nClasse clsPmieducarInstituicao n√£o encontrada\n-->";
+				$opcoes = array( "" => "Erro na gera√ß√£o" );
 			}
 			if ( $get_escola && $get_curso )
 			{
 				$retorno .= '<tr id="tr_status">
 							 <td valign="top" class="formlttd">
-							 <span class="form">Institui&ccedil;&atilde;o</span>
+							 <span class="form">Institui√ß√£o Executora</span>
 							 <span class="campo_obrigatorio">*</span>
 							 <br/>
 							 <sub style="vertical-align: top;"/>
@@ -120,7 +120,7 @@
 			{
 				$retorno .= '<tr id="tr_status">
 							 <td valign="top" class="formlttd">
-							 <span class="form">Institui&ccedil;&atilde;o</span>
+							 <span class="form">Institui√ß√£o Executora</span>
 							 <span class="campo_obrigatorio">*</span>
 							 <br/>
 							 <sub style="vertical-align: top;"/>
@@ -188,8 +188,8 @@
 				}
 				else
 				{
-					echo "<!--\nErro\nClasse clsPmieducarEscola n&atilde;o encontrada\n-->";
-					$opcoes_escola = array( "" => "Erro na gera&ccedil;&atilde;o" );
+					echo "<!--\nErro\nClasse clsPmieducarEscola n√£o encontrada\n-->";
+					$opcoes_escola = array( "" => "Erro na gera√ß√£o" );
 				}
 				if ( $this->ref_cod_instituicao )
 				{
@@ -208,15 +208,15 @@
 					}
 					else
 					{
-						echo "<!--\nErro\nClasse clsPmieducarEscola n&atilde;o encontrada\n-->";
-						$opcoes_escola = array( "" => "Erro na gera&ccedil;&atilde;o" );
+						echo "<!--\nErro\nClasse clsPmieducarEscola n√£o encontrada\n-->";
+						$opcoes_escola = array( "" => "Erro na gera√ß√£o" );
 					}
 				}
 				if ( $get_escola )
 				{
 					$retorno .= '<tr id="tr_escola">
 								 <td valign="top" class="formmdtd">
-								 <span class="form">Escola</span>
+								 <span class="form">Institui√ß√£o</span>
 								 <span class="campo_obrigatorio">*</span>
 								 <br/>
 								 <sub style="vertical-align: top;"/>
@@ -316,8 +316,8 @@
 			}
 			else
 			{
-				echo "<!--\nErro\nClasse clsPmieducarCurso n&atilde;o encontrada\n-->";
-				$opcoes_curso = array( "" => "Erro na gera&ccedil;&atilde;o" );
+				echo "<!--\nErro\nClasse clsPmieducarCurso n√£o encontrada\n-->";
+				$opcoes_curso = array( "" => "Erro na gera√ß√£o" );
 			}
 			$retorno .= '<tr id="tr_curso">
 						 <td valign="top" class="formlttd">
@@ -406,12 +406,12 @@
 			}
 			else
 			{
-				echo "<!--\nErro\nClasse clsPmieducarSerie n&atilde;o encontrada\n-->";
-				$todas_series = array( "" => "Erro na gera&ccedil;&atilde;o" );
+				echo "<!--\nErro\nClasse clsPmieducarSerie n√£o encontrada\n-->";
+				$todas_series = array( "" => "Erro na gera√ß√£o" );
 			}
 			$retorno .= '<tr id="tr_curso">
 						 <td valign="top" class="formmdtd">
-						 <span class="form">S&eacute;rie</span>
+						 <span class="form">Eixo</span>
 						 <span class="campo_obrigatorio">*</span>
 						 <br/>
 						 <sub style="vertical-align: top;"/>
@@ -474,8 +474,8 @@
 			}
 			else
 			{
-				echo "<!--\nErro\nClasse clsPmieducarTurma n&atilde;o encontrada\n-->";
-				$todas_turmas = array( "" => "Erro na gera&ccedil;&atilde;o" );
+				echo "<!--\nErro\nClasse clsPmieducarTurma n√£o encontrada\n-->";
+				$todas_turmas = array( "" => "Erro na gera√ß√£o" );
 			}
 			$retorno .= '<tr id="tr_turma">
 						 <td valign="top" class="formlttd">
@@ -511,36 +511,36 @@
 		if ( isset( $get_cabecalho ) )
 		{
 			if ( $nivel_usuario == 1 || $nivel_usuario == 2 || $nivel_usuario == 4 ) {
-				${$get_cabecalho}[] = "Curso";
-				${$get_cabecalho}[] = "S&eacute;rie";
+				${$get_cabecalho}[] = "Projeto";
+				${$get_cabecalho}[] = "Eixo";
 				${$get_cabecalho}[] = "Turma";
 			}
 			if ( $nivel_usuario == 1 || $nivel_usuario == 2 )
-				${$get_cabecalho}[] = "Escola";
+				${$get_cabecalho}[] = "Institui√ß√£o";
 			if ( $nivel_usuario == 1 )
-				${$get_cabecalho}[] = "Institui&ccedil;&atilde;o";
+				${$get_cabecalho}[] = "Institui√ß√£o Executora";
 		}
 
 		$validacao = "";
 		if ( $nivel_usuario == 1 )
 		{
 			$validacao = 'if ( !document.getElementById( "ref_cod_instituicao" ).value ) {
-					alert( "Por favor, selecione uma instituiÁ„o" );
+					alert( "Por favor, selecione uma institui√ß√£o executora" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_escola" ).value) {
 						//if( !document.getElementById( "ref_cod_curso" ).value){
-							alert( "Por favor, selecione uma escola" );
+							alert( "Por favor, selecione uma institui√ß√£o" );
 							return false;
 						//}
 					}
 					if ( !document.getElementById( "ref_cod_curso" ).value ) {
-					alert( "Por favor, selecione um curso" );
+					alert( "Por favor, selecione um projeto" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_serie" ).value) {
 						//if( document.getElementById( "ref_cod_escola" ).value){
-							alert( "Por favor, selecione uma sÈrie" );
+							alert( "Por favor, selecione um eixo" );
 							return false;
 					//	}else{
 						//	alert( "Por favor, selecione uma turma" );
@@ -556,15 +556,15 @@
 		{
 			$validacao = '
 					if ( !document.getElementById( "ref_cod_escola" ).value /*&&  !document.getElementById( "ref_cod_curso" ).value*/) {
-					alert( "Por favor, selecione uma escola" );
+					alert( "Por favor, selecione uma institui√ß√£o" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_curso" ).value ) {
-					alert( "Por favor, selecione um curso" );
+					alert( "Por favor, selecione um projeto" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_serie" ).value ) {
-					alert( "Por favor, selecione uma sÈrie" );
+					alert( "Por favor, selecione um eixo" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_turma" ).value ) {
@@ -576,11 +576,11 @@
 		{
 			$validacao = '
 					if ( !document.getElementById( "ref_cod_curso" ).value ) {
-					alert( "Por favor, selecione um curso" );
+					alert( "Por favor, selecione um projeto" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_serie" ).value ) {
-					alert( "Por favor, selecione uma sÈrie" );
+					alert( "Por favor, selecione uma eixo" );
 					return false;
 					}
 					if ( !document.getElementById( "ref_cod_turma" ).value ) {
@@ -656,7 +656,7 @@ if ( $nivel_usuario == 1 || $nivel_usuario == 2 )
 		if(DOM_array.length)
 		{
 			campoEscola.length = 1;
-			campoEscola.options[0].text = 'Selecione uma escola';
+			campoEscola.options[0].text = 'Selecione uma institui√ß√£o';
 			campoEscola.disabled = false;
 
 			for( var i = 0; i < DOM_array.length; i++ )
@@ -665,7 +665,7 @@ if ( $nivel_usuario == 1 || $nivel_usuario == 2 )
 			}
 		}
 		else
-			campoEscola.options[0].text = 'A instituiÁ„o n„o possui nenhuma escola';
+			campoEscola.options[0].text = 'A institui√ß√£o executora n√£o possui nenhuma instuitui√ß√£o';
 	}
 <?
 }
@@ -678,7 +678,7 @@ function getCurso( xml_curso )
 	if(DOM_array.length)
 	{
 		campoCurso.length = 1;
-		campoCurso.options[0].text = 'Selecione um curso';
+		campoCurso.options[0].text = 'Selecione um projeto';
 		campoCurso.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -687,7 +687,7 @@ function getCurso( xml_curso )
 		}
 	}
 	else
-		campoCurso.options[0].text = 'A escola n„o possui nenhum curso';
+		campoCurso.options[0].text = 'A institui√ß√£o n√£o possui nenhum projeto';
 }
 
 function getSerie( xml_serie )
@@ -697,7 +697,7 @@ function getSerie( xml_serie )
 	if(DOM_array.length)
 	{
 		campoSerie.length = 1;
-		campoSerie.options[0].text = 'Selecione uma sÈrie';
+		campoSerie.options[0].text = 'Selecione um eixo';
 		campoSerie.disabled = false;
 
 		for( var i = 0; i < DOM_array.length; i++ )
@@ -706,7 +706,7 @@ function getSerie( xml_serie )
 		}
 	}
 	else
-		campoSerie.options[0].text = 'A escola/curso n„o possui nenhuma sÈrie';
+		campoSerie.options[0].text = 'A projeto n√£o possui nenhum eixo';
 }
 
 function getTurma( xml_turma )
@@ -725,6 +725,6 @@ function getTurma( xml_turma )
 		}
 	}
 	else
-		campoTurma.options[0].text = 'A escola/sÈrie n„o possui nenhuma turma';
+		campoTurma.options[0].text = 'O eixo n√£o possui nenhuma turma';
 }
 </script>

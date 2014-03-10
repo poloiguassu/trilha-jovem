@@ -1,30 +1,30 @@
 <?php
 
 /**
- * i-Educar - Sistema de gest„o escolar
+ * i-Educar - Sistema de gest√£o escolar
  *
- * Copyright (C) 2006  Prefeitura Municipal de ItajaÌ
+ * Copyright (C) 2006  Prefeitura Municipal de Itaja√≠
  *                     <ctima@itajai.sc.gov.br>
  *
- * Este programa È software livre; vocÍ pode redistribuÌ-lo e/ou modific·-lo
- * sob os termos da LicenÁa P˙blica Geral GNU conforme publicada pela Free
- * Software Foundation; tanto a vers„o 2 da LicenÁa, como (a seu critÈrio)
- * qualquer vers„o posterior.
+ * Este programa √© software livre; voc√™ pode redistribu√≠-lo e/ou modific√°-lo
+ * sob os termos da Licen√ßa P√∫blica Geral GNU conforme publicada pela Free
+ * Software Foundation; tanto a vers√£o 2 da Licen√ßa, como (a seu crit√©rio)
+ * qualquer vers√£o posterior.
  *
- * Este programa È distribuÌ≠do na expectativa de que seja ˙til, porÈm, SEM
- * NENHUMA GARANTIA; nem mesmo a garantia implÌ≠cita de COMERCIABILIDADE OU
- * ADEQUA«√O A UMA FINALIDADE ESPECÕFICA. Consulte a LicenÁa P˙blica Geral
+ * Este programa √© distribu√≠¬≠do na expectativa de que seja √∫til, por√©m, SEM
+ * NENHUMA GARANTIA; nem mesmo a garantia impl√≠¬≠cita de COMERCIABILIDADE OU
+ * ADEQUA√á√ÉO A UMA FINALIDADE ESPEC√çFICA. Consulte a Licen√ßa P√∫blica Geral
  * do GNU para mais detalhes.
  *
- * VocÍ deve ter recebido uma cÛpia da LicenÁa P˙blica Geral do GNU junto
- * com este programa; se n„o, escreva para a Free Software Foundation, Inc., no
- * endereÁo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
+ * Voc√™ deve ter recebido uma c√≥pia da Licen√ßa P√∫blica Geral do GNU junto
+ * com este programa; se n√£o, escreva para a Free Software Foundation, Inc., no
+ * endere√ßo 59 Temple Street, Suite 330, Boston, MA 02111-1307 USA.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Arquivo disponÌvel desde a vers„o 1.0.0
+ * @since     Arquivo dispon√≠vel desde a vers√£o 1.0.0
  * @version   $Id$
  */
 
@@ -36,18 +36,18 @@ require_once 'include/pmieducar/geral.inc.php';
 /**
  * clsIndexBase class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class clsIndexBase extends clsBase
 {
   function Formular()
   {
-    $this->SetTitulo($this->_instituicao . ' i-Educar - Curso');
+    $this->SetTitulo($this->_instituicao . ' Trilha Jovem - Curso');
     $this->processoAp = '566';
   }
 }
@@ -55,11 +55,11 @@ class clsIndexBase extends clsBase
 /**
  * indice class.
  *
- * @author    Prefeitura Municipal de ItajaÌ <ctima@itajai.sc.gov.br>
+ * @author    Prefeitura Municipal de Itaja√≠ <ctima@itajai.sc.gov.br>
  * @category  i-Educar
  * @license   @@license@@
  * @package   iEd_Pmieducar
- * @since     Classe disponÌvel desde a vers„o 1.0.0
+ * @since     Classe dispon√≠vel desde a vers√£o 1.0.0
  * @version   @@package_version@@
  */
 class indice extends clsCadastro
@@ -175,7 +175,7 @@ class indice extends clsCadastro
     $obrigatorio = true;
     include('include/pmieducar/educar_campo_lista.php');
 
-    // NÌvel ensino
+    // N√≠vel ensino
     $opcoes = array( '' => 'Selecione' );
 
     if ($this->ref_cod_instituicao) {
@@ -198,7 +198,7 @@ class indice extends clsCadastro
       $script = "<img id='img_nivel_ensino' style='display: none;' src='imagens/banco_imagens/escreve.gif' style='cursor:hand; cursor:pointer;' border='0' onclick=\"{$script}\">";
     }
 
-    $this->campoLista('ref_cod_nivel_ensino', 'N&iacute;vel Ensino', $opcoes,
+    $this->campoLista('ref_cod_nivel_ensino', 'N√≠vel de Ensino', $opcoes,
       $this->ref_cod_nivel_ensino, '', FALSE, '', $script);
 
     // Tipo ensino
@@ -225,7 +225,7 @@ class indice extends clsCadastro
       $script = "<img id='img_tipo_ensino' style='display: none;' src='imagens/banco_imagens/escreve.gif' style='cursor:hand; cursor:pointer;' border='0' onclick=\"{$script}\">";
     }
 
-    $this->campoLista('ref_cod_tipo_ensino', 'Tipo Ensino', $opcoes,
+    $this->campoLista('ref_cod_tipo_ensino', 'Tipo de Ensino', $opcoes,
       $this->ref_cod_tipo_ensino, '', FALSE, '', $script);
 
 
@@ -259,11 +259,11 @@ class indice extends clsCadastro
       $this->ref_cod_tipo_regime, '', FALSE, '', $script, FALSE, FALSE);
 
     // Outros campos
-    $this->campoTexto('nm_curso', 'Curso', $this->nm_curso, 30, 255, TRUE);
+    $this->campoTexto('nm_curso', 'Projeto', $this->nm_curso, 30, 255, TRUE);
 
-    $this->campoTexto('sgl_curso', 'Sigla Curso', $this->sgl_curso, 15, 15, TRUE);
+    $this->campoTexto('sgl_curso', 'Sigla do Projeto', $this->sgl_curso, 15, 15, TRUE);
 
-    $this->campoNumero('qtd_etapas', 'Quantidade Etapas', $this->qtd_etapas, 2, 2, TRUE);
+    $this->campoNumero('qtd_etapas', 'Quantidade de Etapas', $this->qtd_etapas, 2, 2, TRUE);
 
     if (is_numeric($this->hora_falta)) {
       $this->campoMonetario('hora_falta', 'Hora Falta',
@@ -274,47 +274,12 @@ class indice extends clsCadastro
         FALSE, '', '', '');
     }
 
-    $this->campoMonetario('carga_horaria', 'Carga Hor&aacute;ria',
+    $this->campoMonetario('carga_horaria', 'Carga Hor√°ria',
       $this->carga_horaria, 7, 7, TRUE);
-
-    $this->campoTexto('ato_poder_publico', 'Ato Poder P&uacute;blico',
-      $this->ato_poder_publico, 30, 255, FALSE);
 
     $this->campoOculto('excluir_', '');
     $qtd_habilitacao = 1;
     $aux;
-
-    $this->campoQuebra();
-    if ($this->habilitacao_curso) {
-      foreach ($this->habilitacao_curso as $campo) {
-        if ($this->excluir_ == $campo["ref_cod_habilitacao_"]) {
-          $this->habilitacao_curso[$campo["ref_cod_habilitacao"]] = NULL;
-          $this->excluir_ = NULL;
-        }
-        else
-        {
-          $obj_habilitacao = new clsPmieducarHabilitacao($campo["ref_cod_habilitacao_"]);
-          $obj_habilitacao_det = $obj_habilitacao->detalhe();
-          $nm_habilitacao = $obj_habilitacao_det["nm_tipo"];
-
-          $this->campoTextoInv("ref_cod_habilitacao_{$campo["ref_cod_habilitacao_"]}",
-            '', $nm_habilitacao, 30, 255, FALSE, FALSE, FALSE, '',
-            "<a href='#' onclick=\"getElementById('excluir_').value = '{$campo["ref_cod_habilitacao_"]}'; getElementById('tipoacao').value = ''; {$this->__nome}.submit();\"><img src='imagens/nvp_bola_xis.gif' title='Excluir' border=0></a>" );
-
-          $aux[$qtd_habilitacao]["ref_cod_habilitacao_"] = $campo["ref_cod_habilitacao_"];
-
-          $qtd_habilitacao++;
-        }
-      }
-
-      unset($this->habilitacao_curso);
-      $this->habilitacao_curso = $aux;
-    }
-
-    $this->campoOculto('habilitacao_curso', serialize($this->habilitacao_curso));
-
-    // HabilitaÁ„o
-    $opcoes = array('' => 'Selecione');
 
     if ($this->ref_cod_instituicao) {
       $objTemp = new clsPmieducarHabilitacao();
@@ -333,24 +298,13 @@ class indice extends clsCadastro
     $script = "javascript:showExpansivelIframe(520, 225, 'educar_habilitacao_cad_pop.php');";
     $script = "<img id='img_habilitacao' src='imagens/banco_imagens/escreve.gif' style='cursor:hand; cursor:pointer;' border='0' onclick=\"{$script}\">";
 
-    $this->campoLista('habilitacao', 'Habilita&ccedil;&atilde;o', $opcoes,
-      $this->habilitacao, '', FALSE, '',
-      "<a href='#' onclick=\"getElementById('incluir').value = 'S'; getElementById('tipoacao').value = ''; {$this->__nome}.submit();\"><img src='imagens/nvp_bot_adiciona.gif' title='Incluir' border=0></a>{$script}",
-      FALSE, FALSE);
-    $this->campoOculto('incluir', '');
-    $this->campoQuebra();
-
-    // Padr„o ano escolar
-    $this->campoCheck('padrao_ano_escolar', 'Padr&atilde;o Ano Escolar', $this->padrao_ano_escolar);
+    // Padr√£o ano escolar
+    $this->campoCheck('padrao_ano_escolar', 'Padr√£o Ano Escolar', $this->padrao_ano_escolar);
 
     $this->campoCheck('multi_seriado', 'Multi seriado', $this->multi_seriado);
 
     // Objetivo do curso
-    $this->campoMemo('objetivo_curso', 'Objetivo Curso', $this->objetivo_curso,
-      60, 5, FALSE);
-
-    // P˙blico alvo
-    $this->campoMemo('publico_alvo', 'P&uacute;blico Alvo', $this->publico_alvo,
+    $this->campoMemo('objetivo_curso', 'Objetivo do Projeto', $this->objetivo_curso,
       60, 5, FALSE);
   }
 
@@ -390,8 +344,8 @@ class indice extends clsCadastro
             $cadastrou2  = $obj->cadastra();
 
             if (!$cadastrou2) {
-              $this->mensagem = "Cadastro n&atilde;o realizado.<br>";
-              echo "<!--\nErro ao cadastrar clsPmieducarHabilitacaoCurso\nvalores obrigat&oacute;rios\nis_numeric( $cadastrou ) && is_numeric( {$campo["ref_cod_habilitacao_"]} ) )\n-->";
+              $this->mensagem = "Cadastro n√£o realizado.<br>";
+              echo "<!--\nErro ao cadastrar clsPmieducarHabilitacaoCurso\nvalores obrigat√≥rios\nis_numeric( $cadastrou ) && is_numeric( {$campo["ref_cod_habilitacao_"]} ) )\n-->";
               return FALSE;
             }
           }
@@ -402,8 +356,8 @@ class indice extends clsCadastro
         die();
       }
 
-      $this->mensagem = "Cadastro n&atilde;o realizado.<br>";
-      echo "<!--\nErro ao cadastrar clsPmieducarCurso\nvalores obrigat&oacute;rios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_cod_tipo_regime ) && is_numeric( $this->ref_cod_nivel_ensino ) && is_numeric( $this->ref_cod_tipo_ensino ) && is_string( $this->nm_curso ) && is_string( $this->sgl_curso ) && is_numeric( $this->qtd_etapas ) && is_numeric( $this->frequencia_minima ) && is_numeric( $this->media ) && is_numeric( $this->falta_ch_globalizada ) && is_numeric( $this->edicao_final ) && is_string( $this->data_inicio ) && is_string( $this->data_fim )\n-->";
+      $this->mensagem = "Cadastro n√£o realizado.<br>";
+      echo "<!--\nErro ao cadastrar clsPmieducarCurso\nvalores obrigat√≥rios\nis_numeric( $this->pessoa_logada ) && is_numeric( $this->ref_cod_tipo_regime ) && is_numeric( $this->ref_cod_nivel_ensino ) && is_numeric( $this->ref_cod_tipo_ensino ) && is_string( $this->nm_curso ) && is_string( $this->sgl_curso ) && is_numeric( $this->qtd_etapas ) && is_numeric( $this->frequencia_minima ) && is_numeric( $this->media ) && is_numeric( $this->falta_ch_globalizada ) && is_numeric( $this->edicao_final ) && is_string( $this->data_inicio ) && is_string( $this->data_fim )\n-->";
       return FALSE;
     }
 
@@ -449,20 +403,20 @@ class indice extends clsCadastro
               $cadastrou2  = $obj->cadastra();
 
               if (!$cadastrou2) {
-                $this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
-                echo "<!--\nErro ao editar clsPmieducarHabilitacaoCurso\nvalores obrigat&oacute;rios\nis_numeric( $this->cod_curso ) && is_numeric( {$campo["ref_cod_habilitacao_"]} ) )\n-->";
+                $this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
+                echo "<!--\nErro ao editar clsPmieducarHabilitacaoCurso\nvalores obrigat√≥rios\nis_numeric( $this->cod_curso ) && is_numeric( {$campo["ref_cod_habilitacao_"]} ) )\n-->";
                 return FALSE;
               }
             }
           }
         }
 
-        $this->mensagem .= "Edi&ccedil;&atilde;o efetuada com sucesso.<br>";
+        $this->mensagem .= "Edi√ß√£o efetuada com sucesso.<br>";
         header("Location: educar_curso_lst.php");
         die();
       }
 
-      $this->mensagem = "Edi&ccedil;&atilde;o n&atilde;o realizada.<br>";
+      $this->mensagem = "Edi√ß√£o n√£o realizada.<br>";
       echo "<!--\nErro ao editar clsPmieducarCurso\nvalores obrigat&oacute;rios\nif( is_numeric( $this->cod_curso ) && is_numeric( $this->pessoa_logada ) )\n-->";
       return FALSE;
     }
@@ -482,27 +436,27 @@ class indice extends clsCadastro
 
     $excluiu = $obj->excluir();
     if ($excluiu) {
-      $this->mensagem .= "Exclus&atilde;o efetuada com sucesso.<br>";
+      $this->mensagem .= "Excus√£o realizada com sucesso.<br>";
       header("Location: educar_curso_lst.php");
       die();
     }
 
-    $this->mensagem = "Exclus&atilde;o n&atilde;o realizada.<br>";
+    $this->mensagem = "Exclus√£o n√£o realizada.<br>";
     echo "<!--\nErro ao excluir clsPmieducarCurso\nvalores obrigat&oacute;rios\nif( is_numeric( $this->cod_curso ) && is_numeric( $this->pessoa_logada ) )\n-->";
     return FALSE;
   }
 }
 
-// Instancia objeto de p·gina
+// Instancia objeto de p√°gina
 $pagina = new clsIndexBase();
 
-// Instancia objeto de conte˙do
+// Instancia objeto de conte√∫do
 $miolo = new indice();
 
-// Atribui o conte˙do ‡† p·gina
+// Atribui o conte√∫do √†¬† p√°gina
 $pagina->addForm($miolo);
 
-// Gera o cÛdigo HTML
+// Gera o c√≥digo HTML
 $pagina->MakeAll();
 ?>
 <script type="text/javascript">
@@ -513,7 +467,7 @@ function getNivelEnsino(xml_nivel_ensino)
 
   if (DOM_array.length) {
     campoNivelEnsino.length = 1;
-    campoNivelEnsino.options[0].text = 'Selecione um nÌvel de ensino';
+    campoNivelEnsino.options[0].text = 'Selecione um n√≠vel de ensino';
     campoNivelEnsino.disabled = false;
 
     for (var i = 0; i < DOM_array.length; i++) {
@@ -524,7 +478,7 @@ function getNivelEnsino(xml_nivel_ensino)
     }
   }
   else {
-    campoNivelEnsino.options[0].text = 'A instituiÁ„o n„o possui nenhum nÌvel de ensino';
+    campoNivelEnsino.options[0].text = 'A institui√ß√£o n√£o possui nenhum n√≠vel de ensino';
   }
 }
 
@@ -546,7 +500,7 @@ function getTipoEnsino(xml_tipo_ensino)
     }
   }
   else {
-    campoTipoEnsino.options[0].text = 'A instituiÁ„o n„o possui nenhum tipo de ensino';
+    campoTipoEnsino.options[0].text = 'A institui√ß√£o n√£o possui nenhum tipo de ensino';
   }
 }
 
@@ -569,7 +523,7 @@ function getTipoRegime(xml_tipo_regime)
     }
   }
   else {
-    campoTipoRegime.options[0].text = 'A instituiÁ„o n„o possui nenhum tipo de regime';
+    campoTipoRegime.options[0].text = 'A institui√ß√£o n√£o possui nenhum tipo de regime';
   }
 }
 
@@ -580,7 +534,7 @@ function getHabilitacao(xml_habilitacao)
 
   if (DOM_array.length) {
     campoHabilitacao.length = 1;
-    campoHabilitacao.options[0].text = 'Selecione uma habilitaÁ„o';
+    campoHabilitacao.options[0].text = 'Selecione uma habilita√ß√£o';
     campoHabilitacao.disabled = false;
 
     for (var i = 0; i < DOM_array.length; i++) {
@@ -591,7 +545,7 @@ function getHabilitacao(xml_habilitacao)
     }
   }
   else {
-    campoHabilitacao.options[0].text = 'A instituiÁ„o n„o possui nenhuma habilitaÁ„o';
+    campoHabilitacao.options[0].text = 'A institui√ß√£o n√£o possui nenhuma habilita√ß√£o';
   }
 }
 
@@ -602,7 +556,7 @@ document.getElementById('ref_cod_instituicao').onchange = function()
   var campoNivelEnsino = document.getElementById('ref_cod_nivel_ensino');
   campoNivelEnsino.length = 1;
   campoNivelEnsino.disabled = true;
-  campoNivelEnsino.options[0].text = 'Carregando nÌvel de ensino';
+  campoNivelEnsino.options[0].text = 'Carregando n√≠vel de ensino';
 
   var campoTipoEnsino = document.getElementById('ref_cod_tipo_ensino');
   campoTipoEnsino.length = 1;
@@ -617,7 +571,7 @@ document.getElementById('ref_cod_instituicao').onchange = function()
   var campoHabilitacao = document.getElementById('habilitacao');
   campoHabilitacao.length = 1;
   campoHabilitacao.disabled = true;
-  campoHabilitacao.options[0].text = 'Carregando habilitaÁ„o';
+  campoHabilitacao.options[0].text = 'Carregando habilita√ß√£o';
 
   var xml_nivel_ensino = new ajax(getNivelEnsino);
   xml_nivel_ensino.envia("educar_nivel_ensino_xml.php?ins="+campoInstituicao);

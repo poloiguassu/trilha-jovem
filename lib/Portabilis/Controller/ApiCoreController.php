@@ -456,7 +456,7 @@ class ApiCoreController extends Core_Controller_Page_EditController
 
   // DEPRECADO #TODO nas classe filhas migrar de safeStringForDb => toLatin1
   protected function safeStringForDb($str) {
-    return $this->toLatin1($str);
+    return $this->toUtf8($str);
   }
 
 
@@ -506,7 +506,7 @@ class ApiCoreController extends Core_Controller_Page_EditController
     $selectFields                    = join(', ', $searchOptions['selectFields']);
 
     return "select distinct $selectFields from $namespace.$table
-            where lower(to_ascii($labelAttr)) like lower(to_ascii($1))||'%' order by $labelAttr limit 15";
+            where lower(sem_acento($labelAttr)) like lower(sem_acento($1))||'%' order by $labelAttr limit 15";
   }
 
   protected function sqlParams($query) {

@@ -6,7 +6,7 @@
 
     var handleGetCursos = function(response) {
       var selectOptions = jsonResourcesToSelectOptions(response['options']);
-      updateSelect($cursoField, selectOptions, "Selecione um curso");
+      updateSelect($cursoField, selectOptions, "Selecione um projeto");
     }
 
     var updateCursos = function(){

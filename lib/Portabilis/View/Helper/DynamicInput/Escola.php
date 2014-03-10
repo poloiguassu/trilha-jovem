@@ -68,7 +68,7 @@ class Portabilis_View_Helper_DynamicInput_Escola extends Portabilis_View_Helper_
       $resources = App_Model_IedFinder::getEscolas($instituicaoId);
 
 
-    return $this->insertOption(null, "Selecione uma escola", $resources);
+    return $this->insertOption(null, "Selecione uma instituição", $resources);
   }
 
 
@@ -91,7 +91,7 @@ class Portabilis_View_Helper_DynamicInput_Escola extends Portabilis_View_Helper_
     $options['options']['value'] = $escola['nome'];
 
     $defaultInputOptions = array('id'        => 'ref_cod_escola',
-                                 'label'     => 'Escola',
+                                 'label'     => 'Instituição',
                                  'value'     => '',
                                  'inline'    => false,
                                  'descricao' => '',
@@ -105,7 +105,10 @@ class Portabilis_View_Helper_DynamicInput_Escola extends Portabilis_View_Helper_
     call_user_func_array(array($this->viewInstance, 'campoRotulo'), $inputOptions);
   }
 
-
+  protected function defaultOptions(){
+    return array('options' => array('label' => 'Instituição'));
+  }
+  
   public function escola($options = array()) {
     $isProfessor = Portabilis_Business_Professor::isProfessor($this->getInstituicaoId($options['instituicaoId']),
                                                               $this->getCurrentUserId());

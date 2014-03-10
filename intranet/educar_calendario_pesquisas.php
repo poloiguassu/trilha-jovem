@@ -56,14 +56,14 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
       }
     }
     else {
-      $opcoes = array('' => 'Erro na geraÁ„o');
+      $opcoes = array('' => 'Erro na gera√ß√£o');
     }
 
     if ($get_escola) {
       $retorno .= '
         <tr id="tr_status">
           <td valign="top" class="formlttd">
-            <span class="form">InstituiÁ„o</span>
+            <span class="form">Institui√ß√£o Executora</span>
             <span class="campo_obrigatorio">*</span><br/>
             <sub style="vertical-align: top;"/>
           </td>';
@@ -136,7 +136,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
         echo sprintf('<script>%s</script>', $todas_escolas);
       }
       else {
-        $opcoes_escola = array('' => 'Erro na geraÁ„o');
+        $opcoes_escola = array('' => 'Erro na gera√ß√£o');
       }
 
       if ($this->ref_cod_instituicao) {
@@ -153,7 +153,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
           }
         }
         else {
-          $opcoes_escola = array('' => 'Erro na geraÁ„o');
+          $opcoes_escola = array('' => 'Erro na gera√ß√£o');
         }
       }
 
@@ -161,7 +161,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
         $retorno .= '
           <tr id="tr_escola">
             <td valign="top" class="formmdtd">
-              <span class="form">Escola</span>
+              <span class="form">Institui√ß√£o</span>
               <span class="campo_obrigatorio">*</span><br/>
               <sub style="vertical-align: top;"/>
             </td>';
@@ -195,10 +195,10 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
 
   if (isset($get_cabecalho)) {
     if ($nivel_usuario == 1 || $nivel_usuario == 2) {
-      ${$get_cabecalho}[] = 'Escola';
+      ${$get_cabecalho}[] = 'Institui√ß√£o';
     }
     if ($nivel_usuario == 1) {
-      ${$get_cabecalho}[] = 'InstituiÁ„o';
+      ${$get_cabecalho}[] = 'Institui√ß√£o Executora';
     }
   }
 
@@ -207,18 +207,18 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
   if ($nivel_usuario == 1) {
     $validacao = '
       if (!document.getElementById("ref_cod_instituicao").value) {
-        alert("Por favor, selecione uma instituicao");
+        alert("Por favor, selecione uma instituicao executora");
         return false;
       }
       if (!document.getElementById("ref_cod_escola").value) {
-        alert("Por favor, selecione uma escola");
+        alert("Por favor, selecione uma institui√ß√£o");
         return false;
       } ';
   }
   elseif ($nivel_usuario == 2) {
     $validacao = '
       if (!document.getElementById("ref_cod_escola").value){
-        alert("Por favor, selecione uma escola");
+        alert("Por favor, selecione uma institui√ß√£o");
         return false;
       } ';
   }
@@ -226,7 +226,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
   $retorno .= '
     <tr id="tr_escola">
       <td valign="top" class="formldtd">
-        <span class="form">Ano</span>
+        <span class="form">Etapa</span>
         <span class="campo_obrigatorio">*</span><br/>
         <sub style="vertical-align: top;"/>
       </td>';
@@ -290,7 +290,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
     }
 
     campoEscola.length = 1;
-    campoEscola.options[0] = new Option('Selecione uma escola', '', false, false);
+    campoEscola.options[0] = new Option('Selecione uma Institui√ß√£o', '', false, false);
     for (var j = 0; j < escola.length; j++) {
       if (escola[j][2] == campoInstituicao) {
         campoEscola.options[campoEscola.options.length] = new Option(
@@ -301,7 +301,7 @@ if ($nivel_usuario <= 4 && !empty($nivel_usuario)) {
 
     if (campoEscola.length == 1 && campoInstituicao != '') {
       campoEscola.options[0] = new Option(
-        'A instituÁ„o n„o possui nenhuma escola', '', false, false
+        'A institu√ß√£o executora n√£o possui nenhuma Institui√ß√£o', '', false, false
       );
     }
 

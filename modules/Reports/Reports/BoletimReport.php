@@ -55,7 +55,7 @@ class BoletimReport extends Portabilis_Report_ReportCore
 
   	if (empty($flagTipoBoletimTurma)) {
   		throw new Exception(
-        Portabilis_String_Utils::toLatin1("Não foi definido o tipo de boletim no cadastro de turmas.")
+        Portabilis_String_Utils::toUtf8("Não foi definido o tipo de boletim no cadastro de turmas.")
       );
     }
 
@@ -74,7 +74,7 @@ class BoletimReport extends Portabilis_Report_ReportCore
 
   	if (empty($template)) {
   		throw new Exception(
-        Portabilis_String_Utils::toLatin1("Não foi possivel recuperar nome do template para o boletim.")
+        Portabilis_String_Utils::toUtf8("Não foi possivel recuperar nome do template para o boletim.")
       );
     }
 

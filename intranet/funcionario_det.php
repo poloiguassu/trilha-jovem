@@ -1,25 +1,25 @@
 <?php
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																	     *
-	*	@author Prefeitura Municipal de ItajaÌ								 *
+	*	@author Prefeitura Municipal de Itaja√≠								 *
 	*	@updated 29/03/2007													 *
-	*   Pacote: i-PLB Software P˙blico Livre e Brasileiro					 *
+	*   Pacote: i-PLB Software P√∫blico Livre e Brasileiro					 *
 	*																		 *
-	*	Copyright (C) 2006	PMI - Prefeitura Municipal de ItajaÌ			 *
+	*	Copyright (C) 2006	PMI - Prefeitura Municipal de Itaja√≠			 *
 	*						ctima@itajai.sc.gov.br					    	 *
 	*																		 *
-	*	Este  programa  È  software livre, vocÍ pode redistribuÌ-lo e/ou	 *
-	*	modific·-lo sob os termos da LicenÁa P˙blica Geral GNU, conforme	 *
-	*	publicada pela Free  Software  Foundation,  tanto  a vers„o 2 da	 *
-	*	LicenÁa   como  (a  seu  critÈrio)  qualquer  vers„o  mais  nova.	 *
+	*	Este  programa  √©  software livre, voc√™ pode redistribu√≠-lo e/ou	 *
+	*	modific√°-lo sob os termos da Licen√ßa P√∫blica Geral GNU, conforme	 *
+	*	publicada pela Free  Software  Foundation,  tanto  a vers√£o 2 da	 *
+	*	Licen√ßa   como  (a  seu  crit√©rio)  qualquer  vers√£o  mais  nova.	 *
 	*																		 *
-	*	Este programa  È distribuÌdo na expectativa de ser ˙til, mas SEM	 *
-	*	QUALQUER GARANTIA. Sem mesmo a garantia implÌcita de COMERCIALI-	 *
-	*	ZA«√O  ou  de ADEQUA«√O A QUALQUER PROP”SITO EM PARTICULAR. Con-	 *
-	*	sulte  a  LicenÁa  P˙blica  Geral  GNU para obter mais detalhes.	 *
+	*	Este programa  √© distribu√≠do na expectativa de ser √∫til, mas SEM	 *
+	*	QUALQUER GARANTIA. Sem mesmo a garantia impl√≠cita de COMERCIALI-	 *
+	*	ZA√á√ÉO  ou  de ADEQUA√á√ÉO A QUALQUER PROP√ìSITO EM PARTICULAR. Con-	 *
+	*	sulte  a  Licen√ßa  P√∫blica  Geral  GNU para obter mais detalhes.	 *
 	*																		 *
-	*	VocÍ  deve  ter  recebido uma cÛpia da LicenÁa P˙blica Geral GNU	 *
-	*	junto  com  este  programa. Se n„o, escreva para a Free Software	 *
+	*	Voc√™  deve  ter  recebido uma c√≥pia da Licen√ßa P√∫blica Geral GNU	 *
+	*	junto  com  este  programa. Se n√£o, escreva para a Free Software	 *
 	*	Foundation,  Inc.,  59  Temple  Place,  Suite  330,  Boston,  MA	 *
 	*	02111-1307, USA.													 *
 	*																		 *
@@ -34,7 +34,7 @@ class clsIndex extends clsBase
 
 	function Formular()
 	{
-		$this->SetTitulo( "{$this->_instituicao} Usu·rios" );
+		$this->SetTitulo( "{$this->_instituicao} Usu√°rios" );
 		$this->processoAp = "36";
 	}
 }
@@ -43,7 +43,7 @@ class indice extends clsDetalhe
 {
 	function Gerar()
 	{
-		$this->titulo = "Detalhe do usu·rio";
+		$this->titulo = "Detalhe do usu√°rio";
 		$this->addBanner( "imagens/nvp_top_intranet.jpg", "imagens/nvp_vert_intranet.jpg", "Intranet" );
 
 		$cod_pessoa = @$_GET['ref_pessoa'];
@@ -135,7 +135,7 @@ class indice extends clsDetalhe
 
 		$this->addDetalhe( array("Site", $det_pessoa["url"]) );
 		//$this->addDetalhe( array("E-mail", $det_pessoa["email"]) );
-		$this->addDetalhe( array("E-mail usu·rio", $det_funcionario["email"]) );
+		$this->addDetalhe( array("E-mail usu√°rio", $det_funcionario["email"]) );
 
 		$obj_fisica = new clsFisica($cod_pessoa);
 		$det_fisica = $obj_fisica->detalhe();
@@ -143,7 +143,7 @@ class indice extends clsDetalhe
 		$sexo = ($det_fisica["sexo"] == "M") ? "Masculino" : "Feminino";
 		$this->addDetalhe( array("Sexo", $sexo) );
 
-		$this->addDetalhe( array("Matricula", $det_funcionario["matricula"]) );
+		$this->addDetalhe( array("Nome de Usu√°rio", $det_funcionario["matricula"]) );
 		$this->addDetalhe( array("Sequencial", $det_funcionario["sequencial"]) );
 		$ativo_f = ($det_funcionario["ativo"] == '1') ? "Ativo" : "Inativo";
 		$this->addDetalhe( array("Status", $ativo_f) );
@@ -168,11 +168,11 @@ class indice extends clsDetalhe
 
 		if ( $det_funcionario["proibido"] )
 		{
-			$this->addDetalhe( array("MÛdulos", "<b>Banido</b>") );
+			$this->addDetalhe( array("M√≥dulos", "<b>Banido</b>") );
 		}
 		if ($super_user)
 		{
-			$this->addDetalhe( array("MÛdulos", "<b>Super Usu·rio</b>") );
+			$this->addDetalhe( array("M√≥dulos", "<b>Super Usu√°rio</b>") );
 		}
 		else
 		{
@@ -181,7 +181,7 @@ class indice extends clsDetalhe
 				$dba->Consulta( "SELECT nm_submenu FROM menu_submenu WHERE cod_menu_submenu={$cod}" );
 				$dba->ProximoRegistro();
 				list($nm_item) = $dba->Tupla();
-				$this->addDetalhe( array("MÛdulos", $nm_item) );
+				$this->addDetalhe( array("M√≥dulos", $nm_item) );
 
 			}
 		}

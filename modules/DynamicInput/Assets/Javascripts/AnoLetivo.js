@@ -6,7 +6,7 @@
 
     var handleGetAnoEscolares = function(response) {
       var selectOptions = jsonResourcesToSelectOptions(response['options']);
-      updateSelect($anoLetivoField, selectOptions, "Selecione um ano escolar");
+      updateSelect($anoLetivoField, selectOptions, "Selecione uma etapa");
     }
 
     var updateAnoEscolares = function(){
