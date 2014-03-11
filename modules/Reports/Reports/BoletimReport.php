@@ -61,13 +61,7 @@ class BoletimReport extends Portabilis_Report_ReportCore
 
     $tiposBoletim = Portabilis_Model_Report_TipoBoletim;
 
-    $templates = array($tiposBoletim::BIMESTRAL                     => 'portabilis_boletim',
-                       $tiposBoletim::TRIMESTRAL                    => 'portabilis_boletim_trimestral',
-                       $tiposBoletim::TRIMESTRAL_CONCEITUAL         => 'portabilis_boletim_primeiro_ano_trimestral',
-                       $tiposBoletim::SEMESTRAL                     => 'portabilis_boletim_semestral',
-                       $tiposBoletim::SEMESTRAL_CONCEITUAL          => 'portabilis_boletim_conceitual_semestral',
-                       $tiposBoletim::SEMESTRAL_EDUCACAO_INFANTIL   => 'portabilis_boletim_educ_infantil_semestral',
-                       $tiposBoletim::PARECER_DESCRITIVO_COMPONENTE => 'portabilis_boletim_parecer',
+    $templates = array($tiposBoletim::PARECER_DESCRITIVO_COMPONENTE => 'portabilis_boletim_parecer',
                        $tiposBoletim::PARECER_DESCRITIVO_GERAL      => 'portabilis_boletim_parecer_geral');
 
     $template = is_null($flagTipoBoletimTurma) ? '' : $templates[$flagTipoBoletimTurma];

@@ -44,22 +44,10 @@ require_once 'CoreExt/Enum.php';
  */
 class Portabilis_Model_Report_TipoBoletim extends CoreExt_Enum
 {
-  const BIMESTRAL                     = 1;
-  const TRIMESTRAL                    = 2;
-  const TRIMESTRAL_CONCEITUAL         = 3;
-  const SEMESTRAL                     = 4;
-  const SEMESTRAL_CONCEITUAL          = 5;
-  const SEMESTRAL_EDUCACAO_INFANTIL   = 6;
   const PARECER_DESCRITIVO_COMPONENTE = 7;
   const PARECER_DESCRITIVO_GERAL      = 8;
 
   protected $_data = array(
-    self::BIMESTRAL                     => 'Bimestral',
-    self::TRIMESTRAL                    => 'Trimestral',
-    self::TRIMESTRAL_CONCEITUAL         => 'Trimestral conceitual',
-    self::SEMESTRAL                     => 'Semestral',
-    self::SEMESTRAL_CONCEITUAL          => 'Semestral conceitual',
-    self::SEMESTRAL_EDUCACAO_INFANTIL   => 'Semestral educação infantil',
     self::PARECER_DESCRITIVO_COMPONENTE => 'Parecer descritivo por componente curricular',
     self::PARECER_DESCRITIVO_GERAL      => 'Parecer descritivo geral'
   );
