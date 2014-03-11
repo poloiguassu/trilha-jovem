@@ -49,9 +49,7 @@ class HistoricoEscolarReport extends Portabilis_Report_ReportCore
 {
 
   function templateName() {
-    $modelos = array(1 => 'portabilis_historico_escolar_9anos',
-                     2 => 'portabilis_historico_escolar',
-                     3 => 'portabilis_historico_escolar_series_anos');
+    $modelos = array(1 => 'portabilis_historico_escolar_9anos');
 
     return $modelos[$this->args['modelo']];               
   }
