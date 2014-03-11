@@ -55,9 +55,7 @@ class HistoricoEscolarController extends Portabilis_Controller_ReportCoreControl
     $this->inputsHelper()->dynamic(array('instituicao', 'escola'));
     $this->inputsHelper()->simpleSearchAluno();
 
-    $resources = array(1 => '9 anos',
-                       2 => '8 anos',
-                       3 => 'S&eacute;rie/Anos');
+    $resources = array(1 => '9 anos');
 
     $options = array('label' => 'Modelo', 'resources' => $resources, 'value' => 1);
 		$this->inputsHelper()->select('modelo', $options);
