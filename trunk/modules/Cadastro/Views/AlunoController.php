@@ -153,13 +153,7 @@ class AlunoController extends Portabilis_Controller_Page_EditController
 
     $label = Portabilis_String_Utils::toUtf8($this->_getLabel('responsavel'));
 
-    $tiposResponsavel = array(null           => $label,
-                              'pai'          => 'Pai',
-                              'mae'          => 'Mãe',
-                              'outra_pessoa' => 'Outra pessoa');
-
     $options = array('label'     => $this->_getLabel('responsavel'),
-                     'resources' => $tiposResponsavel,
                      'required'  => true,
                      'inline'    => true);
 
