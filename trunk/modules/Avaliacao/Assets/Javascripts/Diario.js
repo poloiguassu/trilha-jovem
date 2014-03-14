@@ -448,57 +448,61 @@ function handleChange(dataResponse) {
 function setTableSearchDetails($tableSearchDetails, dataDetails) {
   var componenteCurricularSelected = ($j('#ref_cod_componente_curricular').val() != '');
 
-  $j('<caption />').html('<strong>Lan&#231;amento de notas por turma</strong>').appendTo($tableSearchDetails);
+  $j('<caption />').html('<strong>Lançamento de notas por turma</strong>').appendTo($tableSearchDetails);
 
   //set headers table
   var $linha = $j('<tr />');
 
-  if (componenteCurricularSelected)
-    $j('<th />').html('Componente curricular').appendTo($linha);
+  if (componenteCurricularSelected) {
+		$j('<th />').html('Área de Conhecimento').appendTo($linha);
+		$j('<th />').html('Componente curricular').appendTo($linha);
+	}
 
-  $j('<th />').html('Etapa').appendTo($linha);
-  $j('<th />').html('Turma').appendTo($linha);
-  $j('<th />').html(safeUtf8Decode('Série')).appendTo($linha);
-  $j('<th />').html('Ano').appendTo($linha);
-  $j('<th />').html('Escola').appendTo($linha);
-  $j('<th />').html('Regra avalia&#231;&#227;o').appendTo($linha);
-  $j('<th />').html('Tipo nota').appendTo($linha);
-  $j('<th />').html('Tipo presen&#231;a').appendTo($linha);
-  $j('<th />').html('Tipo parecer').appendTo($linha);
+	$j('<th />').html('Etapa').appendTo($linha);
+	$j('<th />').html('Turma').appendTo($linha);
+	$j('<th />').html('Eixo').appendTo($linha);
+	$j('<th />').html('Ano').appendTo($linha);
+	$j('<th />').html(safeUtf8Decode('Instituição')).appendTo($linha);
+	$j('<th />').html(safeUtf8Decode('Regra avaliação')).appendTo($linha);
+	$j('<th />').html('Tipo nota').appendTo($linha);
+	$j('<th />').html(safeUtf8Decode('Tipo presença')).appendTo($linha);
+	$j('<th />').html('Tipo parecer').appendTo($linha);
 
-  $linha.appendTo($tableSearchDetails);
+	$linha.appendTo($tableSearchDetails);
 
-  var $linha = $j('<tr />').addClass('cellColor');
+	var $linha = $j('<tr />').addClass('cellColor');
 
-  if (componenteCurricularSelected)
-    $j('<td />').html(safeToUpperCase($j('#ref_cod_componente_curricular').children("[selected='selected']").html())).appendTo($linha);
+	if (componenteCurricularSelected) {
+		$j('<td />').html(safeToUpperCase($j('#ref_cod_componente_curricular optgroup').children("[selected='selected']").parent().attr('label'))).appendTo($linha);
+		$j('<td />').html(safeToUpperCase($j('#ref_cod_componente_curricular optgroup').children("[selected='selected']").html())).appendTo($linha);
+	}
 
-  $j('<td />').html(safeToUpperCase($j('#etapa').children("[selected='selected']").html())).appendTo($linha);
-  $j('<td />').html(safeToUpperCase($j('#ref_cod_turma').children("[selected='selected']").html())).appendTo($linha);
-  $j('<td />').html(safeToUpperCase($j('#ref_ref_cod_serie').children("[selected='selected']").html())).appendTo($linha);
-  $j('<td />').html($j('#ano').val()).appendTo($linha);
+	$j('<td />').html(safeToUpperCase($j('#etapa').children("[selected='selected']").html())).appendTo($linha);
+	$j('<td />').html(safeToUpperCase($j('#ref_cod_turma').children("[selected='selected']").html())).appendTo($linha);
+	$j('<td />').html(safeToUpperCase($j('#ref_ref_cod_serie').children("[selected='selected']").html())).appendTo($linha);
+	$j('<td />').html($j('#ano').val()).appendTo($linha);
 
-  //field escola pode ser diferente de select caso usuario comum
-  var $htmlEscolaField = $j('#ref_cod_escola').children("[selected='selected']").html() ||
-                         $j('#tr_nm_escola span:last').html();
+	//field escola pode ser diferente de select caso usuario comum
+	var $htmlEscolaField = $j('#ref_cod_escola').children("[selected='selected']").html() ||
+						 $j('#tr_nm_escola span:last').html();
 
-  $j('<td />').html(safeToUpperCase($htmlEscolaField)).appendTo($linha);
-  $j('<td />').html(dataDetails.id + ' - ' +safeToUpperCase(dataDetails.nome)).appendTo($linha);
+	$j('<td />').html(safeToUpperCase($htmlEscolaField)).appendTo($linha);
+	$j('<td />').html(dataDetails.id + ' - ' +safeToUpperCase(dataDetails.nome)).appendTo($linha);
 
-  //corrige acentuação
-  var tipoNota = dataDetails.tipo_nota.replace('_', ' ');
-  if (tipoNota == 'numerica')
-    tipoNota = 'numérica';
-  $j('<td />').html(safeToUpperCase(safeUtf8Decode(tipoNota))).appendTo($linha);
+	//corrige acentuação
+	var tipoNota = dataDetails.tipo_nota.replace('_', ' ');
+	if (tipoNota == 'numerica')
+	tipoNota = 'numérica';
+	$j('<td />').html(safeToUpperCase(safeUtf8Decode(tipoNota))).appendTo($linha);
 
-  $j('<td />').html(safeToUpperCase(dataDetails.tipo_presenca.replace('_', ' '))).appendTo($linha);
-  $j('<td />').html(safeToUpperCase(dataDetails.tipo_parecer_descritivo.replace('_', ' '))).appendTo($linha);
+	$j('<td />').html(safeToUpperCase(dataDetails.tipo_presenca.replace('_', ' '))).appendTo($linha);
+	$j('<td />').html(safeToUpperCase(dataDetails.tipo_parecer_descritivo.replace('_', ' '))).appendTo($linha);
 
-  $linha.appendTo($tableSearchDetails);
-  $tableSearchDetails.show();
+	$linha.appendTo($tableSearchDetails);
+	$tableSearchDetails.show();
 
-  //dataDetails.opcoes_notas = safeSortArray(dataDetails.opcoes_notas);
-  $tableSearchDetails.data('details', dataDetails);
+	//dataDetails.opcoes_notas = safeSortArray(dataDetails.opcoes_notas);
+	$tableSearchDetails.data('details', dataDetails);
 }
 
 var nextTabIndex = 1;
@@ -547,7 +551,7 @@ function handleSearch($resultTable, dataResponse) {
   // seta colspan [th, td].aluno quando exibe nota exame
   if ($tableSearchDetails.data('details').tipo_nota != 'nenhum' &&
       $tableSearchDetails.data('details').quantidade_etapas == $j('#etapa').val()) {
-    $resultTable.find('[colspan]').attr('colspan', componenteCurricularSelected ? 1 : 5);
+    $resultTable.find('[colspan]:not(.area-conhecimento)').attr('colspan', componenteCurricularSelected ? 1 : 5);
   }
 
   $resultTable.find('tr:even').addClass('even');
@@ -709,14 +713,28 @@ function updateComponenteCurriculares($targetElement, matriculaId, componentesCu
   var useNota                = $tableSearchDetails.data('details').tipo_nota != 'nenhum';
   var useParecer             = $tableSearchDetails.data('details').tipo_parecer_descritivo != 'nenhum';
 
+  var areas = new Array();
+  
   var $ccHeader = $j('<tr />').addClass('strong');
-
+  
   $j('<td />').addClass('center').html('Componente curricular').appendTo($ccHeader);
   updateComponenteCurricularHeaders($ccHeader, $j('<td />'));
 
   $ccHeader.appendTo($targetElement);
+  
+  var areaColspan = $j('td', $ccHeader).length;
 
   $j.each(componentesCurriculares, function(index, cc) {
+	if (areas.indexOf(cc.area_id) == -1) {
+		areas.push(cc.area_id);
+
+		var $areaRow = $j('<tr />');
+
+		$j('<td />').addClass('area-conhecimento').attr('colspan', areaColspan).html(cc.area_nome).appendTo($areaRow);
+
+		$areaRow.appendTo($targetElement);
+	}
+ 
     var $ccRow = $j('<tr />');
 
     $j('<td />').addClass('center').html(cc.nome).appendTo($ccRow);
@@ -764,8 +782,23 @@ function canSearch(){
   return true;
 }
 
+
+function myNextValid($selectElement) {
+	var a = $selectElement.find('option:selected');
+	if (a.next('option').length == 0) {
+		b = a.parent();
+		if (b.prop('tagName').toUpperCase() == 'SELECT') {
+			return null;
+		} else {
+			return b.next().children('option:first');
+		}
+	} else {
+		return a.next('option');
+	}
+}
+
 function selectNextOption($selectElement){
-  var $nextOption = $selectElement.find('option:selected').next('option');
+  var $nextOption = myNextValid($selectElement);
 
   if ($nextOption.val() != undefined) {
     $selectElement.val($nextOption.val());

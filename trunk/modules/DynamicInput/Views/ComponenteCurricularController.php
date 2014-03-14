@@ -57,45 +57,51 @@ class ComponenteCurricularController extends ApiCoreController
   protected function getComponentesCurriculares() {
     if ($this->canGetComponentesCurriculares()) {
 
-      $userId        = $this->getSession()->id_pessoa;
-      $instituicaoId = $this->getRequest()->instituicao_id;
-      $turmaId       = $this->getRequest()->turma_id;
-      $ano           = $this->getRequest()->ano;
+		$userId        = $this->getSession()->id_pessoa;
+		$instituicaoId = $this->getRequest()->instituicao_id;
+		$turmaId       = $this->getRequest()->turma_id;
+		$ano           = $this->getRequest()->ano;
 
-      $isProfessor   = Portabilis_Business_Professor::isProfessor($instituicaoId, $userId);
+		$isProfessor   = Portabilis_Business_Professor::isProfessor($instituicaoId, $userId);
 
-      if ($isProfessor) {
-        $componentesCurriculares = Portabilis_Business_Professor::componentesCurricularesAlocado(
-          $turmaId, $ano, $userId
-        );
-      }
+		if ($isProfessor) {
+			$componentesCurriculares = Portabilis_Business_Professor::componentesCurricularesAlocado(
+			  $turmaId, $ano, $userId
+			);
+		}
 
-      else {
-        $sql = "select cc.id, cc.nome
-                from pmieducar.turma, modules.componente_curricular_turma as cct, modules.componente_curricular as cc,
-                pmieducar.escola_ano_letivo as al where turma.cod_turma = $1 and cct.turma_id = turma.cod_turma and
-                cct.escola_id = turma.ref_ref_cod_escola and cct.componente_curricular_id = cc.id and al.ano = $2
-                and cct.escola_id = al.ref_cod_escola";
+		else {
+			$sql = "select cc.id, cc.nome, ac.nome as area_conhecimento
+					from pmieducar.turma, modules.componente_curricular_turma as cct, modules.componente_curricular as cc, modules.area_conhecimento as ac,
+					pmieducar.escola_ano_letivo as al where turma.cod_turma = $1 and cct.turma_id = turma.cod_turma and
+					cct.escola_id = turma.ref_ref_cod_escola and cct.componente_curricular_id = cc.id and al.ano = $2
+					and cct.escola_id = al.ref_cod_escola and cc.area_conhecimento_id = ac.id
+					order by ac.nome, cc.nome";
 
-        $componentesCurriculares = $this->fetchPreparedQuery($sql, array($turmaId, $ano));
+			$componentesCurriculares = $this->fetchPreparedQuery($sql, array($turmaId, $ano));
 
-        if (count($ComponentesCurriculares) < 1) {
-          $sql = "select cc.id, cc.nome from
-                  pmieducar.turma as t, pmieducar.escola_serie_disciplina as esd, modules.componente_curricular
-                  as cc, pmieducar.escola_ano_letivo as al where t.cod_turma = $1 and esd.ref_ref_cod_escola =
-                  t.ref_ref_cod_escola and esd.ref_ref_cod_serie = t.ref_ref_cod_serie and esd.ref_cod_disciplina =
-                  cc.id and al.ano = $2 and esd.ref_ref_cod_escola = al.ref_cod_escola and t.ativo = 1 and
-                  esd.ativo = 1 and al.ativo = 1";
+			if (count($ComponentesCurriculares) < 1) {
+			  $sql = "select cc.id, cc.nome, ac.nome as area_conhecimento from
+					  pmieducar.turma as t, pmieducar.escola_serie_disciplina as esd, modules.componente_curricular
+					  as cc, modules.area_conhecimento as ac, pmieducar.escola_ano_letivo as al where t.cod_turma = $1 and esd.ref_ref_cod_escola =
+					  t.ref_ref_cod_escola and esd.ref_ref_cod_serie = t.ref_ref_cod_serie and esd.ref_cod_disciplina =
+					  cc.id and al.ano = $2 and esd.ref_ref_cod_escola = al.ref_cod_escola and t.ativo = 1 and
+					  esd.ativo = 1 and al.ativo = 1 and cc.area_conhecimento_id = ac.id
+					  order by ac.nome, cc.nome";
 
-          $componentesCurriculares = $this->fetchPreparedQuery($sql, array($turmaId, $ano));
-        }
-      }
+			  $componentesCurriculares = $this->fetchPreparedQuery($sql, array($turmaId, $ano));
+			}
+		}
 
-      $options = array();
-      foreach ($componentesCurriculares as $componenteCurricular)
-        $options['__' . $componenteCurricular['id']] = $this->toUtf8($componenteCurricular['nome']);
+		$options = array();
+		foreach ($componentesCurriculares as $componenteCurricular) {
+			$options['__' . $componenteCurricular['id']] = array(
+				'value' => $this->toUtf8($componenteCurricular['nome']),
+				'group' => $this->toUtf8($componenteCurricular['area_conhecimento'])
+			);
+		}
 
-      return array('options' => $options);
+		return array('options' => $options);
     }
   }
 
