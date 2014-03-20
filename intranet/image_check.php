@@ -85,9 +85,6 @@ class PictureController {
 			return $actual_image_name;
 		}
 		else{
-			echo "<script type='text/javascript'>
-			alert('".$actual_image_name." foi criada com sucesso..');
-			</script>";
 			$this->errorMessage = "Ocorreu um erro no servidor ao enviar foto. Tente novamente.";
 			return '';
 		}
@@ -155,7 +152,7 @@ class PictureController {
         $l = strlen($name) - $i;
         $ext = substr($name,$i+1,$l);
 
-        return $ext;
+        return strtolower($ext);
     }
 }
 

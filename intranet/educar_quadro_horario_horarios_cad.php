@@ -267,7 +267,7 @@ class indice extends clsCadastro
       FALSE, '', '', NULL, NULL, '', TRUE, FALSE, FALSE);
 
     $this->campoRotulo(
-      'bt_incluir_horario', 'Hor&aacute;rio',
+      'bt_incluir_horario', 'Horário',
       "<a href='#' onclick=\"" .
       "if (document.getElementById('ref_cod_disciplina').value == '') {
          alert('Você deve escolher a disciplina!');
@@ -434,7 +434,7 @@ class indice extends clsCadastro
               break;
 
             case 7:
-              $campo['nm_dia_semana_'] = 'S&aacute;bado';
+              $campo['nm_dia_semana_'] = 'Sábado';
               break;
           }
         }
