@@ -74,8 +74,6 @@ function jsonResourcesToSelectOptions(resources) {
     if (id.indexOf && id.substr && id.indexOf('__') == 0)
       id = id.substr(2);
 
-    options.push($j('<option />').attr('value', id).html(safeCapitalize(value)));
-    
 	var opt = $j('<option />').attr('value', id);
     
     var newValue = value;
